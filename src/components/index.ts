@@ -1,0 +1,21 @@
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as About } from './About';
+export { default as HowItWorks } from './HowItWorks';
+export { default as Services } from './Services';
+export { default as Testimonials } from './Testimonials';
+export { default as LatestWorks } from './LatestWorks';
+export { default as FinalCTA } from './FinalCTA';
+export { default as Contact } from './Contact';
+export { default as Footer } from './Footer';
+
+export type { HeaderProps } from './Header';
+export type { HeroProps } from './Hero';
+export type { AboutProps } from './About';
+export type { HowItWorksProps, HowItWorksStep } from './HowItWorks';
+export type { ServicesProps, Service } from './Services';
+export type { TestimonialsProps, Testimonial } from './Testimonials';
+export type { LatestWorksProps, Project } from './LatestWorks';
+export type { FinalCTAProps, CTAButton } from './FinalCTA';
+export type { ContactProps, ContactInfo } from './Contact';
+export type { FooterProps } from './Footer';

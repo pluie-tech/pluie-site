@@ -1,8 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pluie - Institutional Website
+
+A modern, fully static institutional website built with Next.js 15, TypeScript, and Tailwind CSS. This project showcases a complete business website with responsive design and optimized performance.
+
+## Features
+
+- **Static Site Generation (SSG)** - Optimized for performance and SEO
+- **Responsive Design** - Mobile-first approach using Tailwind CSS
+- **TypeScript** - Type-safe development with excellent developer experience
+- **Modern Components** - Reusable, accessible React components
+- **SEO Optimized** - Proper meta tags and semantic HTML structure
+
+## Components
+
+- **Header** - Navigation with responsive mobile menu
+- **Hero** - Engaging landing section with call-to-action
+- **About** - Company overview with mission and values
+- **Services** - Service offerings with detailed features
+- **Contact** - Contact form and business information
+- **Footer** - Site footer with social links and newsletter signup
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +35,94 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the static site for production:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+The built files will be exported to the `dist` directory, ready for deployment to any static hosting service.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To serve the built site locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run serve
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout with Header and Footer
+│   └── page.tsx        # Home page with all sections
+├── components/
+│   ├── About.tsx       # About section component
+│   ├── Contact.tsx     # Contact form and info component
+│   ├── Footer.tsx      # Site footer component
+│   ├── Header.tsx      # Navigation header component
+│   ├── Hero.tsx        # Hero section component
+│   ├── Services.tsx    # Services showcase component
+│   └── index.ts        # Component exports
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+### Updating Content
+
+Each component accepts props to customize content:
+
+- **Header**: Logo, company name, and navigation links
+- **Hero**: Title, subtitle, description, and CTA
+- **About**: Company information and feature highlights
+- **Services**: Service offerings and pricing
+- **Contact**: Contact information and form handling
+- **Footer**: Company details and social links
+
+### Styling
+
+The project uses Tailwind CSS for styling. You can customize:
+
+- Colors in `tailwind.config.js`
+- Typography and spacing
+- Component-specific styles
+
+### Static Export Configuration
+
+The site is configured for static export in `next.config.ts`:
+
+```typescript
+const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'dist',
+  images: {
+    unoptimized: true
+  }
+};
+```
+
+## Deployment
+
+This static site can be deployed to:
+
+- **Vercel** - Zero-config deployment
+- **Netlify** - Drag and drop the `dist` folder
+- **GitHub Pages** - Upload the `dist` folder contents
+- **AWS S3** - Static website hosting
+- **Any CDN or static hosting service**
+
+## Technologies Used
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **React** - UI library
