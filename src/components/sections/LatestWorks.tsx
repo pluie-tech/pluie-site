@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Section from './Section';
-import Button from './Button';
+import Section from '../Section';
+import Button from '../ui/Button';
 
 export interface Project {
   name: string;

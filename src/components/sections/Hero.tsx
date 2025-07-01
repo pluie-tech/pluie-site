@@ -1,4 +1,4 @@
-import CTAButton from './CTAButton';
+import CTAButton from '../ui/CTAButton';
 import { Calendar } from 'lucide-react';
 
 export interface HeroProps {

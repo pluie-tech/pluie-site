@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import SectionTitle from './SectionTitle';
+import SectionTitle from '../SectionTitle';
 
 export interface Testimonial {
   quote: string;

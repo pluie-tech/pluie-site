@@ -1,5 +1,5 @@
 import { LucideIcon } from 'lucide-react';
-import WhatsAppIcon from '@/components/WhatsAppIcon';
+import WhatsAppIcon from './WhatsAppIcon';
 import { ComponentPropsWithoutRef, ElementType } from 'react';
 
 export interface ButtonProps {

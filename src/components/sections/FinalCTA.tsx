@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Section from './Section';
+import Section from '../Section';
 import { Calendar, LucideIcon } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
-import Button from './Button';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
+import Button from '../ui/Button';
 
-export interface CTAButton {
+export interface FinalCTAButton {
   text: string;
   icon: LucideIcon | typeof WhatsAppIcon;
   href?: string;
@@ -14,7 +14,7 @@ export interface CTAButton {
 export interface FinalCTAProps {
   title?: string;
   subtitle?: string;
-  buttons?: CTAButton[];
+  buttons?: FinalCTAButton[];
 }
 
 export default function FinalCTA({
