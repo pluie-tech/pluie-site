@@ -18,8 +18,8 @@ export default function Header({ logo, companyName = "Your Company" }: HeaderPro
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 shadow-header" aria-label="Top">
+    <header className="sticky top-0 z-50 bg-white">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between py-4">
           <div className="flex justify-around items-center">
             <Link href="/">
@@ -31,7 +31,7 @@ export default function Header({ logo, companyName = "Your Company" }: HeaderPro
                   alt={companyName}
                 />
               ) : (
-                <span className="text-2xl font-bold text-gray-900">{companyName}</span>
+                <span className="text-2xl font-bold text-foreground">{companyName}</span>
               )}
             </Link>
           </div>
@@ -43,7 +43,7 @@ export default function Header({ logo, companyName = "Your Company" }: HeaderPro
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>

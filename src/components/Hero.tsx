@@ -21,10 +21,10 @@ export default function Hero({
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-5"
+      className="relative min-h-dvh flex items-center justify-center p-5"
     >
       <div
-        className="w-full min-h-screen rounded-3xl"
+        className="w-full min-h-dvh rounded-3xl"
         style={backgroundImage ? {
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
