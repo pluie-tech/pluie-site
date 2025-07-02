@@ -1,14 +1,12 @@
-import { Calendar, LucideIcon, MessageCircle } from 'lucide-react';
-import WhatsAppIcon from '../ui/WhatsAppIcon';
+import { LucideIcon } from 'lucide-react';
+import type { WhatsAppIconType } from '../ui/WhatsAppIcon';
 import Section from '../Section';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
 
 export interface FinalCTAButton {
   text: string;
-  icon: string;
-  href?: string;
-  variant?: 'primary' | 'outline';
+  icon: LucideIcon | WhatsAppIconType;
 }
 
 export interface FinalCTAProps {
@@ -16,12 +14,6 @@ export interface FinalCTAProps {
   subtitle?: string;
   buttons?: FinalCTAButton[];
 }
-
-const icons: { [key: string]: LucideIcon | typeof WhatsAppIcon } = {
-  "calendar": Calendar,
-  "whatsapp": WhatsAppIcon,
-  "message": MessageCircle,
-};
 
 export default function FinalCTA({
   title,
@@ -45,9 +37,8 @@ export default function FinalCTA({
           {buttons && buttons.map((button, index) => (
             <Button
               key={index}
-              href={button.href}
-              leftIcon={icons[button.icon]}
-              variant={button.variant}
+              href='#contato'
+              leftIcon={button.icon}
             >
               {button.text}
             </Button>

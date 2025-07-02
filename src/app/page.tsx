@@ -2,7 +2,7 @@
 
 import { Hero, About, HowItWorks, Services, Testimonials, LatestWorks, FinalCTA, Contact } from '@/components';
 import { motion } from 'framer-motion';
-import content from '@/../docs/content.json';
+import { siteContent } from '@/content';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -10,7 +10,7 @@ const itemVariants = {
 };
 
 export default function Home() {
-  const { hero, about_us, how_it_works, solutions, testimonials, latest_works, final_cta } = content.page;
+  const { hero, about_us, how_it_works, solutions, testimonials, latest_works, final_cta, contact } = siteContent.page;
 
   return (
     <main className="overflow-hidden">
@@ -54,7 +54,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <Services services={solutions} />
+        <Services {...solutions} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -90,7 +90,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <Contact />
+        <Contact {...contact} />
       </motion.div>
     </main>
   );

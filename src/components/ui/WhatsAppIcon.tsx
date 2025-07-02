@@ -14,3 +14,5 @@ export default function WhatsAppIcon({
     </svg>
   )
 }
+
+export type WhatsAppIconType = typeof WhatsAppIcon;

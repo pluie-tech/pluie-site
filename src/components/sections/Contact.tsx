@@ -8,22 +8,14 @@ import Select from '../ui/Select';
 import Textarea from '../ui/Textarea';
 import Label from '../ui/Label';
 
-export interface ContactInfo {
-  email?: string;
-  phone?: string;
-  address?: string;
-  hours?: string;
-}
-
 export interface ContactProps {
-  title?: string;
-  subtitle?: string;
-  contactInfo?: ContactInfo;
+  title: string;
+  subtitle: string;
 }
 
 export default function Contact({
-  title = "Pronto para começar seu projeto?",
-  subtitle = "Conte com a Pluie para desenvolver ou aprimorar sua solução digital.",
+  title,
+  subtitle
 }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
@@ -128,7 +120,7 @@ export default function Contact({
 
               <button
                 type="submit"
-                className="flex items-center justify-center cursor-pointer rounded-lg bg-brand-secondary hover:bg-brand-secondary-hover text-white font-semibold px-6 py-3 transition-colors"
+                className="flex items-center justify-center cursor-pointer rounded-lg bg-azulao hover:bg-azulao-hover text-white font-semibold px-6 py-3 transition-colors"
               >
                 Enviar
               </button>
