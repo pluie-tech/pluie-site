@@ -17,5 +17,5 @@ export default function Logo({ size = 64, withName = false }: LogoProps) {
 
   const src = withName ? imageSrcs.logo : imageSrcs.symbol;
 
-  return <Image src={src} alt="Pluie Logo" width={width} height={height} />;
+  return <Image src={src} alt="Pluie Logo" width={width} height={height} aria-label="Pluie Logo" />;
 }

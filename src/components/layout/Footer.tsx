@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import Logo from '../ui/Logo';
+import Link from 'next/link';
 
 export interface FooterProps {
   companyName?: string;
@@ -64,26 +65,27 @@ export default function Footer({
           </div>
           
           {/* Quick Links */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4 border-b border-slate-100">
               Navegação
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 font-medium">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <Link
+                    key={link.name}
                     href={link.href}
-                    className="hover:text-gray-900 hover:underline transition-colors duration-200 font-medium"
+                    className="text-foreground transition-colors duration-200 hover:underline"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
           
           {/* Contact Information */}
-          <div className="lg:col-span-1">
+          <div>
             <h3 className="text-lg font-semibold mb-4 border-b border-slate-100">
               Contato
             </h3>

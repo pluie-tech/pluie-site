@@ -1,8 +1,6 @@
 import { SelectHTMLAttributes } from "react";
 
-export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {}
-
-export default function Select(props: SelectProps) {
+export default function Select(props: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <select
       {...props}

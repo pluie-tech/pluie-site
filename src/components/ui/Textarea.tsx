@@ -1,9 +1,6 @@
 import { TextareaHTMLAttributes } from "react";
 
-export interface TextareaProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-export default function Textarea(props: TextareaProps) {
+export default function Textarea(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <textarea
       {...props}

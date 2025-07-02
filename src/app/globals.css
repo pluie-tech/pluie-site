@@ -19,7 +19,8 @@
   --container-8xl: 1440px;
 
   --color-primary: #72E3AD;
-  
+  --color-brand-secondary: #3A5BA0;
+  --color-brand-secondary-hover: #2c457f;
 
   --shadow-header: 0px 2px 4px 3px #00000008;
   --color-border: #F1F5F9;

@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Section from '../Section';
 import { Calendar, LucideIcon } from 'lucide-react';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
 import Button from '../ui/Button';
+import Logo from '../ui/Logo';
 
 export interface FinalCTAButton {
   text: string;
@@ -43,7 +43,7 @@ export default function FinalCTA({
       color="black"
       preSection={
         <div className="flex justify-center mb-6 sm:mb-10">
-          <Image src="/Pluie-logo.svg" alt="Pluie Logo" width={64} height={74} />
+          <Logo size={80} />
         </div>
       }
     >

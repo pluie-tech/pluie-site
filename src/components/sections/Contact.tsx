@@ -128,7 +128,7 @@ export default function Contact({
 
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 transition-colors"
+                className="flex items-center justify-center cursor-pointer rounded-lg bg-brand-secondary hover:bg-brand-secondary-hover text-white font-semibold px-6 py-3 transition-colors"
               >
                 Enviar
               </button>

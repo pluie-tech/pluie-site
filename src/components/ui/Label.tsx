@@ -1,8 +1,6 @@
 import { LabelHTMLAttributes } from "react";
 
-export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {}
-
-export default function Label(props: LabelProps) {
+export default function Label(props: LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label {...props} className="text-lg font-medium" />
   );
