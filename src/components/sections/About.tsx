@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Section from './Section';
+import Section from '../Section';
 
 export interface AboutProps {
   title?: string;

@@ -1,8 +1,8 @@
 import { Lightbulb } from 'lucide-react';
-import IconWrapper from './IconWrapper';
-import CTAButton from './CTAButton';
-import WhatsAppIcon from './WhatsAppIcon';
-import Section from './Section';
+import IconWrapper from '../ui/IconWrapper';
+import CTAButton from '../ui/CTAButton';
+import WhatsAppIcon from '../ui/WhatsAppIcon';
+import Section from '../Section';
 
 export interface Service {
   title: string;

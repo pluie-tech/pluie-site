@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Section from './Section';
+import Section from '../Section';
 
 export interface ContactInfo {
   email?: string;

@@ -1,21 +1,37 @@
-export { default as Header } from './Header';
-export { default as Hero } from './Hero';
-export { default as About } from './About';
-export { default as HowItWorks } from './HowItWorks';
-export { default as Services } from './Services';
-export { default as Testimonials } from './Testimonials';
-export { default as LatestWorks } from './LatestWorks';
-export { default as FinalCTA } from './FinalCTA';
-export { default as Contact } from './Contact';
-export { default as Footer } from './Footer';
+// Layout components
+export { default as Header } from './layout/Header';
+export { default as Footer } from './layout/Footer';
 
-export type { HeaderProps } from './Header';
-export type { HeroProps } from './Hero';
-export type { AboutProps } from './About';
-export type { HowItWorksProps, HowItWorksStep } from './HowItWorks';
-export type { ServicesProps, Service } from './Services';
-export type { TestimonialsProps, Testimonial } from './Testimonials';
-export type { LatestWorksProps, Project } from './LatestWorks';
-export type { FinalCTAProps, CTAButton } from './FinalCTA';
-export type { ContactProps, ContactInfo } from './Contact';
-export type { FooterProps } from './Footer';
+// Section components
+export { default as Hero } from './sections/Hero';
+export { default as About } from './sections/About';
+export { default as HowItWorks } from './sections/HowItWorks';
+export { default as Services } from './sections/Services';
+export { default as Testimonials } from './sections/Testimonials';
+export { default as LatestWorks } from './sections/LatestWorks';
+export { default as FinalCTA } from './sections/FinalCTA';
+export { default as Contact } from './sections/Contact';
+
+// UI components
+export { default as Button } from './ui/Button';
+export { default as CTAButton } from './ui/CTAButton';
+export { default as IconWrapper } from './ui/IconWrapper';
+export { default as WhatsAppIcon } from './ui/WhatsAppIcon';
+
+// Shared components
+export { default as Section } from './Section';
+export { default as SectionTitle } from './SectionTitle';
+
+// Type exports
+export type { HeaderProps } from './layout/Header';
+export type { FooterProps } from './layout/Footer';
+export type { HeroProps } from './sections/Hero';
+export type { AboutProps } from './sections/About';
+export type { HowItWorksProps, HowItWorksStep } from './sections/HowItWorks';
+export type { ServicesProps, Service } from './sections/Services';
+export type { TestimonialsProps, Testimonial } from './sections/Testimonials';
+export type { LatestWorksProps, Project } from './sections/LatestWorks';
+export type { FinalCTAProps, FinalCTAButton } from './sections/FinalCTA';
+export type { ContactProps, ContactInfo } from './sections/Contact';
+export type { ButtonProps } from './ui/Button';
+export type { CTAButtonProps } from './ui/CTAButton';

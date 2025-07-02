@@ -1,7 +1,7 @@
 import { Calendar, CalendarCheck, FileText, BicepsFlexed, LucideIcon } from 'lucide-react'
-import IconWrapper from './IconWrapper'
-import CTAButton from './CTAButton'
-import Section from './Section'
+import IconWrapper from '../ui/IconWrapper'
+import CTAButton from '../ui/CTAButton'
+import Section from '../Section'
 
 export interface HowItWorksStep {
   icon: LucideIcon
