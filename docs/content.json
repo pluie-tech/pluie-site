@@ -78,52 +78,92 @@
         }
       ]
     },
-    "solutions": {
-      "title": "Soluções",
-      "subtitle": "De sites a sistemas completos, desenvolvemos o que o seu negócio precisa. Sempre sob medida, para resolver seu desafio.",
-      "services": [
+    "solutions": [
+    {
+      "title": "Sites, Aplicativos e Sistemas",
+      "description": "Do conceito ao código: criamos produtos digitais que entregam resultados.",
+      "features": [
         {
-          "title": "Sites, Aplicativos e Sistemas",
-          "description": "Do conceito ao código: criamos produtos digitais que entregam resultados.",
-          "features": [
-            "Software pronto em semanas, não em meses.",
-            "Ótima usabilidade e estrutura sólida, feito para durar e crescer com o seu negócio.",
-            "Faça seu MVP: Tiramos sua ideia do papel com foco no essencial. Para você testar, aprender e evoluir."
-          ],
-          "cta_button": {
-            "text": "Preciso de um MVP",
-            "icon": "whatsapp"
-          }
+          "title": "Entrega rápida",
+          "description": "Software pronto em semanas, não em meses.",
+          "icon": "timer"
         },
         {
-          "title": "Consultoria em Usabilidade",
-          "description": "Seus clientes reclamam? Ajudamos a identificar e corrigir falhas que prejudicam a experiência.",
-          "features": [
-            "Seus clientes vão adorar seu sistema, site ou aplicativo.",
-            "Elimine telas confusas e dores de cabeça.",
-            "Exemplos práticos de como as mudanças vão gerar resultados."
-          ]
+          "title": "Prontos para crescer",
+          "description": "Ótima usabilidade e estrutura sólida, feito para durar e crescer com o seu negócio.",
+          "icon": "layout-dashboard"
         },
         {
-          "title": "Automações",
-          "description": "Tarefas repetitivas? Economizamos seu tempo com tecnologia inteligente.",
-          "features": [
-            "Faça o sistema trabalhar por você e foque no que realmente importa.",
-            "Integração com suas planilhas, e-mails e sistemas.",
-            "Relatórios de acompanhamento de resultados."
-          ]
-        },
-        {
-          "title": "Identidade Visual",
-          "description": "Precisa de cara nova? Desenvolvemos marcas que comunicam clareza e confiança.",
-          "features": [
-            "Seus clientes vão reconhecer e lembrar de sua marca.",
-            "Kits para usar em várias aplicações.",
-            "Style guide e design system para organizar seu trabalho."
-          ]
+          "title": "MVP com foco",
+          "description": "Faça seu MVP: Tiramos sua ideia do papel com foco no essencial. Para você testar, aprender e evoluir.",
+          "icon": "box"
         }
       ]
     },
+    {
+      "title": "Consultoria em Usabilidade",
+      "description": "Seus clientes reclamam? Ajudamos a identificar e corrigir falhas que prejudicam a experiência.",
+      "features": [
+        {
+          "title": "Mais satisfação",
+          "description": "Seus clientes vão adorar seu sistema, site ou aplicativo.",
+          "icon": "smile"
+        },
+        {
+          "title": "Telas mais claras",
+          "description": "Elimine telas confusas e dores de cabeça.",
+          "icon": "wand-sparkles"
+        },
+        {
+          "title": "Impacto real",
+          "description": "Exemplos práticos de como as mudanças vão gerar resultados.",
+          "icon": "trending-up"
+        }
+      ]
+    },
+    {
+      "title": "Automações",
+      "description": "Tarefas repetitivas? Economizamos seu tempo com tecnologia inteligente.",
+      "features": [
+        {
+          "title": "Mais tempo livre",
+          "description": "Faça o sistema trabalhar por você e foque no que realmente importa.",
+          "icon": "repeat"
+        },
+        {
+          "title": "Integra com o que você usa",
+          "description": "Integração com suas planilhas, e-mails e sistemas.",
+          "icon": "link"
+        },
+        {
+          "title": "Acompanhe com dados",
+          "description": "Relatórios de acompanhamento de resultados.",
+          "icon": "bar-chart-3"
+        }
+      ]
+    },
+    {
+      "title": "Identidade Visual",
+      "description": "Precisa de cara nova? Desenvolvemos marcas que comunicam clareza e confiança.",
+      "features": [
+        {
+          "title": "Marca memorável",
+          "description": "Seus clientes vão reconhecer e lembrar de sua marca.",
+          "icon": "star"
+        },
+        {
+          "title": "Kit de aplicações",
+          "description": "Kits para usar em várias aplicações.",
+          "icon": "palette"
+        },
+        {
+          "title": "Organização visual",
+          "description": "Style guide e design system para organizar seu trabalho.",
+          "icon": "layout-template"
+        }
+      ]
+    }
+  ],
     "testimonials": {
       "title": "Tecnologia que faz sentido pra todo mundo",
       "subtitle": "Não importa se é dono do negócio ou se é quem está usando: o que a gente faz resolve e funciona de verdade.",

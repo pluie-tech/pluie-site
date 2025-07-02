@@ -4,35 +4,18 @@ import SectionTitle from '../SectionTitle';
 export interface Testimonial {
   quote: string;
   author: string;
-  authorImage: string;
 }
 
 export interface TestimonialsProps {
   title?: string;
   subtitle?: string;
-  testimonials?: Testimonial[];
+  quotes?: Testimonial[];
 }
 
 export default function Testimonials({
-  title = "Tecnologia que faz sentido pra todo mundo",
-  subtitle = "Não importa se é dono do negócio ou se é quem está usando: o que a gente faz resolve e funciona de verdade.",
-  testimonials = [
-    {
-      quote: "Eu não entendo nada de tecnologia, mas eles explicaram tudo com clareza e foram super parceiros do começo ao fim.",
-      author: "Irene, dona de clínica",
-      authorImage: "/images/testimonials/testimonial1.png"
-    },
-    {
-      quote: "Usei o DESAFIADO e consegui alcançar meus objetivos de vida.",
-      author: "Pi, dono de zoológico",
-      authorImage: "/images/testimonials/testimonial2.png"
-    },
-    {
-      quote: "Graças ao GASTADO eu consegui comprar minha coleção de bonecos de Jojo Parte 3.",
-      author: "Cleia, otaku safada",
-      authorImage: "/images/testimonials/testimonial3.png"
-    }
-  ]
+  title,
+  subtitle,
+  quotes
 }: TestimonialsProps) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
@@ -43,7 +26,7 @@ export default function Testimonials({
         />
 
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
+          {quotes && quotes.map((testimonial, index) => (
             <div
               key={index}
               className="relative rounded-4xl p-8 bg-gradient-to-b from-[#E1EFF899]/60 to-[#E0F8ED99]/60"
@@ -51,7 +34,7 @@ export default function Testimonials({
               <div className="">
                 <Image
                   className="size-16 rounded-2xl mb-6"
-                  src={testimonial.authorImage}
+                  src={`/images/testimonials/testimonial${index + 1}.png`}
                   width={64}
                   height={64}
                   alt="User avatar"

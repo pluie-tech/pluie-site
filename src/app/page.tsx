@@ -2,6 +2,7 @@
 
 import { Hero, About, HowItWorks, Services, Testimonials, LatestWorks, FinalCTA, Contact } from '@/components';
 import { motion } from 'framer-motion';
+import content from '@/../docs/content.json';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -9,6 +10,8 @@ const itemVariants = {
 };
 
 export default function Home() {
+  const { hero, about_us, how_it_works, solutions, testimonials, latest_works, final_cta } = content.page;
+
   return (
     <main className="overflow-hidden">
       <motion.div
@@ -19,9 +22,9 @@ export default function Home() {
         className="will-change-transform"
       >
         <Hero
-          title="Tecnologia que resolve, sem complicar."
-          subtitle="Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento."
-          ctaText="Agende uma conversa"
+          title={hero.title}
+          subtitle={hero.subtitle}
+          ctaText={hero.cta_button.text}
           ctaLink="#contato"
           backgroundImage='/images/hero.png'
         />
@@ -33,7 +36,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <About />
+        <About {...about_us} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -42,7 +45,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <HowItWorks />
+        <HowItWorks {...how_it_works} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -51,7 +54,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <Services />
+        <Services services={solutions} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -60,7 +63,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <Testimonials />
+        <Testimonials {...testimonials} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -69,7 +72,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <LatestWorks />
+        <LatestWorks {...latest_works} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -78,7 +81,7 @@ export default function Home() {
         variants={itemVariants}
         className="will-change-transform"
       >
-        <FinalCTA />
+        <FinalCTA {...final_cta} />
       </motion.div>
       <motion.div
         initial="hidden"

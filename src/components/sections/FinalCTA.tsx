@@ -1,12 +1,12 @@
-import Section from '../Section';
-import { Calendar, LucideIcon } from 'lucide-react';
+import { Calendar, LucideIcon, MessageCircle } from 'lucide-react';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
-import Button from '../ui/Button';
+import Section from '../Section';
 import Logo from '../ui/Logo';
+import Button from '../ui/Button';
 
 export interface FinalCTAButton {
   text: string;
-  icon: LucideIcon | typeof WhatsAppIcon;
+  icon: string;
   href?: string;
   variant?: 'primary' | 'outline';
 }
@@ -17,23 +17,16 @@ export interface FinalCTAProps {
   buttons?: FinalCTAButton[];
 }
 
+const icons: { [key: string]: LucideIcon | typeof WhatsAppIcon } = {
+  "calendar": Calendar,
+  "whatsapp": WhatsAppIcon,
+  "message": MessageCircle,
+};
+
 export default function FinalCTA({
-  title = "Agende uma conversa gratuita",
-  subtitle = "A gente escuta, entende e mostra como pode ajudar.",
-  buttons = [
-    {
-      text: "Escolher horário",
-      icon: Calendar,
-      href: "#contato",
-      variant: "primary"
-    },
-    {
-      text: "Fale conosco",
-      icon: WhatsAppIcon,
-      href: "#contato",
-      variant: "outline"
-    }
-  ]
+  title,
+  subtitle,
+  buttons
 }: FinalCTAProps) {
   return (
     <Section
@@ -49,11 +42,11 @@ export default function FinalCTA({
     >
       <div className="mt-10 flex justify-center">
         <div className="flex flex-col gap-4">
-          {buttons.map((button, index) => (
+          {buttons && buttons.map((button, index) => (
             <Button
               key={index}
               href={button.href}
-              leftIcon={button.icon}
+              leftIcon={icons[button.icon]}
               variant={button.variant}
             >
               {button.text}

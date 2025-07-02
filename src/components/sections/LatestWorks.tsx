@@ -8,7 +8,7 @@ export interface Project {
   name: string;
   description: string;
   image: string;
-  ctaButton: {
+  cta_button: {
     text: string;
     href?: string;
   };
@@ -21,28 +21,9 @@ export interface LatestWorksProps {
 }
 
 export default function LatestWorks({
-  title = "Nossos últimos trabalhos",
-  subtitle = "Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.",
-  projects = [
-    {
-      name: "Desafiado",
-      description: "Transforme objetivos em hábitos duradouros.",
-      image: "/images/works/desafiado.png",
-      ctaButton: {
-        text: "Experimentar",
-        href: "#"
-      }
-    },
-    {
-      name: "Agrobay",
-      description: "Projetamos toda a experiência do usuário e o aplicativo foi desenvolvido pela Utronics.",
-      image: "/images/works/agrobay.png",
-      ctaButton: {
-        text: "Ver na loja",
-        href: "#"
-      }
-    }
-  ]
+  title,
+  subtitle,
+  projects
 }: LatestWorksProps) {
   return (
     <Section
@@ -53,7 +34,7 @@ export default function LatestWorks({
       rounded="top"
     >   
       <div className="grid sm:grid-cols-2 gap-0.5">
-        {projects.map((project, index) => (
+        {projects && projects.map((project, index) => (
           <Work key={index} {...project} />
         ))}
       </div>
@@ -65,13 +46,13 @@ function Work({
   name,
   description,
   image,
-  ctaButton
+  cta_button
 }: Project) {
   return (
     <div className="flex flex-col sm:flex-row p-3 rounded-[36px] bg-background">
       <div className="rounded-[32px] overflow-hidden shrink-0 mb-4 sm:mb-0">
         <Image
-          src={image}
+          src={`/public/images/works/${image}`}
           width={256}
           height={256}
           alt={`Imagem do projeto ${name}`}
@@ -89,8 +70,8 @@ function Work({
         </p>
         
         <div className="mt-auto">
-          <Button variant="outline" href={ctaButton.href} className="w-full sm:w-auto">
-            {ctaButton.text}
+          <Button variant="outline" href={cta_button.href} className="w-full sm:w-auto">
+            {cta_button.text}
           </Button>
         </div>
       </div>
