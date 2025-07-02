@@ -28,15 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header companyName="Pluie" />
         {children}
-        <Footer 
-          companyName="Pluie"
-          description="Building innovative solutions for businesses worldwide. We're committed to excellence and delivering results that matter."
-          socialLinks={[
-            { name: "Twitter", href: "https://twitter.com", icon: "🐦" },
-            { name: "LinkedIn", href: "https://linkedin.com", icon: "💼" },
-            { name: "GitHub", href: "https://github.com", icon: "🐙" }
-          ]}
-        />
+        <Footer />
       </body>
     </html>
   );
