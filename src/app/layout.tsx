@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Epilogue, Cabin } from "next/font/google";
 import { Header, Footer } from '@/components';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cabin = Cabin({
+  variable: "--font-cabin",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "Pluie - Tecnologia que resolve, sem complicar",
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
         <Header companyName="Pluie" />
         {children}
         <Footer />
