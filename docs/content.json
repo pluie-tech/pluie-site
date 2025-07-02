@@ -177,6 +177,18 @@
           "icon": "whatsapp"
         }
       ]
+    },
+    "contact": {
+      "title": "Pronto para começar seu projeto?",
+      "subtitle": "Conte com a Pluie para desenvolver ou aprimorar sua solução digital."
+
+    },
+    "footer": {
+      "short_description": "Tecnologia sob medida para resolver problemas reais."
     }
+  },
+  "contact_information": {
+    "email": "contato@pluie.tech",
+    "phone": "(41) 8492-6574"
   }
 }
