@@ -45,7 +45,7 @@ export default function Footer({
             <div className="mb-4">
               <Logo size={96} withName />
             </div>
-            <p className="mb-6 font-medium max-w-64">
+            <p className="mb-6 max-w-64">
               {description}
             </p>
             
