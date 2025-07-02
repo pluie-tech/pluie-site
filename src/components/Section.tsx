@@ -1,5 +1,5 @@
-import { cn } from '@/lib/util'
-import SectionTitle from './SectionTitle'
+import { cn } from '@/lib/utils';
+import SectionTitle from './SectionTitle';
 
 interface SectionProps {
   title?: string

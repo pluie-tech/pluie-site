@@ -1,4 +1,4 @@
-import { cn } from '@/lib/util';
+import { cn } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react';
 
 type Size = 'small' | 'medium' | 'large';
