@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Section from '../Section';
 import { motion } from 'motion/react';
+import IconWrapper from '../ui/IconWrapper';
+import { Sprout } from 'lucide-react';
 
 type AboutSectionWithContent = {
   content: string;
@@ -111,7 +113,8 @@ export default function About({
                   viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.6, delay: 1.0 + (index * 0.2), ease: "easeOut" }}
                 >
-                  <Image src="/mini-logo.svg" alt={feature.title} width={28} height={28} />
+                  {/* <Image src="/mini-logo.svg" alt={feature.title} width={28} height={28} /> */}
+                  <IconWrapper icon={Sprout} size="small" />
                 </motion.div>
                 <div className="ml-4">
                   <motion.h4 
