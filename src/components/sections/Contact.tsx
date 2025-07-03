@@ -7,6 +7,7 @@ import Input from '../ui/Input';
 import Select from '../ui/Select';
 import Textarea from '../ui/Textarea';
 import Label from '../ui/Label';
+import { motion } from 'motion/react';
 
 export interface ContactProps {
   title: string;
@@ -44,20 +45,57 @@ export default function Contact({
       id="contato"
       color="white"
     >
-      <div className="grid lg:grid-cols-3 max-w-7xl mx-auto">
-        <div className="lg:col-span-2 place-content-center">
+      <motion.div 
+        className="grid lg:grid-cols-3 max-w-7xl mx-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div 
+          className="lg:col-span-2 place-content-center"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
           <SectionTitle title={title} className="max-w-md text-left" />
-        </div>
+        </motion.div>
 
         {/* Contact Form */}
-        <div className="lg:col-span-1">
+        <motion.div 
+          className="lg:col-span-1"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        >
 
           <div className="">
-            <p className="text-2xl mb-6">
+            <motion.p 
+              className="text-2xl mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
               {subtitle}
-            </p>
-            <form onSubmit={handleSubmit} className="grid gap-6 max-w-xl mx-auto">
-              <div className="grid gap-2">
+            </motion.p>
+            <motion.form 
+              onSubmit={handleSubmit} 
+              className="grid gap-6 max-w-xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+            >
+              <motion.div 
+                className="grid gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              >
                 <Label htmlFor="name">Seu nome</Label>
                 <Input
                   id="name"
@@ -68,9 +106,15 @@ export default function Contact({
                   value={formData.name}
                   onChange={handleChange}
                 />
-              </div>
+              </motion.div>
 
-              <div className="grid gap-2">
+              <motion.div 
+                className="grid gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+              >
                 <Label htmlFor="email">Seu e-mail</Label>
                 <Input
                   id="email"
@@ -81,9 +125,15 @@ export default function Contact({
                   value={formData.email}
                   onChange={handleChange}
                 />
-              </div>
+              </motion.div>
 
-              <div className="grid gap-2">
+              <motion.div 
+                className="grid gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              >
                 <Label htmlFor="service">O que você está procurando?</Label>
                 <Select
                   id="service"
@@ -103,9 +153,15 @@ export default function Contact({
                   <option>Diagnóstico técnico / avaliação de sistema</option>
                   <option>Outro (descrever abaixo)</option>
                 </Select>
-              </div>
+              </motion.div>
 
-              <div className="grid gap-2">
+              <motion.div 
+                className="grid gap-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.3, ease: "easeOut" }}
+              >
                 <Label htmlFor="message">Conte mais pra gente</Label>
                 <Textarea
                   id="message"
@@ -116,18 +172,22 @@ export default function Contact({
                   value={formData.message}
                   onChange={handleChange}
                 />
-              </div>
+              </motion.div>
 
-              <button
+              <motion.button
                 type="submit"
                 className="flex items-center justify-center cursor-pointer rounded-lg bg-azulao hover:bg-azulao-hover text-white font-semibold px-6 py-3 transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
               >
                 Enviar
-              </button>
-            </form>
+              </motion.button>
+            </motion.form>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 }

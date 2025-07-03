@@ -19,17 +19,17 @@ export const siteContent = {
           url: '#'
         }
       ],
-      contact_icon: 'WhatsApp'
+      contactIcon: 'WhatsApp'
     },
     hero: {
       title: 'Tecnologia que resolve, sem complicar.',
       subtitle: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
-      cta_button: {
+      ctaButton: {
         text: 'Agende uma conversa',
         icon: Calendar
       }
     },
-    about_us: {
+    aboutUs: {
       title: 'Quem somos',
       intro: 'Dois veteranos da tecnologia que viram produtos bons morrerem em processos ruins.',
       sections: [
@@ -56,7 +56,7 @@ export const siteContent = {
         }
       ]
     },
-    how_it_works: {
+    howItWorks: {
       title: 'Como funciona',
       subtitle: 'Sem burocracia. Resolvemos junto com você, passo a passo:',
       steps: [
@@ -64,7 +64,7 @@ export const siteContent = {
           icon: CalendarPlus,
           title: 'Agende uma conversa gratuita',
           description: 'Nos conte o que você precisa - sem compromisso.',
-          cta_button: {
+          ctaButton: {
             text: 'Agendar',
             icon: Calendar
           }
@@ -181,41 +181,44 @@ export const siteContent = {
       quotes: [
         {
           quote: 'Eu não entendo nada de tecnologia, mas eles explicaram tudo com clareza e foram super parceiros do começo ao fim.',
-          author: 'Irene, dona de clínica'
+          author: 'Irene, dona de clínica',
+          authorImage: '/images/testimonials/testimonial1.png'
         },
         {
           quote: 'Usei o DESAFIADO e consegui alcançar meus objetivos de vida.',
-          author: 'Pi, dono de zoológico'
+          author: 'Pi, dono de zoológico',
+          authorImage: '/images/testimonials/testimonial2.png'
         },
         {
           quote: 'Graças ao GASTADO eu consegui comprar minha coleção de bonecos de Jojo Parte 3.',
-          author: 'Cleia, otaku safada'
+          author: 'Cleia, otaku safada',
+          authorImage: '/images/testimonials/testimonial3.png'
         }
       ]
     },
-    latest_works: {
+    latestWorks: {
       title: 'Nossos últimos trabalhos',
       subtitle: 'Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.',
       projects: [
         {
           name: 'Desafiado',
           description: 'Transforme objetivos em hábitos duradouros.',
-          image: "Image of the 'Desafiado' app.",
-          cta_button: {
+          image: "/images/works/desafiado.png",
+          ctaButton: {
             text: 'Experimentar'
           }
         },
         {
           name: 'Agrobay',
           description: 'Projetamos toda a experiência do usuário e o aplicativo foi desenvolvido pela Utronics.',
-          image: "Image of the 'Agrobay' app.",
-          cta_button: {
+          image: "/images/works/agrobay.png",
+          ctaButton: {
             text: 'Ver na loja'
           }
         }
       ]
     },
-    final_cta: {
+    finalCta: {
       title: 'Agende uma conversa gratuita',
       subtitle: 'A gente escuta, entende e mostra como pode ajudar.',
       buttons: [
@@ -234,10 +237,10 @@ export const siteContent = {
       subtitle: 'Conte com a Pluie para desenvolver ou aprimorar sua solução digital.'
     },
     footer: {
-      short_description: 'Tecnologia sob medida para resolver problemas reais.'
+      shortDescription: 'Tecnologia sob medida para resolver problemas reais.'
     }
   },
-  contact_information: {
+  contactInformation: {
     email: 'contato@pluie.tech',
     phone: '(41) 8492-6574'
   }
