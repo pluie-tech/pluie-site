@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
+import { motion } from 'motion/react';
 
 export interface Testimonial {
   quote: string;
@@ -42,30 +43,54 @@ export default function Testimonials({
           subtitle={subtitle}
         />
 
-        <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div 
+          className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative rounded-4xl p-8 bg-gradient-to-b from-[#E1EFF899]/60 to-[#E0F8ED99]/60"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
             >
               <div className="">
-                <Image
-                  className="size-16 rounded-2xl mb-6"
-                  src={testimonial.authorImage}
-                  width={64}
-                  height={64}
-                  alt="User avatar"
-                />
-                <blockquote className="leading-7 text-lg font-medium font-heading mb-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 + 0.3, ease: "easeOut" }}
+                >
+                  <Image
+                    className="size-16 rounded-2xl mb-6"
+                    src={testimonial.authorImage}
+                    width={64}
+                    height={64}
+                    alt="User avatar"
+                  />
+                </motion.div>
+                <motion.blockquote 
+                  className="leading-7 text-lg font-medium font-heading mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
+                >
                   {testimonial.quote}
-                </blockquote>
-                <cite className="not-italic">
+                </motion.blockquote>
+                <motion.cite 
+                  className="not-italic"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 + 0.5, ease: "easeOut" }}
+                >
                   — {testimonial.author}
-                </cite>
+                </motion.cite>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

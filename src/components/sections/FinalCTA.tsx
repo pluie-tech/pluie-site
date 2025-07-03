@@ -3,6 +3,7 @@ import { Calendar, LucideIcon } from 'lucide-react';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
 import Button from '../ui/Button';
 import Logo from '../ui/Logo';
+import { motion } from 'motion/react';
 
 export interface FinalCTAButton {
   text: string;
@@ -42,25 +43,41 @@ export default function FinalCTA({
       subtitle={subtitle}
       color="black"
       preSection={
-        <div className="flex justify-center mb-6 sm:mb-10">
+        <motion.div 
+          className="flex justify-center mb-6 sm:mb-10"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Logo size={80} />
-        </div>
+        </motion.div>
       }
     >
-      <div className="mt-10 flex justify-center">
+      <motion.div 
+        className="mt-10 flex justify-center"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+      >
         <div className="flex flex-col gap-4">
           {buttons.map((button, index) => (
-            <Button
+            <motion.div
               key={index}
-              href={button.href}
-              leftIcon={button.icon}
-              variant={button.variant}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 + (index * 0.2), ease: "easeOut" }}
             >
-              {button.text}
-            </Button>
+              <Button
+                href={button.href}
+                leftIcon={button.icon}
+                variant={button.variant}
+              >
+                {button.text}
+              </Button>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }

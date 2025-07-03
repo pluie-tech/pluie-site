@@ -3,6 +3,7 @@ import IconWrapper from '../ui/IconWrapper';
 import CTAButton from '../ui/CTAButton';
 import WhatsAppIcon from '../ui/WhatsAppIcon';
 import Section from '../Section';
+import { motion } from 'motion/react';
 
 export interface Service {
   title: string;
@@ -79,31 +80,65 @@ export default function Services({
       color="black"
       rounded="full"
     >
-      <div className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-0.5 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
+      <motion.div 
+        className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-0.5 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
             className="flex flex-col rounded-3xl bg-white px-7 md:px-10 2xl:px-8 py-12"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
           >
-            <h5 className="text-3xl md:text-[40px] font-black font-heading">
+            <motion.h5 
+              className="text-3xl md:text-[40px] font-black font-heading"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 + 0.2, ease: "easeOut" }}
+            >
               {service.title}
-            </h5>
+            </motion.h5>
     
-            <p className="mt-4 leading-7 text-lg">
+            <motion.p 
+              className="mt-4 leading-7 text-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 + 0.3, ease: "easeOut" }}
+            >
               {service.description}
-            </p>
+            </motion.p>
     
-            <ul className="mt-8 space-y-4">
+            <motion.ul 
+              className="mt-8 space-y-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
+            >
               {service.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-start">
+                <motion.li 
+                  key={featureIndex} 
+                  className="flex items-start"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 + 0.5 + (featureIndex * 0.1), ease: "easeOut" }}
+                >
                   <IconWrapper icon={Lightbulb} size="small" />
                   <span className="ml-3 text-xl">{feature}</span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
             {service.action && (
-              <div className="mt-8 w-full">
+              <motion.div 
+                className="mt-8 w-full"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 + 0.8, ease: "easeOut" }}
+              >
                 <CTAButton
                   className="w-full md:w-fit lg:w-full text-center"
                   leftIcon={WhatsAppIcon}
@@ -111,11 +146,11 @@ export default function Services({
                   text={service.action.text}
                   link={service.action.link}
                 />
-              </div>
+              </motion.div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }
