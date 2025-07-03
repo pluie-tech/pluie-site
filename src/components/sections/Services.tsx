@@ -37,7 +37,7 @@ export default function Services({
           className="mx-auto px-6 grid gap-4 lg:gap-8"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {services && services.map((service, index) => (
@@ -63,21 +63,21 @@ function ServiceItem({
       className={cn("lg:flex bg-background py-8 sm:py-10 lg:py-14 rounded-3xl", inverted && "flex-row-reverse")}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 'some' }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
     >
       <motion.div 
         className="flex-1 px-8 sm:px-10 lg:px-14 flex flex-col"
         initial={{ opacity: 0, x: inverted ? 40 : -40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: index * 0.1 + 0.2, ease: "easeOut" }}
       >
         <motion.h3 
           className={`font-extrabold text-3xl sm:text-4xl font-heading`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.4, ease: "easeOut" }}
         >
           {service.title}
@@ -86,7 +86,7 @@ function ServiceItem({
           className="mt-4 text-lg leading-normal flex-grow"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.5, ease: "easeOut" }}
         >
           {service.description}
@@ -96,7 +96,7 @@ function ServiceItem({
           className="grid lg:grid-cols-3 divide-y lg:divide-x lg:divide-y-0 divide-gray-300 mt-5"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.4, ease: "easeOut" }}
         >
           {service.features.map((feature, featureIndex) => (
@@ -105,13 +105,13 @@ function ServiceItem({
               className="pb-4 mb-4 lg:pr-6 lg:mr-6 lg:pb-0 lg:mb-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.6, delay: index * 0.1 + 0.5 + (featureIndex * 0.1), ease: "easeOut" }}
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.6 + (featureIndex * 0.1), ease: "easeOut" }}
               >
                 <feature.icon size={40} className="w-10 h-10 mb-4" />
@@ -120,7 +120,7 @@ function ServiceItem({
                 className="text-lg leading-tight font-semibold mb-3"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.7 + (featureIndex * 0.1), ease: "easeOut" }}
               >
                 {feature.title}
@@ -129,7 +129,7 @@ function ServiceItem({
                 className="leading-tight"
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.8 + (featureIndex * 0.1), ease: "easeOut" }}
               >
                 {feature.description}
@@ -146,13 +146,13 @@ function ServiceItem({
         }
         initial={{ opacity: 0, x: inverted ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
         >
           <Image

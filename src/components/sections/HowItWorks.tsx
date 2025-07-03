@@ -33,7 +33,7 @@ export default function HowItWorks({
         className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3 bg-border rounded-3xl px-5 py-9 sm:py-10 xl:py-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {steps.map((step, index) => (
@@ -42,7 +42,7 @@ export default function HowItWorks({
             className="relative"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 'some' }}
             transition={{ duration: 0.8, delay: index * 0.3, ease: "easeOut" }}
           >
             <div className="flex">
@@ -51,7 +51,7 @@ export default function HowItWorks({
                   className="flex items-center justify-start"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.6, delay: index * 0.3 + 0.2, ease: "easeOut" }}
                 >
                   <IconWrapper icon={step.icon} size="medium" />
@@ -65,7 +65,7 @@ export default function HowItWorks({
                     className="flex items-center justify-center mb-6"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 'some' }}
                     transition={{ duration: 0.6, delay: index * 0.3 + 0.2, ease: "easeOut" }}
                   >
                     <IconWrapper icon={step.icon} size="large" />
@@ -77,7 +77,7 @@ export default function HowItWorks({
                   className="text-2xl text-heading font-semibold mb-4 text-azulao text-wrap-balance max-w-60 md:mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: "easeOut" }}
                 >
                   {step.title}
@@ -87,7 +87,7 @@ export default function HowItWorks({
                   className=" text-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
                 >
                   {step.description}
@@ -98,7 +98,7 @@ export default function HowItWorks({
                     className="mt-5"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 'some' }}
                     transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: "easeOut" }}
                   >
                     <CTAButton text={step.ctaButton.text} leftIcon={step.ctaButton.icon} />

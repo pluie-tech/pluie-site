@@ -34,7 +34,7 @@ export default function FinalCTA({
           className="flex justify-center mb-6 sm:mb-10"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Logo size={80} />
@@ -45,7 +45,7 @@ export default function FinalCTA({
         className="mt-10 flex justify-center"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
       >
         <div className="flex flex-col gap-4">
@@ -54,7 +54,7 @@ export default function FinalCTA({
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.6, delay: 0.5 + (index * 0.2), ease: "easeOut" }}
             >
               <Button

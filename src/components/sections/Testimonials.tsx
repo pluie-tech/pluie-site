@@ -33,7 +33,7 @@ export default function Testimonials({
           className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {quotes.map((testimonial, index) => (
@@ -42,14 +42,14 @@ export default function Testimonials({
               className="relative rounded-4xl p-8 bg-gradient-to-b from-[#E1EFF899]/60 to-[#E0F8ED99]/60"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
             >
               <div className="">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.6, delay: index * 0.2 + 0.3, ease: "easeOut" }}
                 >
                   <Image
@@ -64,7 +64,7 @@ export default function Testimonials({
                   className="leading-7 text-lg font-medium font-heading mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
                 >
                   {testimonial.quote}
@@ -73,7 +73,7 @@ export default function Testimonials({
                   className="not-italic"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.8, delay: index * 0.2 + 0.5, ease: "easeOut" }}
                 >
                   — {testimonial.author}

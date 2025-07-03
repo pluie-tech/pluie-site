@@ -49,14 +49,14 @@ export default function Contact({
         className="grid lg:grid-cols-3 max-w-7xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div 
           className="lg:col-span-2 place-content-center"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <SectionTitle title={title} className="max-w-md text-left" />
@@ -67,7 +67,7 @@ export default function Contact({
           className="lg:col-span-1"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
 
@@ -76,7 +76,7 @@ export default function Contact({
               className="text-2xl mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               {subtitle}
@@ -86,14 +86,14 @@ export default function Contact({
               className="grid gap-6 max-w-xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 'some' }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             >
               <motion.div 
                 className="grid gap-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
               >
                 <Label htmlFor="name">Seu nome</Label>
@@ -112,7 +112,7 @@ export default function Contact({
                 className="grid gap-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
               >
                 <Label htmlFor="email">Seu e-mail</Label>
@@ -131,7 +131,7 @@ export default function Contact({
                 className="grid gap-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
               >
                 <Label htmlFor="service">O que você está procurando?</Label>
@@ -159,7 +159,7 @@ export default function Contact({
                 className="grid gap-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.3, ease: "easeOut" }}
               >
                 <Label htmlFor="message">Conte mais pra gente</Label>
@@ -179,7 +179,7 @@ export default function Contact({
                 className="flex items-center justify-center cursor-pointer rounded-lg bg-azulao hover:bg-azulao-hover text-white font-semibold px-6 py-3 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
               >
                 Enviar

@@ -38,7 +38,7 @@ export default function LatestWorks({
         className="grid sm:grid-cols-2 gap-0.5"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {projects.map((project, index) => (
@@ -61,14 +61,14 @@ function Work({
       className="flex flex-col sm:flex-row p-3 rounded-[36px] bg-background"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 'some' }}
       transition={{ duration: 0.8, delay: index * 0.3, ease: "easeOut" }}
     >
       <motion.div 
         className="rounded-[32px] overflow-hidden shrink-0 mb-4 sm:mb-0"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: index * 0.3 + 0.2, ease: "easeOut" }}
       >
         <Image
@@ -85,7 +85,7 @@ function Work({
           className="text-2xl font-bold font-heading mb-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: "easeOut" }}
         >
           {name}
@@ -95,7 +95,7 @@ function Work({
           className="text-lg mb-6 flex-grow"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
         >
           {description}
@@ -105,7 +105,7 @@ function Work({
           className="mt-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: "easeOut" }}
         >
           <Button variant="outline" href={ctaButton.href} className="w-full sm:w-auto">
