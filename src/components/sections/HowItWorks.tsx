@@ -1,3 +1,5 @@
+"use client";
+
 import { LucideIcon } from 'lucide-react'
 import IconWrapper from '../ui/IconWrapper'
 import CTAButton from '../ui/CTAButton'

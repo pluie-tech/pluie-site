@@ -1,3 +1,5 @@
+"use client";
+
 import { LucideIcon } from 'lucide-react';
 import type { WhatsAppIconType } from '../ui/WhatsAppIcon';
 import Section from '../Section';

@@ -1,3 +1,5 @@
+"use client";
+
 import CTAButton from '../ui/CTAButton';
 import { Calendar } from 'lucide-react';
 import { motion } from 'motion/react';

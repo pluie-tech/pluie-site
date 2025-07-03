@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
 import { motion } from 'motion/react';

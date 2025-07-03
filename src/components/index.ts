@@ -32,6 +32,6 @@ export type { ServicesProps, Service } from './sections/Services';
 export type { TestimonialsProps, Testimonial } from './sections/Testimonials';
 export type { LatestWorksProps, Project } from './sections/LatestWorks';
 export type { FinalCTAProps, FinalCTAButton } from './sections/FinalCTA';
-export type { ContactProps, ContactInfo } from './sections/Contact';
+export type { ContactProps } from './sections/Contact';
 export type { ButtonProps } from './ui/Button';
 export type { CTAButtonProps } from './ui/CTAButton';
