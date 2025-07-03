@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Section from '../Section';
 import Button from '../ui/Button';
+import { motion } from 'motion/react';
 
 export interface Project {
   name: string;
@@ -52,11 +53,16 @@ export default function LatestWorks({
       color="black"
       rounded="top"
     >   
-      <div className="grid sm:grid-cols-2 gap-0.5">
+      <motion.div 
+        className="grid sm:grid-cols-2 gap-0.5"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         {projects.map((project, index) => (
-          <Work key={index} {...project} />
+          <Work key={index} index={index} {...project} />
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }
@@ -65,11 +71,22 @@ function Work({
   name,
   description,
   image,
-  ctaButton
-}: Project) {
+  ctaButton,
+  index
+}: Project & { index: number }) {
   return (
-    <div className="flex flex-col sm:flex-row p-3 rounded-[36px] bg-background">
-      <div className="rounded-[32px] overflow-hidden shrink-0 mb-4 sm:mb-0">
+    <motion.div 
+      className="flex flex-col sm:flex-row p-3 rounded-[36px] bg-background"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.3, ease: "easeOut" }}
+    >
+      <motion.div 
+        className="rounded-[32px] overflow-hidden shrink-0 mb-4 sm:mb-0"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: index * 0.3 + 0.2, ease: "easeOut" }}
+      >
         <Image
           src={image}
           width={256}
@@ -77,24 +94,39 @@ function Work({
           alt={`Imagem do projeto ${name}`}
           className="object-cover size-fit sm:min-w-64 sm:max-w-64"
         />
-      </div>
+      </motion.div>
 
       <div className="py-8 text-center sm:text-left sm:ml-12 flex flex-col">
-        <h3 className="text-2xl font-bold font-heading mb-3">
+        <motion.h3 
+          className="text-2xl font-bold font-heading mb-3"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: "easeOut" }}
+        >
           {name}
-        </h3>
+        </motion.h3>
         
-        <p className="text-lg mb-6 flex-grow">
+        <motion.p 
+          className="text-lg mb-6 flex-grow"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
+        >
           {description}
-        </p>
+        </motion.p>
         
-        <div className="mt-auto">
+        <motion.div 
+          className="mt-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: "easeOut" }}
+        >
           <Button variant="outline" href={ctaButton.href} className="w-full sm:w-auto">
             {ctaButton.text}
           </Button>
-        </div>
+        </motion.div>
       </div>
       
-    </div>
+    </motion.div>
   );
 }
