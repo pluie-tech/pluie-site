@@ -13,15 +13,16 @@ export default function Home() {
         title={hero.title}
         subtitle={hero.subtitle}
         ctaText={hero.ctaButton.text}
-        ctaLink="#contato"
+        ctaLink={hero.ctaButton.link}
+        ctaIcon={hero.ctaButton.icon}
         backgroundImage='/images/hero.png'
       />
       <About {...aboutUs} />
       <HowItWorks {...howItWorks} />
       <Services {...solutions} />
+      <FinalCTA {...finalCta} />
       <Testimonials {...testimonials} />
       <LatestWorks {...latestWorks} />
-      <FinalCTA {...finalCta} />
       <Contact {...contact} />
     </main>
   );

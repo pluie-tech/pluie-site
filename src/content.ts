@@ -1,9 +1,26 @@
-import { BarChart3, BicepsFlexed, Box, Calendar, CalendarCheck, FileText, LayoutDashboard, LayoutTemplate, Link, Palette, Repeat, Smile, Star, Timer, TrendingUp, WandSparkles } from 'lucide-react';
+import { BicepsFlexed, Bird, Calendar, CalendarCheck, ChartPie, FileText, LayoutTemplate, Palette, Puzzle, Shrub, Smile, Star, Target, Timer, TrendingUp, WandSparkles, Linkedin, Mail } from 'lucide-react';
 import { WhatsAppIcon } from './components';
-import { LinkedInIcon } from './components/ui/BrandIcon';
 import { ButtonVariant } from './components/ui/Button';
+import { generateWhatsappLink } from './lib/utils';
+
+const email = 'contato@pluie.com'
+const phone = '(41) 9 8492-6574'
+const whatsappLink = generateWhatsappLink(phone, 'Olá, gostaria de saber mais sobre os serviços da Pluie.')
+
+const contactInformation = {
+  email: email,
+  phone: phone,
+  whatsappMessage: 'Olá, gostaria de saber mais sobre os serviços da Pluie.',
+  whatsappLink: whatsappLink,
+  socialLinks: [
+    { name: "WhatsApp", href: whatsappLink, icon: WhatsAppIcon },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/pluietech/", icon: Linkedin },
+    { name: "E-mail", href: `mailto:${email}`, icon: Mail },
+  ],
+}
 
 export const siteContent = {
+  companyName: 'Pluie',
   title: 'Pluie - Tecnologia que resolve, sem complicar',
   description: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
   page: {
@@ -30,7 +47,8 @@ export const siteContent = {
       subtitle: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
       ctaButton: {
         text: 'Agende uma conversa',
-        icon: Calendar
+        icon: WhatsAppIcon,
+        link: contactInformation.whatsappLink
       }
     },
     aboutUs: {
@@ -70,7 +88,8 @@ export const siteContent = {
           description: 'Nos conte o que você precisa - sem compromisso.',
           ctaButton: {
             text: 'Agendar',
-            icon: Calendar
+            icon: Calendar,
+            link: contactInformation.whatsappLink
           }
         },
         {
@@ -101,12 +120,12 @@ export const siteContent = {
             {
               title: 'Prontos para crescer',
               description: 'Ótima usabilidade e estrutura sólida, feito para durar e crescer com o seu negócio.',
-              icon: LayoutDashboard
+              icon: Shrub
             },
             {
               title: 'MVP com foco',
               description: 'Faça seu MVP: Tiramos sua ideia do papel com foco no essencial. Para você testar, aprender e evoluir.',
-              icon: Box
+              icon: Target
             }
           ],
           imagePath: '/images/services/applications.jpg'
@@ -121,7 +140,7 @@ export const siteContent = {
               icon: Smile
             },
             {
-              title: 'Telas mais claras',
+              title: 'Interface intuitiva',
               description: 'Elimine telas confusas e dores de cabeça.',
               icon: WandSparkles
             },
@@ -140,17 +159,17 @@ export const siteContent = {
             {
               title: 'Mais tempo livre',
               description: 'Faça o sistema trabalhar por você e foque no que realmente importa.',
-              icon: Repeat
+              icon: Bird
             },
             {
               title: 'Integra com o que você usa',
               description: 'Integração com suas planilhas, e-mails e sistemas.',
-              icon: Link
+              icon: Puzzle
             },
             {
               title: 'Acompanhe com dados',
               description: 'Relatórios de acompanhamento de resultados.',
-              icon: BarChart3
+              icon: ChartPie
             }
           ],
           imagePath: '/images/services/automations.jpg'
@@ -227,14 +246,10 @@ export const siteContent = {
       subtitle: 'A gente escuta, entende e mostra como pode ajudar.',
       buttons: [
         {
-          text: 'Escolher horário',
-          icon: Calendar,
-          variant: 'primary' as ButtonVariant
-        },
-        {
           text: 'Fale conosco',
           icon: WhatsAppIcon,
-          variant: 'outline' as ButtonVariant
+          variant: 'primary' as ButtonVariant,
+          link: generateWhatsappLink(contactInformation.phone, contactInformation.whatsappMessage)
         }
       ]
     },
@@ -246,14 +261,7 @@ export const siteContent = {
       shortDescription: 'Tecnologia sob medida para resolver problemas reais.'
     }
   },
-  contactInformation: {
-    email: 'contato@pluie.tech',
-    phone: '(41) 9 8492-6574',
-    whatsappMessage: 'Olá, gostaria de saber mais sobre os serviços da Pluie.',
-    socialLinks: [
-      { name: "LinkedIn", href: "#", icon: LinkedInIcon }
-    ],
-  }
+  contactInformation
 }
 
 export type SiteContent = typeof siteContent;

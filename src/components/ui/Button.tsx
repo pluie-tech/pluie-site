@@ -39,7 +39,7 @@ export default function Button({
     >
       {LeftIcon && (
         <span className="mr-2 -translate-y-0.5">
-          <LeftIcon size={leftIconSize} />
+          <LeftIcon size={leftIconSize} className="stroke-2" />
         </span>
       )}
       <span className={variant === 'primary' ? 'leading-none' : ''}>

@@ -37,6 +37,7 @@ export default function About({
       id="quem-somos"
       title={title}
       subtitle={intro}
+      titleClassName="max-w-2xl mx-auto text-center"
     >  
       <motion.div 
         className="mx-auto mt-16 max-w-7xl flex flex-col lg:flex-row gap-1"

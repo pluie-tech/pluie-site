@@ -14,7 +14,6 @@ export { default as Contact } from './sections/Contact';
 
 // UI components
 export { default as Button } from './ui/Button';
-export { default as CTAButton } from './ui/CTAButton';
 export { default as IconWrapper } from './ui/IconWrapper';
 export { WhatsAppIcon, LinkedInIcon } from './ui/BrandIcon';
 
@@ -34,5 +33,4 @@ export type { LatestWorksProps, Project } from './sections/LatestWorks';
 export type { FinalCTAProps, FinalCTAButton } from './sections/FinalCTA';
 export type { ContactProps } from './sections/Contact';
 export type { ButtonProps } from './ui/Button';
-export type { CTAButtonProps } from './ui/CTAButton';
 export type { BrandIconType, WhatsAppIconType, LinkedInIconType } from './ui/BrandIcon';

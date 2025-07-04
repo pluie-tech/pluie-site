@@ -31,17 +31,24 @@ export default function Services({
   services
 }: ServicesProps) {
   return (
-    <Section id="solucoes" title={title} subtitle={subtitle} color="black" rounded="full">
+    <Section
+      id="solucoes"
+      title={title}
+      subtitle={subtitle}
+      color="black"
+      rounded="top"
+      titleClassName="max-w-3xl mx-auto text-center"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div 
-          className="mx-auto px-6 grid gap-4 lg:gap-8"
+          className="mx-auto px-0.5 space-y-0.5"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {services && services.map((service, index) => (
-            <ServiceItem service={service} inverted={index % 2 === 0} key={index} index={index} />
+            <ServiceItem service={service} inverted key={index} index={index} />
           ))}
         </motion.div>
       </div>
@@ -60,21 +67,17 @@ function ServiceItem({
 }) {
   return (
     <motion.div 
-      className={cn("lg:flex bg-background py-8 sm:py-10 lg:py-14 rounded-3xl", inverted && "flex-row-reverse")}
+      className={cn("xl:flex xl:items-center bg-background p-3 rounded-3xl", inverted && "flex-row-reverse")}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 'some' }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
     >
-      <motion.div 
-        className="flex-1 px-8 sm:px-10 lg:px-14 flex flex-col"
-        initial={{ opacity: 0, x: inverted ? 40 : -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, delay: index * 0.1 + 0.2, ease: "easeOut" }}
+      <div 
+        className="flex-1 p-6 sm:p-12 md:p-10 xl:p-12 flex flex-col"
       >
         <motion.h3 
-          className={`font-extrabold text-3xl sm:text-4xl font-heading`}
+          className={`font-black text-[40px] font-heading tracking-title leading-small`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -83,7 +86,7 @@ function ServiceItem({
           {service.title}
         </motion.h3>
         <motion.p 
-          className="mt-4 text-lg leading-normal flex-grow"
+          className="mt-4 text-lg leading-body"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -93,7 +96,7 @@ function ServiceItem({
         </motion.p>
 
         <motion.div 
-          className="grid lg:grid-cols-3 divide-y lg:divide-x lg:divide-y-0 divide-gray-300 mt-5"
+          className="grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border mt-9"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -102,7 +105,7 @@ function ServiceItem({
           {service.features.map((feature, featureIndex) => (
             <motion.div 
               key={featureIndex} 
-              className="pb-4 mb-4 lg:pr-6 lg:mr-6 lg:pb-0 lg:mb-0"
+              className="pb-4 mb-4 pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 'some' }}
@@ -137,36 +140,22 @@ function ServiceItem({
             </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
+      
       <motion.div
-        className={
-          cn("flex-1 overflow-hidden px-8 lg:px-0",
-            
-          )
-        }
-        initial={{ opacity: 0, x: inverted ? -40 : 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
+        className="h-full"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
-        >
-          <Image
-            src={service.imagePath}
-            alt={service.title}
-            width={300}
-            height={300}
-            className={
-              cn("w-full max-h-[400px] object-cover rounded-xl lg:rounded-none mt-2 lg:mt-0",
-                inverted ? "lg:rounded-tr-xl lg:rounded-br-xl" : "lg:rounded-tl-xl lg:rounded-bl-xl"
-              )
-            }
-          />
-        </motion.div>
+        <Image
+          src={service.imagePath}
+          alt={service.title}
+          width={460}
+          height={460}
+          className="object-cover w-full xl:w-[460px] rounded-xl mt-2 xl:mt-0"
+        />
       </motion.div>
     </motion.div>
   )

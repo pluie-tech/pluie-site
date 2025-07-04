@@ -3,7 +3,6 @@ import { Epilogue, Cabin } from "next/font/google";
 import { Header, Footer } from '@/components';
 import { siteContent } from '@/content';
 import "./globals.css";
-import { generateWhatsappLink } from '@/lib/utils';
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -28,16 +27,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const whatsappLink = generateWhatsappLink(siteContent.contactInformation.phone, siteContent.contactInformation.whatsappMessage)
-
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
-        <Header companyName="Pluie" whatsappLink={whatsappLink} />
+        <Header companyName="Pluie" whatsappLink={siteContent.contactInformation.whatsappLink} />
         {children}
         <Footer
-          description={siteContent.page.footer.shortDescription}
-          contact={siteContent.contactInformation}
+          companyName={siteContent.companyName}
           socialLinks={siteContent.contactInformation.socialLinks}
         />
       </body>

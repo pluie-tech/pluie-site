@@ -23,7 +23,7 @@ export default function Testimonials({
 }: TestimonialsProps) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={title}
           subtitle={subtitle}

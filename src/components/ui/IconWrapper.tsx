@@ -24,7 +24,7 @@ export default function IconWrapper({
     <span
       className={cn("inline-flex items-center justify-center bg-azulao text-white ", sizeClasses[size], className)}
     >
-      {<Icon />}
+      {<Icon className="stroke-2" />}
     </span>
   );
 }

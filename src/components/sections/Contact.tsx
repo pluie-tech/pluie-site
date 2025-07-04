@@ -8,6 +8,8 @@ import Select from '../ui/Select';
 import Textarea from '../ui/Textarea';
 import Label from '../ui/Label';
 import { motion } from 'motion/react';
+import Logo from '../ui/Logo';
+import Button from '../ui/Button';
 
 export interface ContactProps {
   title: string;
@@ -44,46 +46,39 @@ export default function Contact({
     <Section
       id="contato"
       color="white"
+      contentClassName='mt-0'
     >
       <motion.div 
-        className="grid lg:grid-cols-3 max-w-7xl mx-auto"
+        className="flex flex-col lg:flex-row justify-start lg:justify-between max-w-7xl mx-auto px-0.5 sm:px-15"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div 
-          className="lg:col-span-2 place-content-center"
+          className="lg:col-span-2 place-content-center px-5 sm:px-0"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <SectionTitle title={title} className="max-w-md text-left" />
+          <Logo className="w-[58px] sm:w-[88] mb-6 sm:mb-8" />
+          <SectionTitle title={title} subtitle={subtitle} className="max-w-md text-left" />
         </motion.div>
 
         {/* Contact Form */}
         <motion.div 
-          className="lg:col-span-1"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="lg:ml-8"
         >
 
-          <div className="">
-            <motion.p 
-              className="text-2xl mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 'some' }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            >
-              {subtitle}
-            </motion.p>
+          <div className="bg-border p-9 sm:p-15 rounded-[36px]">
             <motion.form 
               onSubmit={handleSubmit} 
-              className="grid gap-6 max-w-xl mx-auto"
+              className="grid gap-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 'some' }}
@@ -103,6 +98,7 @@ export default function Contact({
                   type="text"
                   required
                   placeholder="Como podemos te chamar?"
+                  className="w-full"
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -174,16 +170,16 @@ export default function Contact({
                 />
               </motion.div>
 
-              <motion.button
-                type="submit"
-                className="flex items-center justify-center cursor-pointer rounded-lg bg-azulao hover:bg-azulao-hover text-white font-semibold px-6 py-3 transition-colors"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
               >
-                Enviar
-              </motion.button>
+                <Button variant="primary" className="w-full">
+                  Enviar
+                </Button>
+              </motion.div>
             </motion.form>
           </div>
         </motion.div>

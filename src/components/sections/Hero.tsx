@@ -1,14 +1,15 @@
 "use client";
 
-import CTAButton from '../ui/CTAButton';
-import { Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
+import Button from '../ui/Button';
+import { BrandIconType } from '../ui/BrandIcon';
 
 export interface HeroProps {
   title: string;
   subtitle: string;
   ctaText: string;
   ctaLink: string;
+  ctaIcon: BrandIconType
   backgroundImage: string;
 }
 
@@ -17,6 +18,7 @@ export default function Hero({
   subtitle,
   ctaText,
   ctaLink,
+  ctaIcon,
   backgroundImage
 }: HeroProps) {
   return (
@@ -42,7 +44,7 @@ export default function Hero({
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-[34px] font-bold tracking-tight text-white sm:text-[54px] md:text-7xl font-heading"
+              className="text-[34px] font-black tracking-title leading-small text-white sm:text-[54px] md:text-7xl font-heading"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -63,7 +65,14 @@ export default function Hero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             >
-              <CTAButton text={ctaText} link={ctaLink} leftIcon={Calendar} />
+              <Button
+                href={ctaLink}
+                leftIcon={ctaIcon}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {ctaText}
+              </Button>
             </motion.div>
           </motion.div>
         </div>

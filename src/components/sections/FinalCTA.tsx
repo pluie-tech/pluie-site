@@ -1,16 +1,16 @@
 "use client";
 
+import { motion } from 'motion/react';
 import { LucideIcon } from 'lucide-react';
 import type { BrandIconType } from '../ui/BrandIcon';
 import Section from '../Section';
-import Logo from '../ui/Logo';
 import Button from '../ui/Button';
-import { motion } from 'motion/react';
 
 export interface FinalCTAButton {
   text: string;
   icon: LucideIcon | BrandIconType;
   variant: 'primary' | 'outline';
+  link: string;
 }
 
 export interface FinalCTAProps {
@@ -30,17 +30,7 @@ export default function FinalCTA({
       title={title}
       subtitle={subtitle}
       color="black"
-      preSection={
-        <motion.div 
-          className="flex justify-center mb-6 sm:mb-10"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <Logo size={80} />
-        </motion.div>
-      }
+      rounded="bottom"
     >
       <motion.div 
         className="mt-10 flex justify-center"
@@ -60,7 +50,9 @@ export default function FinalCTA({
             >
               <Button
                 key={index}
-                href='#contato'
+                href={button.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className='w-54'
                 variant={button.variant}
                 leftIcon={button.icon}
