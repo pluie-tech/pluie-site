@@ -4,6 +4,8 @@ import { LinkedInIcon } from './components/ui/BrandIcon';
 import { ButtonVariant } from './components/ui/Button';
 
 export const siteContent = {
+  title: 'Pluie - Tecnologia que resolve, sem complicar',
+  description: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
   page: {
     header: {
       logo: 'pluie',
@@ -253,3 +255,5 @@ export const siteContent = {
     ],
   }
 }
+
+export type SiteContent = typeof siteContent;

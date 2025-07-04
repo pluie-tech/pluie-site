@@ -3,6 +3,7 @@
 import { Hero, About, HowItWorks, Services, Testimonials, LatestWorks, FinalCTA, Contact } from '@/components';
 import { siteContent } from '@/content';
 
+
 export default function Home() {
   const { hero, aboutUs, howItWorks, solutions, testimonials, latestWorks, finalCta, contact } = siteContent.page;
 

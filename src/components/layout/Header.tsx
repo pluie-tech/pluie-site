@@ -2,11 +2,10 @@
 
 import Link from 'next/link';
 import Logo from '../ui/Logo';
-import { generateWhatsappLink } from '@/lib/utils';
-import { siteContent } from '@/content'
 
 export interface HeaderProps {
-  companyName?: string;
+  companyName: string;
+  whatsappLink: string;
 }
 
 const navigation = [
@@ -15,8 +14,7 @@ const navigation = [
   { name: 'Soluções', href: '#solucoes' },
 ];
 
-const whatsappLink = generateWhatsappLink(siteContent.contactInformation.phone, siteContent.contactInformation.whatsappMessage)
-export default function Header({ companyName = "Pluie" }: HeaderProps) {
+export default function Header({ companyName, whatsappLink }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-header">
