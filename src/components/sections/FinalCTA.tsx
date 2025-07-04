@@ -1,7 +1,7 @@
 "use client";
 
 import { LucideIcon } from 'lucide-react';
-import type { WhatsAppIconType } from '../ui/BrandIcon';
+import type { BrandIconType } from '../ui/BrandIcon';
 import Section from '../Section';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
@@ -9,7 +9,7 @@ import { motion } from 'motion/react';
 
 export interface FinalCTAButton {
   text: string;
-  icon: LucideIcon | WhatsAppIconType;
+  icon: LucideIcon | BrandIconType;
   variant: 'primary' | 'outline';
 }
 

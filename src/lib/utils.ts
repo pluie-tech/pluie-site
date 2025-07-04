@@ -22,6 +22,5 @@ export function generateWhatsappLink(phoneNumber: string, message: string): stri
   })
 
   const whatsAppLink = `${baseUrl}/${formattedNumber}?${searchParams.toString()}`
-  console.log({ whatsAppLink })
   return whatsAppLink
 }

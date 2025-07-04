@@ -1,11 +1,13 @@
 import { LucideIcon } from 'lucide-react';
-import WhatsAppIcon from './BrandIcon';
+import { BrandIconType } from './BrandIcon';
 import { ComponentPropsWithoutRef, ElementType } from 'react';
 
+export type ButtonVariant = 'primary' | 'outline';
+
 export interface ButtonProps {
-  variant?: 'primary' | 'outline';
+  variant?: ButtonVariant;
   className?: string;
-  leftIcon?: LucideIcon | typeof WhatsAppIcon | null;
+  leftIcon?: LucideIcon | BrandIconType | null;
   leftIconSize?: number;
   as?: ElementType;
   children?: React.ReactNode;

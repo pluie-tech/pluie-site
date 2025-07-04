@@ -1,13 +1,14 @@
 import { LucideIcon } from 'lucide-react';
 import Logo from '../ui/Logo';
 import Link from 'next/link';
+import { BrandIconType } from '../ui/BrandIcon';
 
 export interface FooterProps {
   description: string;
   socialLinks: Array<{
     name: string;
     href: string;
-    icon: LucideIcon;
+    icon: LucideIcon | BrandIconType;
   }>;
   contact: {
     email: string;

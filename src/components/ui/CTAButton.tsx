@@ -1,12 +1,12 @@
 import { LucideIcon } from 'lucide-react';
-import WhatsAppIcon from './BrandIcon';
+import { BrandIconType } from './BrandIcon';
 import Button from './Button';
 
 export interface CTAButtonProps {
   text?: string;
   link?: string;
   className?: string;
-  leftIcon?: LucideIcon | typeof WhatsAppIcon | null;
+  leftIcon?: LucideIcon | BrandIconType | null;
   leftIconSize?: number;
 }
 

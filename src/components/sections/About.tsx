@@ -113,7 +113,7 @@ export default function About({
                   viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.6, delay: 1.0 + (index * 0.2), ease: "easeOut" }}
                 >
-                  <IconWrapper icon={Sprout} size="mdall" />
+                  <IconWrapper icon={Sprout} size="small" />
                 </motion.div>
                 <div className="ml-4">
                   <motion.h4 

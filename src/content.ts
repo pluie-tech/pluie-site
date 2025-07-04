@@ -1,6 +1,7 @@
 import { BarChart3, BicepsFlexed, Box, Calendar, CalendarCheck, FileText, LayoutDashboard, LayoutTemplate, Link, Palette, Repeat, Smile, Star, Timer, TrendingUp, WandSparkles } from 'lucide-react';
 import { WhatsAppIcon } from './components';
 import { LinkedInIcon } from './components/ui/BrandIcon';
+import { ButtonVariant } from './components/ui/Button';
 
 export const siteContent = {
   page: {
@@ -226,12 +227,12 @@ export const siteContent = {
         {
           text: 'Escolher horário',
           icon: Calendar,
-          variant: 'primary'
+          variant: 'primary' as ButtonVariant
         },
         {
           text: 'Fale conosco',
           icon: WhatsAppIcon,
-          variant: 'outline'
+          variant: 'outline' as ButtonVariant
         }
       ]
     },
