@@ -2,20 +2,24 @@
 
 import Link from 'next/link';
 import Logo from '../ui/Logo';
+import { generateWhatsappLink } from '@/lib/utils';
+import { siteContent } from '@/content'
 
 export interface HeaderProps {
   companyName?: string;
 }
 
+const navigation = [
+  { name: 'Quem somos', href: '#quem-somos' },
+  { name: 'Como funciona', href: '#como-funciona' },
+  { name: 'Soluções', href: '#solucoes' },
+];
+
+const whatsappLink = generateWhatsappLink(siteContent.contactInformation.phone, siteContent.contactInformation.whatsappMessage)
 export default function Header({ companyName = "Pluie" }: HeaderProps) {
-  const navigation = [
-    { name: 'Quem somos', href: '#quem-somos' },
-    { name: 'Como funciona', href: '#como-funciona' },
-    { name: 'Soluções', href: '#solucoes' },
-  ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-white shadow-header">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between py-4">
           <div className="flex justify-around items-center">
@@ -31,7 +35,7 @@ export default function Header({ companyName = "Pluie" }: HeaderProps) {
           </div>
           
           {/* Desktop navigation */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8 font-medium">
               {navigation.map((item) => (
                 <Link
@@ -47,10 +51,10 @@ export default function Header({ companyName = "Pluie" }: HeaderProps) {
 
           <div>
             <Link
-              href="https://wa.me/5511999999999"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full p-2 border border-[#707070]"
+              className="inline-flex items-center justify-center rounded-full p-2.5 border border-[#707070]"
               aria-label="Fale conosco no WhatsApp"
             >
               <svg

@@ -1,10 +1,10 @@
 "use client";
 
-import Image from 'next/image';
 import Section from '../Section';
 import { motion } from 'motion/react';
 import IconWrapper from '../ui/IconWrapper';
 import { Sprout } from 'lucide-react';
+import Logo from '../ui/Logo';
 
 type AboutSectionWithContent = {
   content: string;
@@ -39,14 +39,14 @@ export default function About({
       subtitle={intro}
     >  
       <motion.div 
-        className="mx-auto mt-16 max-w-5xl flex flex-col sm:flex-row gap-1"
+        className="mx-auto mt-16 max-w-7xl flex flex-col lg:flex-row gap-1"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div 
-          className="rounded-3xl bg-border p-8 sm:p-12 grid gap-6 sm:w-2/5"
+          className="rounded-3xl bg-border p-8 lg:p-12 grid gap-6 lg:w-2/5"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -58,7 +58,7 @@ export default function About({
             viewport={{ once: true, amount: 'some' }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            <Image src="/Pluie-logo.svg" alt="Pluie Logo" width={64} height={74} />
+            <Logo size={64} />
           </motion.div>
           <motion.p 
             className="text-2xl"
@@ -82,14 +82,14 @@ export default function About({
             
             
         <motion.div 
-          className="rounded-3xl p-8 sm:p-12 sm:w-3/5 bg-gradient-to-b from-[#E1EFF899]/60 to-[#E0F8ED99]/60"
+          className="rounded-3xl p-8 lg:p-12 lg:w-3/5 bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           <motion.h4 
-            className="text-4xl font-black font-heading mb-5 sm:mb-8"
+            className="text-4xl font-black font-heading mb-5 lg:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 'some' }}
@@ -113,12 +113,11 @@ export default function About({
                   viewport={{ once: true, amount: 'some' }}
                   transition={{ duration: 0.6, delay: 1.0 + (index * 0.2), ease: "easeOut" }}
                 >
-                  {/* <Image src="/mini-logo.svg" alt={feature.title} width={28} height={28} /> */}
-                  <IconWrapper icon={Sprout} size="small" />
+                  <IconWrapper icon={Sprout} size="mdall" />
                 </motion.div>
                 <div className="ml-4">
                   <motion.h4 
-                    className="text-2xl font-bold mb-3 font-heading"
+                    className="text-2xl font-bold mb-1 font-heading"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 'some' }}
@@ -127,7 +126,7 @@ export default function About({
                     {feature.title}
                   </motion.h4>
                   <motion.p 
-                    className="text-xl leading-6"
+                    className="text-xl leading-normal"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 'some' }}

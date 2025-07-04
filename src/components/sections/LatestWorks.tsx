@@ -35,7 +35,7 @@ export default function LatestWorks({
       rounded="top"
     >   
       <motion.div 
-        className="grid sm:grid-cols-2 gap-0.5"
+        className="grid lg:grid-cols-2 max-w-7xl gap-0.5 mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
@@ -73,10 +73,10 @@ function Work({
       >
         <Image
           src={image}
-          width={256}
-          height={256}
+          width={240}
+          height={240}
           alt={`Imagem do projeto ${name}`}
-          className="object-cover size-fit sm:min-w-64 sm:max-w-64"
+          className="object-cover size-fit sm:min-w-60 sm:max-w-60"
         />
       </motion.div>
 
@@ -108,7 +108,7 @@ function Work({
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: "easeOut" }}
         >
-          <Button variant="outline" href={ctaButton.href} className="w-full sm:w-auto">
+          <Button variant="outline" href={ctaButton.href}>
             {ctaButton.text}
           </Button>
         </motion.div>

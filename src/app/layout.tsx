@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Epilogue, Cabin } from "next/font/google";
 import { Header, Footer } from '@/components';
+import { siteContent } from '@/content';
 import "./globals.css";
 
 const cabin = Cabin({
@@ -29,7 +30,11 @@ export default function RootLayout({
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
         <Header companyName="Pluie" />
         {children}
-        <Footer />
+        <Footer
+          description={siteContent.page.footer.shortDescription}
+          contact={siteContent.contactInformation}
+          socialLinks={siteContent.contactInformation.socialLinks}
+        />
       </body>
     </html>
   );

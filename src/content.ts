@@ -1,5 +1,6 @@
-import { BarChart3, Blocks, Box, Calendar, CalendarPlus, FileText, LayoutDashboard, LayoutTemplate, Link, Palette, Repeat, Smile, Star, Timer, TrendingUp, WandSparkles } from 'lucide-react';
+import { BarChart3, BicepsFlexed, Box, Calendar, CalendarCheck, FileText, LayoutDashboard, LayoutTemplate, Link, Palette, Repeat, Smile, Star, Timer, TrendingUp, WandSparkles } from 'lucide-react';
 import { WhatsAppIcon } from './components';
+import { LinkedInIcon } from './components/ui/BrandIcon';
 
 export const siteContent = {
   page: {
@@ -61,7 +62,7 @@ export const siteContent = {
       subtitle: 'Sem burocracia. Resolvemos junto com você, passo a passo:',
       steps: [
         {
-          icon: CalendarPlus,
+          icon: CalendarCheck,
           title: 'Agende uma conversa gratuita',
           description: 'Nos conte o que você precisa - sem compromisso.',
           ctaButton: {
@@ -75,7 +76,7 @@ export const siteContent = {
           description: 'Analisamos sua demanda e montamos a nossa melhor solução pra você.'
         },
         {
-          icon: Blocks,
+          icon: BicepsFlexed,
           title: 'A gente põe a mão na massa',
           description: 'Você acompanha o progresso e vê sua ideia virar realidade.'
         }
@@ -224,11 +225,13 @@ export const siteContent = {
       buttons: [
         {
           text: 'Escolher horário',
-          icon: Calendar
+          icon: Calendar,
+          variant: 'primary'
         },
         {
           text: 'Fale conosco',
-          icon: WhatsAppIcon
+          icon: WhatsAppIcon,
+          variant: 'outline'
         }
       ]
     },
@@ -242,6 +245,10 @@ export const siteContent = {
   },
   contactInformation: {
     email: 'contato@pluie.tech',
-    phone: '(41) 8492-6574'
+    phone: '(41) 9 8492-6574',
+    whatsappMessage: 'Olá, gostaria de saber mais sobre os serviços da Pluie.',
+    socialLinks: [
+      { name: "LinkedIn", href: "#", icon: LinkedInIcon }
+    ],
   }
 }

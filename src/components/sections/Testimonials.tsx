@@ -23,14 +23,14 @@ export default function Testimonials({
 }: TestimonialsProps) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={title}
           subtitle={subtitle}
         />
 
         <motion.div 
-          className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto mt-16 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -39,7 +39,7 @@ export default function Testimonials({
           {quotes.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="relative rounded-4xl p-8 bg-gradient-to-b from-[#E1EFF899]/60 to-[#E0F8ED99]/60"
+              className="relative rounded-4xl p-8 bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 'some' }}
@@ -61,7 +61,7 @@ export default function Testimonials({
                   />
                 </motion.div>
                 <motion.blockquote 
-                  className="leading-7 text-lg font-medium font-heading mb-4"
+                  className="leading-[130%] text-xl font-medium font-heading tracking-title mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 'some' }}

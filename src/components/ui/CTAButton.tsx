@@ -1,5 +1,5 @@
 import { LucideIcon } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import WhatsAppIcon from './BrandIcon';
 import Button from './Button';
 
 export interface CTAButtonProps {

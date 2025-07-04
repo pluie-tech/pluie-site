@@ -1,7 +1,7 @@
 "use client";
 
 import { LucideIcon } from 'lucide-react';
-import type { WhatsAppIconType } from '../ui/WhatsAppIcon';
+import type { WhatsAppIconType } from '../ui/BrandIcon';
 import Section from '../Section';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
@@ -10,6 +10,7 @@ import { motion } from 'motion/react';
 export interface FinalCTAButton {
   text: string;
   icon: LucideIcon | WhatsAppIconType;
+  variant: 'primary' | 'outline';
 }
 
 export interface FinalCTAProps {
@@ -60,6 +61,8 @@ export default function FinalCTA({
               <Button
                 key={index}
                 href='#contato'
+                className='w-54'
+                variant={button.variant}
                 leftIcon={button.icon}
               >
                 {button.text}

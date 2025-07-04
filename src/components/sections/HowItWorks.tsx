@@ -30,7 +30,7 @@ export default function HowItWorks({
   return (
     <Section id="como-funciona" title={title} subtitle={subtitle}>
       <motion.div 
-        className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3 bg-border rounded-3xl px-5 py-9 sm:py-10 xl:py-12"
+        className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3 bg-border rounded-3xl px-5 py-9 sm:py-10 sm:px-20 xl:py-12"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
@@ -62,19 +62,19 @@ export default function HowItWorks({
               <div className="md:text-center">
                 <div className="hidden md:block">
                   <motion.div 
-                    className="flex items-center justify-center mb-6"
+                    className="flex items-center justify-center mb-6 xl:mb-9"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 'some' }}
                     transition={{ duration: 0.6, delay: index * 0.3 + 0.2, ease: "easeOut" }}
                   >
-                    <IconWrapper icon={step.icon} size="large" />
+                    <IconWrapper icon={step.icon} size="large" className='z-20'/>
                   </motion.div>
-                  {index > 0 && <div className="absolute -left-1/2 top-[31px] w-full border-t-2 border-dashed border-azulao"></div>}
+                  {index > 0 && <div className="absolute left-[calc(-50%-33px)] top-[31px] w-full border-t-2 border-dashed border-azulao z-10"></div>}
                 </div>
 
                 <motion.h3 
-                  className="text-2xl text-heading font-semibold mb-4 text-azulao text-wrap-balance max-w-60 md:mx-auto"
+                  className="text-2xl font-heading font-semibold mb-4 text-azulao text-wrap-balance leading-[110%] tracking-title max-w-80 md:mx-auto xl:text-[32px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 'some' }}
@@ -84,7 +84,7 @@ export default function HowItWorks({
                 </motion.h3>
 
                 <motion.p 
-                  className=" text-lg"
+                  className="text-xl sm:text-lg xl:text-2xl max-w-80 md:mx-auto"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 'some' }}
@@ -95,7 +95,7 @@ export default function HowItWorks({
 
                 {step.ctaButton && (
                   <motion.div 
-                    className="mt-5"
+                    className="mt-6 xl:mt-9"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 'some' }}

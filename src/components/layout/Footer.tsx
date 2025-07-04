@@ -1,40 +1,32 @@
-import { Linkedin } from "lucide-react";
+import { LucideIcon } from 'lucide-react';
 import Logo from '../ui/Logo';
 import Link from 'next/link';
 
 export interface FooterProps {
-  companyName?: string;
-  description?: string;
-  socialLinks?: Array<{
+  description: string;
+  socialLinks: Array<{
     name: string;
     href: string;
-    icon: React.ReactNode;
+    icon: LucideIcon;
   }>;
-  quickLinks?: Array<{
-    name: string;
-    href: string;
-  }>;
-  contact?: {
+  contact: {
     email: string;
     phone: string;
   }
 }
 
+
+const navigation = [
+  { name: "Quem somos", href: "#quem-somos" },
+  { name: "Como funciona", href: "#como-funciona" },
+  { name: "Soluções", href: "#solucoes" },
+  { name: "Contato", href: "#contato" }
+];
+
 export default function Footer({
-  description = "Tecnologia sob medida para resolver problemas reais.",
-  socialLinks = [
-    { name: "LinkedIn", href: "#", icon: <Linkedin /> }
-  ],
-  quickLinks = [
-    { name: "Quem somos", href: "#quem-somos" },
-    { name: "Como funciona", href: "#como-funciona" },
-    { name: "Soluções", href: "#solucoes" },
-    { name: "Contato", href: "#contato" },
-  ],
-  contact = {
-    email: "contato@pluie.tech",
-    phone: "(41) 8492-6574"
-  }
+  description,
+  socialLinks,
+  contact
 }: FooterProps) {
   return (
     <footer className="">
@@ -58,7 +50,7 @@ export default function Footer({
                   className="hover:text-gray-900 hover:underline transition-colors duration-200"
                   aria-label={link.name}
                 >
-                  {link.icon}
+                  <link.icon />
                 </a>
               ))}
             </div>
@@ -70,7 +62,7 @@ export default function Footer({
               Navegação
             </h3>
             <ul className="space-y-3 font-medium">
-              {quickLinks.map((link, index) => (
+              {navigation.map((link, index) => (
                 <li key={index}>
                   <Link
                     key={link.name}
