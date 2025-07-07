@@ -30,7 +30,7 @@ export default function Section({ title, subtitle, id, color = 'white', rounded 
       {preSection && <>{preSection}</>}
       <div>
         {(title || subtitle) && (
-          <div className="text-center">
+          <div className="text-center px-5">
             <SectionTitle title={title || ''} subtitle={subtitle} color={color === 'black' ? 'white' : 'black'} className={titleClassName} />
           </div>
         )}

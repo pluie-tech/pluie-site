@@ -6,10 +6,23 @@ import { cn } from '@/lib/utils'
 import Section from '../Section'
 import { motion } from 'motion/react'
 
+type Feature = {
+  title: string;
+  description: string;
+  icon: LucideIcon
+}
+
+type Service = {
+  title: string;
+  description: string;
+  features: Feature[];
+  imagePath: string;
+}
+
 export default function Services() {
   const title = 'Soluções';
   const subtitle = 'De sites a sistemas completos, desenvolvemos o que o seu negócio precisa. Sempre sob medida, para resolver seu desafio.';
-  const services = [
+  const services: Service[] = [
     {
       title: 'Sites, Aplicativos e Sistemas',
       description: 'Do conceito ao código: criamos produtos digitais que entregam resultados.',
@@ -131,7 +144,7 @@ function ServiceItem({
   inverted,
   index
 }: {
-  service: any,
+  service: Service,
   inverted: boolean,
   index: number
 }) {
@@ -172,7 +185,7 @@ function ServiceItem({
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.4, ease: "easeOut" }}
         >
-          {service.features.map((feature: any, featureIndex: number) => (
+          {service.features.map((feature, featureIndex: number) => (
             <motion.div 
               key={featureIndex} 
               className="pb-4 mb-4 pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
@@ -217,7 +230,7 @@ function ServiceItem({
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
-        className="h-full"
+        className="h-full hidden xl:block"
       >
         <Image
           src={service.imagePath}
