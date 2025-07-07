@@ -5,25 +5,20 @@ import { LucideIcon } from 'lucide-react';
 import type { BrandIconType } from '../ui/BrandIcon';
 import Section from '../Section';
 import Button from '../ui/Button';
+import { WhatsAppIcon } from '@/components';
 
-export interface FinalCTAButton {
-  text: string;
-  icon: LucideIcon | BrandIconType;
-  variant: 'primary' | 'outline';
-  link: string;
-}
+export default function FinalCTA() {
+  const title = 'Agende uma conversa gratuita';
+  const subtitle = 'A gente escuta, entende e mostra como pode ajudar.';
+  const buttons = [
+    {
+      text: 'Fale conosco',
+      icon: WhatsAppIcon,
+      variant: 'primary',
+      link: 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.'
+    }
+  ];
 
-export interface FinalCTAProps {
-  title: string;
-  subtitle: string;
-  buttons: FinalCTAButton[];
-}
-
-export default function FinalCTA({
-  title,
-  subtitle,
-  buttons
-}: FinalCTAProps) {
   return (
     <Section
       id="cta-final"
@@ -54,7 +49,7 @@ export default function FinalCTA({
                 target="_blank"
                 rel="noopener noreferrer"
                 className='w-54'
-                variant={button.variant}
+                variant={button.variant as any}
                 leftIcon={button.icon}
               >
                 {button.text}

@@ -6,32 +6,36 @@ import IconWrapper from '../ui/IconWrapper';
 import { Sprout } from 'lucide-react';
 import Logo from '../ui/Logo';
 
-type AboutSectionWithContent = {
-  content: string;
-}
+export default function About() {
+  const title = 'Quem somos';
+  const intro = 'Dois veteranos da tecnologia que viram produtos bons morrerem em processos ruins.';
+  const sections = [
+    {
+      content:
+        'Nos conhecemos no mercado de trabalho, onde aprendemos uma lição valiosa: times inflados e hierarquias engessadas criam produtos caros, lentos e distantes de quem realmente importa – o cliente. Por isso, fundamos a Pluie.'
+    },
+    {
+      title: 'Por que somos diferentes',
+      points: [
+        {
+          title: 'Ouvimos antes de criar',
+          description: 'Entendemos sua realidade para sugerir a solução ideal (não a mais complexa).'
+        },
+        {
+          title: 'Software que funciona',
+          description: 'Seu sistema nasce rápido, com boa usabilidade e pronto para crescer.'
+        },
+        {
+          title: 'Sem dor de cabeça',
+          description: 'Levamos nosso trabalho a sério. Você ganha tempo e qualidade.'
+        }
+      ]
+    }
+  ];
 
-type AboutSectionWithPoints = {
-  title: string;
-  points: {
-    title: string;
-    description: string;
-  }[]
-}
+  const aboutSectionWithContent = sections[0] as { content: string };
+  const aboutSectionWithPoints = sections[1] as { title: string; points: { title: string; description: string }[] };
 
-export interface AboutProps {
-  title: string;
-  intro: string;
-  sections: Array<AboutSectionWithContent | AboutSectionWithPoints>;
-}
-
-
-export default function About({
-  title,
-  intro,
-  sections
-}: AboutProps) {
-  const aboutSectionWithContent = sections[0] as AboutSectionWithContent;
-  const aboutSectionWithPoints = sections[1] as AboutSectionWithPoints;
   return (
     <Section
       id="quem-somos"

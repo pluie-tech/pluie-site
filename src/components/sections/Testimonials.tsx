@@ -4,23 +4,27 @@ import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
 import { motion } from 'motion/react';
 
-export interface Testimonial {
-  quote: string;
-  author: string;
-  authorImage: string;
-}
+export default function Testimonials() {
+  const title = 'Tecnologia que faz sentido pra todo mundo';
+  const subtitle = 'Não importa se é dono do negócio ou se é quem está usando: o que a gente faz resolve e funciona de verdade.';
+  const quotes = [
+    {
+      quote: 'Eu não entendo nada de tecnologia, mas eles explicaram tudo com clareza e foram super parceiros do começo ao fim.',
+      author: 'Irene, dona de clínica',
+      authorImage: '/images/testimonials/testimonial1.png'
+    },
+    {
+      quote: 'Usei o DESAFIADO e consegui alcançar meus objetivos de vida.',
+      author: 'Pi, dono de zoológico',
+      authorImage: '/images/testimonials/testimonial2.png'
+    },
+    {
+      quote: 'Graças ao GASTADO eu consegui comprar minha coleção de bonecos de Jojo Parte 3.',
+      author: 'Cleia, otaku safada',
+      authorImage: '/images/testimonials/testimonial3.png'
+    }
+  ];
 
-export interface TestimonialsProps {
-  title: string;
-  subtitle: string;
-  quotes: Testimonial[];
-}
-
-export default function Testimonials({
-  title,
-  subtitle,
-  quotes
-}: TestimonialsProps) {
   return (
     <section id="depoimentos" className="py-24 bg-white">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

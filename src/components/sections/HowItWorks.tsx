@@ -1,30 +1,38 @@
 'use client'
 
-import { LucideIcon } from 'lucide-react'
+import { BicepsFlexed, Calendar, CalendarCheck, FileText, LucideIcon } from 'lucide-react'
 import IconWrapper from '../ui/IconWrapper'
 import Section from '../Section'
 import { motion } from 'motion/react'
 import Button from '../ui/Button'
 import { BrandIconType } from '../ui/BrandIcon'
 
-export interface HowItWorksStep {
-  icon: LucideIcon
-  title: string
-  description: string
-  ctaButton?: {
-    text: string
-    icon: LucideIcon | BrandIconType
-    link: string
-  }
-}
+export default function HowItWorks() {
+  const title = 'Como funciona';
+  const subtitle = 'Sem burocracia. Resolvemos junto com você, passo a passo:';
+  const steps = [
+    {
+      icon: CalendarCheck,
+      title: 'Agende uma conversa gratuita',
+      description: 'Nos conte o que você precisa - sem compromisso.',
+      ctaButton: {
+        text: 'Agendar',
+        icon: Calendar,
+        link: 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.'
+      }
+    },
+    {
+      icon: FileText,
+      title: 'Receba uma proposta personalizada',
+      description: 'Analisamos sua demanda e montamos a nossa melhor solução pra você.'
+    },
+    {
+      icon: BicepsFlexed,
+      title: 'A gente põe a mão na massa',
+      description: 'Você acompanha o progresso e vê sua ideia virar realidade.'
+    }
+  ];
 
-export interface HowItWorksProps {
-  title: string
-  subtitle: string
-  steps: HowItWorksStep[]
-}
-
-export default function HowItWorks({ title, subtitle, steps }: HowItWorksProps) {
   return (
     <Section id="como-funciona" title={title} subtitle={subtitle}>
       <motion.div

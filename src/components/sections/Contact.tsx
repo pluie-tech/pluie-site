@@ -11,15 +11,10 @@ import { motion } from 'motion/react';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
 
-export interface ContactProps {
-  title: string;
-  subtitle: string;
-}
+export default function Contact() {
+  const title = 'Pronto para começar seu projeto?';
+  const subtitle = 'Conte com a Pluie para desenvolver ou aprimorar sua solução digital.';
 
-export default function Contact({
-  title,
-  subtitle
-}: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

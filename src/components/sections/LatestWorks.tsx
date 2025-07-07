@@ -5,23 +5,28 @@ import Section from '../Section'
 import Button from '../ui/Button'
 import { motion } from 'motion/react'
 
-export interface Project {
-  name: string
-  description: string
-  image: string
-  ctaButton: {
-    text: string
-    href?: string
-  }
-}
+export default function LatestWorks() {
+  const title = 'Nossos últimos trabalhos';
+  const subtitle = 'Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.';
+  const projects = [
+    {
+      name: 'Desafiado',
+      description: 'Transforme objetivos em hábitos duradouros.',
+      image: "/images/works/desafiado.png",
+      ctaButton: {
+        text: 'Experimentar'
+      }
+    },
+    {
+      name: 'Agrobay',
+      description: 'Projetamos toda a experiência do usuário e o aplicativo foi desenvolvido pela Utronics.',
+      image: "/images/works/agrobay.png",
+      ctaButton: {
+        text: 'Ver na loja'
+      }
+    }
+  ];
 
-export interface LatestWorksProps {
-  title: string
-  subtitle: string
-  projects: Project[]
-}
-
-export default function LatestWorks({ title, subtitle, projects }: LatestWorksProps) {
   return (
     <Section
       id="trabalhos"
@@ -46,7 +51,7 @@ export default function LatestWorks({ title, subtitle, projects }: LatestWorksPr
   )
 }
 
-function Work({ name, description, image, ctaButton, index }: Project & { index: number }) {
+function Work({ name, description, image, ctaButton, index }: any) {
   return (
     <motion.div
       className="flex flex-col sm:flex-row sm:items-center p-3 rounded-b-[30px] rounded-t-[36px] sm:rounded-b-[36px] sm:rounded-t-[36px] bg-background"

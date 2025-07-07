@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Epilogue, Cabin } from "next/font/google";
 import { Header, Footer } from '@/components';
-import { siteContent } from '@/content';
+import { Linkedin, Mail } from 'lucide-react';
+import { WhatsAppIcon } from '@/components';
 import "./globals.css";
 
 const cabin = Cabin({
@@ -14,11 +15,19 @@ const epilogue = Epilogue({
   subsets: ["latin"],
 });
 
+const contactInformation = {
+  whatsappLink: 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.',
+  socialLinks: [
+    { name: "WhatsApp", href: 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.', icon: WhatsAppIcon },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/pluietech/", icon: Linkedin },
+    { name: "E-mail", href: `mailto:contato@pluie.com`, icon: Mail },
+  ],
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: siteContent.title,
-    description: siteContent.description,
+    title: 'Pluie - Tecnologia que resolve, sem complicar',
+    description: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
   }
 }
 
@@ -30,11 +39,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
-        <Header companyName="Pluie" whatsappLink={siteContent.contactInformation.whatsappLink} />
+        <Header companyName="Pluie" whatsappLink={contactInformation.whatsappLink} />
         {children}
         <Footer
-          companyName={siteContent.companyName}
-          socialLinks={siteContent.contactInformation.socialLinks}
+          companyName="Pluie"
+          socialLinks={contactInformation.socialLinks}
         />
       </body>
     </html>

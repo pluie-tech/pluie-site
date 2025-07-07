@@ -1,35 +1,105 @@
 "use client";
 
 import Image from 'next/image'
-import { LucideIcon } from 'lucide-react'
+import { Bird, ChartPie, LayoutTemplate, LucideIcon, Palette, Puzzle, Shrub, Smile, Star, Target, Timer, TrendingUp, WandSparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Section from '../Section'
 import { motion } from 'motion/react'
 
-export interface Feature {
-  title: string
-  description: string
-  icon: LucideIcon
-}
+export default function Services() {
+  const title = 'Soluções';
+  const subtitle = 'De sites a sistemas completos, desenvolvemos o que o seu negócio precisa. Sempre sob medida, para resolver seu desafio.';
+  const services = [
+    {
+      title: 'Sites, Aplicativos e Sistemas',
+      description: 'Do conceito ao código: criamos produtos digitais que entregam resultados.',
+      features: [
+        {
+          title: 'Entrega rápida',
+          description: 'Software pronto em semanas, não em meses.',
+          icon: Timer
+        },
+        {
+          title: 'Prontos para crescer',
+          description: 'Ótima usabilidade e estrutura sólida, feito para durar e crescer com o seu negócio.',
+          icon: Shrub
+        },
+        {
+          title: 'MVP com foco',
+          description: 'Faça seu MVP: Tiramos sua ideia do papel com foco no essencial. Para você testar, aprender e evoluir.',
+          icon: Target
+        }
+      ],
+      imagePath: '/images/services/applications.jpg'
+    },
+    {
+      title: 'Consultoria em Usabilidade',
+      description: 'Seus clientes reclamam? Ajudamos a identificar e corrigir falhas que prejudicam a experiência.',
+      features: [
+        {
+          title: 'Mais satisfação',
+          description: 'Seus clientes vão adorar seu sistema, site ou aplicativo.',
+          icon: Smile
+        },
+        {
+          title: 'Interface intuitiva',
+          description: 'Elimine telas confusas e dores de cabeça.',
+          icon: WandSparkles
+        },
+        {
+          title: 'Impacto real',
+          description: 'Exemplos práticos de como as mudanças vão gerar resultados.',
+          icon: TrendingUp
+        }
+      ],
+      imagePath: '/images/services/usability.jpg'
+    },
+    {
+      title: 'Automações',
+      description: 'Tarefas repetitivas? Economizamos seu tempo com tecnologia inteligente.',
+      features: [
+        {
+          title: 'Mais tempo livre',
+          description: 'Faça o sistema trabalhar por você e foque no que realmente importa.',
+          icon: Bird
+        },
+        {
+          title: 'Integra com o que você usa',
+          description: 'Integração com suas planilhas, e-mails e sistemas.',
+          icon: Puzzle
+        },
+        {
+          title: 'Acompanhe com dados',
+          description: 'Relatórios de acompanhamento de resultados.',
+          icon: ChartPie
+        }
+      ],
+      imagePath: '/images/services/automations.jpg'
+    },
+    {
+      title: 'Identidade Visual',
+      description: 'Precisa de cara nova? Desenvolvemos marcas que comunicam clareza e confiança.',
+      features: [
+        {
+          title: 'Marca memorável',
+          description: 'Seus clientes vão reconhecer e lembrar de sua marca.',
+          icon: Star
+        },
+        {
+          title: 'Kit de aplicações',
+          description: 'Kits para usar em várias aplicações.',
+          icon: Palette
+        },
+        {
+          title: 'Organização visual',
+          description: 'Style guide e design system para organizar seu trabalho.',
+          icon: LayoutTemplate
+        }
+      ],
+      imagePath: '/images/services/identity.jpg'
+    }
+  ];
 
-export interface Service {
-  title: string
-  description: string
-  features: Feature[]
-  imagePath: string
-}
-
-export interface ServicesProps {
-  title: string
-  subtitle: string
-  services: Service[]
-}
-
-export default function Services({
-  title,
-  subtitle,
-  services
-}: ServicesProps) {
   return (
     <Section
       id="solucoes"
@@ -61,7 +131,7 @@ function ServiceItem({
   inverted,
   index
 }: {
-  service: Service,
+  service: any,
   inverted: boolean,
   index: number
 }) {
@@ -102,7 +172,7 @@ function ServiceItem({
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.8, delay: index * 0.1 + 0.4, ease: "easeOut" }}
         >
-          {service.features.map((feature, featureIndex) => (
+          {service.features.map((feature: any, featureIndex: number) => (
             <motion.div 
               key={featureIndex} 
               className="pb-4 mb-4 pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
