@@ -8,11 +8,11 @@ import Logo from '../ui/Logo';
 
 export default function About() {
   const title = 'Quem somos';
-  const intro = 'Dois veteranos da tecnologia que viram produtos bons morrerem em processos ruins.';
+  const intro = 'Profissionais experientes em design, desenvolvimento e metologias de trabalho.';
   const sections = [
     {
       content:
-        'Nos conhecemos no mercado de trabalho, onde aprendemos uma lição valiosa: times inflados e hierarquias engessadas criam produtos caros, lentos e distantes de quem realmente importa – o cliente. Por isso, fundamos a Pluie.'
+        'Temos vivência na área de tecnologia e queremos oferecer às pequenas e médias empresas uma abordagem com a nossa cara: pensamento colaborativo, processos enxutos, agilidade e qualidade nas entregas.'
     },
     {
       title: 'Por que somos diferentes',
