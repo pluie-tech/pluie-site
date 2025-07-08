@@ -1,81 +1,60 @@
-import { Linkedin } from "lucide-react";
+"use client";
+
+import { Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
 import Logo from '../ui/Logo';
 import Link from 'next/link';
+import { WhatsAppIcon } from '../ui/BrandIcon';
+import { siteConfig } from '@/siteConfig';
+import { useMotionValueEvent, useScroll } from 'motion/react';
+import { cn } from '@/lib/utils';
 
-export interface FooterProps {
-  companyName?: string;
-  description?: string;
-  socialLinks?: Array<{
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-  }>;
-  quickLinks?: Array<{
-    name: string;
-    href: string;
-  }>;
-  contact?: {
-    email: string;
-    phone: string;
-  }
-}
+const navigation = [
+  { name: "Quem somos", href: "#quem-somos" },
+  { name: "Como funciona", href: "#como-funciona" },
+  { name: "Soluções", href: "#solucoes" },
+  { name: "Contato", href: "#contato" }
+];
 
-export default function Footer({
-  description = "Tecnologia sob medida para resolver problemas reais.",
-  socialLinks = [
-    { name: "LinkedIn", href: "#", icon: <Linkedin /> }
-  ],
-  quickLinks = [
-    { name: "Quem somos", href: "#quem-somos" },
-    { name: "Como funciona", href: "#como-funciona" },
-    { name: "Soluções", href: "#solucoes" },
-    { name: "Contato", href: "#contato" },
-  ],
-  contact = {
-    email: "contato@pluie.tech",
-    phone: "(41) 8492-6574"
-  }
-}: FooterProps) {
+const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.';
+
+export default function Footer() {
+  const { scrollYProgress } = useScroll()
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    setHasScrolled(latest > 0.9);
+  });
+
   return (
-    <footer className="">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <footer className={cn(
+      "text-background fixed bottom-0 left-0 w-full z-10",
+      hasScrolled ? "bg-foreground" : "bg-background"
+    )}>
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Company Information */}
           <div className="lg:col-span-1">
-            <div className="mb-4">
-              <Logo size={96} withName />
+            <div className="mb-4 flex items-center gap-4">
+              <Logo size={36} />
             </div>
             <p className="mb-6 max-w-64">
               {description}
             </p>
-            
-            {/* Social Links */}
-            <div className="flex space-x-4 text-lg">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="hover:text-gray-900 hover:underline transition-colors duration-200"
-                  aria-label={link.name}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 border-b border-slate-100">
+            <h3 className="text-lg font-semibold mb-3">
               Navegação
             </h3>
             <ul className="space-y-3 font-medium">
-              {quickLinks.map((link, index) => (
+              {navigation.map((link, index) => (
                 <li key={index}>
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-foreground transition-colors duration-200 hover:underline"
+                    className="text-background transition-colors duration-200 hover:underline"
                   >
                     {link.name}
                   </Link>
@@ -86,16 +65,28 @@ export default function Footer({
           
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 border-b border-slate-100">
+            <h3 className="text-lg font-semibold mb-3">
               Contato
             </h3>
             <div className="space-y-3 font-medium">
               <p>
-                <span className="block">{contact.email}</span>
+                <span className="block">{siteConfig.email}</span>
               </p>
               <p>
-                <span className="block">{contact.phone}</span>
+                <span className="block">{siteConfig.phone}</span>
               </p>
+            </div>
+            {/* Social Links */}
+            <div className="flex space-x-4 text-lg mt-4">
+              <Link href={siteConfig.whatsappLink} aria-label="WhatsApp">
+                <WhatsAppIcon className="text-background fill-background" />
+              </Link>
+              <Link href={siteConfig.linkedin} aria-label="LinkedIn">
+                <Linkedin className="text-background stroke-2" />
+              </Link>
+              <Link href={`mailto:${siteConfig.email}`} aria-label="E-mail">
+                <Mail className="text-background stroke-2" />
+              </Link>
             </div>
           </div>
         </div>

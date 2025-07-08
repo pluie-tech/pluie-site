@@ -1,11 +1,14 @@
 import { LucideIcon } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import { BrandIconType } from './BrandIcon';
 import { ComponentPropsWithoutRef, ElementType } from 'react';
+import { cn } from '@/lib/utils';
+
+export type ButtonVariant = 'primary' | 'outline';
 
 export interface ButtonProps {
-  variant?: 'primary' | 'outline';
+  variant?: ButtonVariant;
   className?: string;
-  leftIcon?: LucideIcon | typeof WhatsAppIcon | null;
+  leftIcon?: LucideIcon | BrandIconType | null;
   leftIconSize?: number;
   as?: ElementType;
   children?: React.ReactNode;
@@ -21,23 +24,23 @@ export default function Button({
   ...props
 }: ButtonProps & ComponentPropsWithoutRef<'a'> & ComponentPropsWithoutRef<'button'>) {
   // Classes base comuns a todas as variantes
-  const baseClasses = "inline-flex justify-center items-center rounded-xl font-heading transition-colors";
+  const baseClasses = "inline-flex justify-center items-center rounded-xl font-semibold font-heading transition-colors tracking-title cursor-pointer";
   
   // Classes específicas para cada variante
   const variantClasses = {
-    primary: "px-6 py-4 bg-primary text-foreground shadow font-bold hover:bg-primary/90",
-    outline: "px-6 py-2 border border-gray-300 bg-background text-foreground font-semibold hover:bg-gray-100"
+    primary: "px-6 py-4 bg-primary text-foreground shadow hover:bg-primary/90",
+    outline: "px-6 py-3 pb-2.5 border border-border-dark bg-background text-foreground hover:bg-gray-100 shadow-button"
   };
 
   return (
     <Component
       {...props}
-      className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      className={cn(baseClasses, variantClasses[variant], className)}
       aria-label={String(children)}
     >
       {LeftIcon && (
         <span className="mr-2 -translate-y-0.5">
-          <LeftIcon size={leftIconSize} />
+          <LeftIcon size={leftIconSize} className="stroke-2" />
         </span>
       )}
       <span className={variant === 'primary' ? 'leading-none' : ''}>

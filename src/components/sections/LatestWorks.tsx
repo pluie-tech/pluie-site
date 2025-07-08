@@ -1,132 +1,108 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import Section from '../Section';
-import Button from '../ui/Button';
-import { motion } from 'motion/react';
+import Image from 'next/image'
+import Section from '../Section'
+import Button from '../ui/Button'
+import { motion } from 'motion/react'
 
-export interface Project {
-  name: string;
-  description: string;
-  image: string;
-  ctaButton: {
-    text: string;
-    href?: string;
-  };
-}
-
-export interface LatestWorksProps {
-  title?: string;
-  subtitle?: string;
-  projects?: Project[];
-}
-
-export default function LatestWorks({
-  title = "Nossos últimos trabalhos",
-  subtitle = "Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.",
-  projects = [
+export default function LatestWorks() {
+  const title = 'Nossos últimos trabalhos';
+  const subtitle = 'Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.';
+  const projects = [
     {
-      name: "Desafiado",
-      description: "Transforme objetivos em hábitos duradouros.",
+      name: 'Desafiado',
+      description: 'Transforme objetivos em hábitos duradouros.',
       image: "/images/works/desafiado.png",
       ctaButton: {
-        text: "Experimentar",
-        href: "#"
+        text: 'Experimentar'
       }
     },
     {
-      name: "Agrobay",
-      description: "Projetamos toda a experiência do usuário e o aplicativo foi desenvolvido pela Utronics.",
+      name: 'Agrobay',
+      description: 'Projetamos toda a experiência do usuário e o aplicativo foi desenvolvido pela Utronics.',
       image: "/images/works/agrobay.png",
       ctaButton: {
-        text: "Ver na loja",
-        href: "#"
+        text: 'Ver na loja'
       }
     }
-  ]
-}: LatestWorksProps) {
+  ];
+
   return (
     <Section
       id="trabalhos"
       title={title}
       subtitle={subtitle}
       color="black"
-      rounded="top"
-    >   
-      <motion.div 
-        className="grid sm:grid-cols-2 gap-0.5"
+      rounded="full"
+      className="pb-0.5 px-0.5"
+      titleClassName="max-w-3xl mx-auto text-center">
+      <motion.div
+        className="grid lg:grid-cols-2 max-w-7xl gap-0.5 mx-auto"
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 'some' }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {projects.map((project, index) => (
           <Work key={index} index={index} {...project} />
         ))}
       </motion.div>
     </Section>
-  );
+  )
 }
 
-function Work({
-  name,
-  description,
-  image,
-  ctaButton,
-  index
-}: Project & { index: number }) {
+function Work({ name, description, image, ctaButton, index }: any) {
   return (
-    <motion.div 
-      className="flex flex-col sm:flex-row p-3 rounded-[36px] bg-background"
+    <motion.div
+      className="flex flex-col sm:flex-row sm:items-center p-3 rounded-b-[30px] rounded-t-[36px] sm:rounded-b-[36px] sm:rounded-t-[36px] bg-background"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: index * 0.3, ease: "easeOut" }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 'some' }}
+      transition={{ duration: 0.8, delay: index * 0.3, ease: 'easeOut' }}
     >
-      <motion.div 
-        className="rounded-[32px] overflow-hidden shrink-0 mb-4 sm:mb-0"
+      <motion.div
+        className="mb-4 sm:mb-0"
         initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: index * 0.3 + 0.2, ease: "easeOut" }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 'some' }}
+        transition={{ duration: 0.8, delay: index * 0.3 + 0.2, ease: 'easeOut' }}
       >
-        <Image
-          src={image}
-          width={256}
-          height={256}
-          alt={`Imagem do projeto ${name}`}
-          className="object-cover size-fit sm:min-w-64 sm:max-w-64"
-        />
+        <Image src={image} width={240} height={240} alt={`Imagem do projeto ${name}`} className="object-cover size-fit rounded-[32px] sm:min-w-60 sm:max-w-60" />
       </motion.div>
 
-      <div className="py-8 text-center sm:text-left sm:ml-12 flex flex-col">
-        <motion.h3 
-          className="text-2xl font-bold font-heading mb-3"
+      <div className="text-center sm:text-left lg:ml-8 xl:ml-12 flex flex-col">
+        <motion.h3
+          className="text-2xl font-bold font-heading mb-2 xl:mb-3"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 'some' }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: 'easeOut' }}
         >
           {name}
         </motion.h3>
-        
-        <motion.p 
-          className="text-lg mb-6 flex-grow"
+
+        <motion.p
+          className="text-lg mb-4 xl:mb-5 flex-grow leading-body"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 'some' }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: 'easeOut' }}
         >
           {description}
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           className="mt-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: "easeOut" }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 'some' }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: 'easeOut' }}
         >
-          <Button variant="outline" href={ctaButton.href} className="w-full sm:w-auto">
+          <Button variant="outline" href={ctaButton.href} target="_blank" rel="noopener noreferrer">
             {ctaButton.text}
           </Button>
         </motion.div>
       </div>
-      
     </motion.div>
-  );
+  )
 }

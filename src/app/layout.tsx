@@ -14,10 +14,12 @@ const epilogue = Epilogue({
 });
 
 
-export const metadata: Metadata = {
-  title: "Pluie - Tecnologia que resolve, sem complicar",
-  description: "Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Pluie - Tecnologia que resolve, sem complicar',
+    description: 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.',
+  }
+}
 
 export default function RootLayout({
   children,
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
-        <Header companyName="Pluie" />
+        <Header />
         {children}
         <Footer />
       </body>

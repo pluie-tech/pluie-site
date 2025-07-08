@@ -1,81 +1,50 @@
-import Section from '../Section';
-import { Calendar, LucideIcon } from 'lucide-react';
-import WhatsAppIcon from '../ui/WhatsAppIcon';
-import Button from '../ui/Button';
-import Logo from '../ui/Logo';
+"use client";
+
 import { motion } from 'motion/react';
+import Section from '../Section';
+import Button, { ButtonVariant } from '../ui/Button';
+import { WhatsAppIcon } from '@/components';
+import { siteConfig } from '@/siteConfig';
 
-export interface FinalCTAButton {
-  text: string;
-  icon: LucideIcon | typeof WhatsAppIcon;
-  href?: string;
-  variant?: 'primary' | 'outline';
-}
+export default function FinalCTA() {
+  const title = 'Agende uma conversa gratuita';
+  const subtitle = 'A gente escuta, entende e mostra como pode ajudar.';
 
-export interface FinalCTAProps {
-  title?: string;
-  subtitle?: string;
-  buttons?: FinalCTAButton[];
-}
-
-export default function FinalCTA({
-  title = "Agende uma conversa gratuita",
-  subtitle = "A gente escuta, entende e mostra como pode ajudar.",
-  buttons = [
-    {
-      text: "Escolher horário",
-      icon: Calendar,
-      href: "#contato",
-      variant: "primary"
-    },
-    {
-      text: "Fale conosco",
-      icon: WhatsAppIcon,
-      href: "#contato",
-      variant: "outline"
-    }
-  ]
-}: FinalCTAProps) {
   return (
     <Section
       id="cta-final"
       title={title}
       subtitle={subtitle}
       color="black"
-      preSection={
-        <motion.div 
-          className="flex justify-center mb-6 sm:mb-10"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <Logo size={80} />
-        </motion.div>
-      }
+      rounded="bottom"
+      className='pb-12 pt-8 sm:pt-10 sm:pb-15'
+      contentClassName='mt-6 sm:mt-10'
     >
       <motion.div 
-        className="mt-10 flex justify-center"
+        className="flex justify-center"
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
       >
         <div className="flex flex-col gap-4">
-          {buttons.map((button, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 + (index * 0.2), ease: "easeOut" }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 'some' }}
+            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          >
+            <Button
+              href={siteConfig.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className='w-54'
+              variant={'primary' as ButtonVariant}
+              leftIcon={WhatsAppIcon}
             >
-              <Button
-                href={button.href}
-                leftIcon={button.icon}
-                variant={button.variant}
-              >
-                {button.text}
-              </Button>
-            </motion.div>
-          ))}
+              Fale conosco
+            </Button>
+          </motion.div>
         </div>
       </motion.div>
     </Section>
