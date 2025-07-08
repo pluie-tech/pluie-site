@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Epilogue, Cabin } from "next/font/google";
+import Script from "next/script";
 import { Header, Footer } from '@/components';
 import "./globals.css";
+import { siteConfig } from '@/siteConfig';
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -21,6 +23,10 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
+function isProduction(): boolean {
+  return process.env.NODE_ENV === 'production';
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +38,13 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        {isProduction() && (
+          <Script
+            src="https://analytics.pluie.tech/script.js"
+            data-website-id={siteConfig.umamiSiteId}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );
