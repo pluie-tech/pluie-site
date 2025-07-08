@@ -1,6 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 import { BrandIconType } from './BrandIcon';
 import { ComponentPropsWithoutRef, ElementType } from 'react';
+import { cn } from '@/lib/utils';
 
 export type ButtonVariant = 'primary' | 'outline';
 
@@ -34,7 +35,7 @@ export default function Button({
   return (
     <Component
       {...props}
-      className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      className={cn(baseClasses, variantClasses[variant], className)}
       aria-label={String(children)}
     >
       {LeftIcon && (

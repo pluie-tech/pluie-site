@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section 
       id="home"
-      className="relative flex items-center justify-center p-5"
+      className="relative flex items-center justify-center p-2 sm:p-7"
     >
       <div
         className="w-full rounded-3xl"
@@ -26,7 +26,7 @@ export default function Hero() {
           backgroundRepeat: 'no-repeat'
         } : undefined}>
         <div
-          className="relative mx-auto lg:max-w-3xl px-4 pt-24 pb-20 sm:px-6 sm:pt-28 sm:pb-24 lg:px-8"
+          className="relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pn-28 lg:px-8"
         >
           <motion.div 
             className="text-center"
@@ -35,15 +35,15 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-[34px] font-black tracking-title leading-small text-white sm:text-[54px] md:text-7xl font-heading"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              className="text-[34px] font-black tracking-title leading-small text-background sm:text-[54px] md:text-7xl font-heading"
+              initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               {title}
             </motion.h1>
             <motion.p 
-              className="mt-6 text-2xl leading-8 text-white max-w-xl mx-auto"
+              className="mt-6 sm:text-xl md:text-2xl leading-body text-background max-w-xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}

@@ -156,3 +156,7 @@ body {
 .lucide.stroke-2 {
   stroke-width: 2;
 }
+
+[id] {
+  scroll-margin-top: 5rem;
+}

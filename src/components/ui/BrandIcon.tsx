@@ -13,7 +13,7 @@ export type BrandIconProps = {
 }
 
 export function WhatsAppIcon({
-  size = 24,
+  size = 28,
   className = '',
 }: WhatsAppIconProps & React.SVGProps<SVGSVGElement> & { className?: string
 }) {

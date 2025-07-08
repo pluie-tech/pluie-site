@@ -41,17 +41,18 @@ export default function Contact() {
     <Section
       id="contato"
       color="white"
-      contentClassName='mt-0'
+      className="px-1 py-8 sm:px-8 sm:py-15"
+      contentClassName='mt-0 '
     >
       <motion.div 
-        className="flex flex-col lg:flex-row justify-start lg:justify-between max-w-7xl mx-auto px-0.5 sm:px-15"
+        className="flex flex-col lg:flex-row justify-start lg:justify-between max-w-7xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div 
-          className="lg:col-span-2 place-content-center px-5 sm:px-0"
+          className="lg:col-span-2 place-content-center px-5 sm:px-0 mb-10 sm:mb-15 lg:mb-0"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -66,7 +67,7 @@ export default function Contact() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="lg:ml-8"
         >
 
@@ -77,14 +78,14 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 'some' }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             >
               <motion.div 
                 className="grid gap-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
               >
                 <Label htmlFor="name">Seu nome</Label>
                 <Input
@@ -104,7 +105,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               >
                 <Label htmlFor="email">Seu e-mail</Label>
                 <Input
@@ -123,7 +124,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
               >
                 <Label htmlFor="service">O que você está procurando?</Label>
                 <Select
@@ -151,7 +152,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: 1.3, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
               >
                 <Label htmlFor="message">Conte mais pra gente</Label>
                 <Textarea
@@ -169,7 +170,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: 0.7, ease: "easeOut" }}
               >
                 <Button variant="primary" className="w-full">
                   Enviar
