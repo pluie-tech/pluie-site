@@ -6,7 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function generateWhatsappLink(phoneNumber: string, message: string): string {
-  const encodedMessage = encodeURIComponent(message)
   const baseUrl = "https://wa.me"
 
   phoneNumber = phoneNumber.replace(/^\+|^00/, "")
@@ -18,7 +17,7 @@ export function generateWhatsappLink(phoneNumber: string, message: string): stri
   const formattedNumber = phoneNumber.replace(/\D/g, "")
   
   const searchParams = new URLSearchParams({
-    text: encodedMessage
+    text: message
   })
 
   const whatsAppLink = `${baseUrl}/${formattedNumber}?${searchParams.toString()}`

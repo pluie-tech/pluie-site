@@ -5,6 +5,7 @@ import IconWrapper from '../ui/IconWrapper'
 import Section from '../Section'
 import { motion } from 'motion/react'
 import Button from '../ui/Button'
+import { siteConfig } from '@/siteConfig'
 
 export default function HowItWorks() {
   const title = 'Como funciona';
@@ -17,7 +18,7 @@ export default function HowItWorks() {
       ctaButton: {
         text: 'Agendar',
         icon: Calendar,
-        link: 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.'
+        link: siteConfig.whatsappLink
       }
     },
     {

@@ -3,12 +3,13 @@
 import { motion } from 'motion/react';
 import Button from '../ui/Button';
 import { WhatsAppIcon } from '@/components';
+import { siteConfig } from '@/siteConfig';
 
 export default function Hero() {
   const title = 'Tecnologia que resolve, sem complicar.';
   const subtitle = 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.';
   const ctaText = 'Agende uma conversa';
-  const ctaLink = 'https://wa.me/5541984926574?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Pluie.';
+  const ctaLink = siteConfig.whatsappLink;
   const ctaIcon = WhatsAppIcon;
   const backgroundImage = '/images/hero.png';
 
