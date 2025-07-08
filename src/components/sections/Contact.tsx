@@ -73,6 +73,8 @@ export default function Contact() {
 
           <div className="bg-border p-9 sm:p-15 rounded-[36px]">
             <motion.form 
+              id='contact-form'
+              data-netlify="true"
               onSubmit={handleSubmit} 
               className="grid gap-6"
               initial={{ opacity: 0, y: 30 }}
