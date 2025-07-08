@@ -5,8 +5,11 @@ import { motion } from 'motion/react';
 import IconWrapper from '../ui/IconWrapper';
 import { Sprout } from 'lucide-react';
 import Logo from '../ui/Logo';
+import { useTrackSectionView } from "@/lib/analytics";
 
 export default function About() {
+  const ref = useTrackSectionView("quem-somos");
+
   const title = 'Quem somos';
   const intro = 'Profissionais experientes em design, desenvolvimento e metologias de trabalho.';
   const sections = [
@@ -38,6 +41,7 @@ export default function About() {
 
   return (
     <Section
+      ref={ref}
       id="quem-somos"
       title={title}
       subtitle={intro}

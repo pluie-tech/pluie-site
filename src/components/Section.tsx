@@ -15,6 +15,7 @@ interface SectionProps {
   titleClassName?: string
   contentClassName?: string
   children: React.ReactNode
+  ref?: React.RefObject<HTMLElement | null>
 }
 
 const roundClassMap = {
@@ -24,12 +25,12 @@ const roundClassMap = {
   none: ''
 }
 
-export default function Section({ title, subtitle, id, color = 'white', rounded = 'none', preSection, className, titleClassName, contentClassName, children }: SectionProps) {
+export default function Section({ ref, title, subtitle, id, color = 'white', rounded = 'none', preSection, className, titleClassName, contentClassName, children }: SectionProps) {
   const sectionBgColorClass = color === 'black' ? 'bg-foreground' : 'bg-background'
   const sectionRoundedClass = roundClassMap[rounded]
 
   return (
-    <section id={id} className={cn(sectionBgColorClass, sectionRoundedClass, className)}>
+    <section id={id} ref={ref} className={cn(sectionBgColorClass, sectionRoundedClass, className)}>
       {preSection && <>{preSection}</>}
       <motion.div
         initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}

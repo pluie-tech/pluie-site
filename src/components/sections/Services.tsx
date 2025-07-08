@@ -5,6 +5,7 @@ import { Bird, ChartPie, LayoutTemplate, LucideIcon, Palette, Puzzle, Shrub, Smi
 import { cn } from '@/lib/utils'
 import Section from '../Section'
 import { motion } from 'motion/react'
+import { useTrackSectionView } from "@/lib/analytics";
 
 type Feature = {
   title: string;
@@ -113,8 +114,11 @@ const services: Service[] = [
 ];
 
 export default function Services() {
+  const ref = useTrackSectionView("servicos");
+
   return (
     <Section
+      ref={ref}
       id="solucoes"
       title={title}
       subtitle={subtitle}

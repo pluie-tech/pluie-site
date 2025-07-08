@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Section from '../Section'
 import Button from '../ui/Button'
 import { motion } from 'motion/react'
+import { useTrackSectionView } from "@/lib/analytics";
 
 type Work = {
   name: string;
@@ -16,6 +17,8 @@ type Work = {
 }
 
 export default function LatestWorks() {
+  const ref = useTrackSectionView("trabalhos");
+
   const title = 'Nossos últimos trabalhos';
   const subtitle = 'Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.';
   const projects = [
@@ -39,6 +42,7 @@ export default function LatestWorks() {
 
   return (
     <Section
+      ref={ref}
       id="trabalhos"
       title={title}
       subtitle={subtitle}

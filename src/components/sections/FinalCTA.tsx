@@ -5,13 +5,16 @@ import Section from '../Section';
 import Button, { ButtonVariant } from '../ui/Button';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
+import { trackWhatsAppCTA, useTrackSectionView } from "@/lib/analytics";
 
 export default function FinalCTA() {
+  const ref = useTrackSectionView("cta_final");
   const title = 'Agende uma conversa gratuita';
   const subtitle = 'A gente escuta, entende e mostra como pode ajudar.';
 
   return (
     <Section
+      ref={ref}
       id="cta-final"
       title={title}
       subtitle={subtitle}
@@ -41,6 +44,7 @@ export default function FinalCTA() {
               className='w-54'
               variant={'primary' as ButtonVariant}
               leftIcon={WhatsAppIcon}
+              onClick={() => trackWhatsAppCTA('cta_final')}
             >
               Fale conosco
             </Button>

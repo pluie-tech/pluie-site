@@ -3,8 +3,10 @@
 import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
 import { motion } from 'motion/react';
+import { useTrackSectionView } from "@/lib/analytics";
 
 export default function Testimonials() {
+  const ref = useTrackSectionView("depoimentos");
   const title = 'Tecnologia que faz sentido pra todo mundo';
   const subtitle = 'Não importa se é dono do negócio ou se é quem está usando: o que a gente faz resolve e funciona de verdade.';
   const quotes = [
@@ -26,7 +28,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="depoimentos" className="py-24 bg-white">
+    <section ref={ref} id="depoimentos" className="py-24 bg-white">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title={title}

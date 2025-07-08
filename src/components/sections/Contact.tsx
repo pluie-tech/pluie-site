@@ -10,15 +10,17 @@ import Label from '../ui/Label';
 import { motion } from 'motion/react';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
+import { trackFormSubmission, useTrackSectionView } from "@/lib/analytics";
 
 export default function Contact() {
+  const ref = useTrackSectionView("contato");
+
   const title = 'Pronto para começar seu projeto?';
   const subtitle = 'Conte com a Pluie para desenvolver ou aprimorar sua solução digital.';
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
     service: '',
     message: ''
   });
@@ -29,7 +31,13 @@ export default function Contact() {
     console.log('Form submitted:', formData);
     // You can integrate with your preferred form handling service
     alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
-    setFormData({ name: '', email: '', company: '', service: '', message: '' });
+    setFormData({ name: '', email: '', service: '', message: '' });
+    trackFormSubmission('Contato', {
+      name: formData.name,
+      email: formData.email,
+      service: formData.service,
+      message: formData.message
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -39,6 +47,7 @@ export default function Contact() {
 
   return (
     <Section
+      ref={ref}
       id="contato"
       color="white"
       className="px-1 py-8 sm:px-8 sm:py-15"

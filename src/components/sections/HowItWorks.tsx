@@ -6,8 +6,11 @@ import Section from '../Section'
 import { motion } from 'motion/react'
 import Button from '../ui/Button'
 import { siteConfig } from '@/siteConfig'
+import { trackWhatsAppCTA, useTrackSectionView } from "@/lib/analytics";
 
 export default function HowItWorks() {
+  const ref = useTrackSectionView("como-funciona");
+
   const title = 'Como funciona';
   const subtitle = 'Sem burocracia. Resolvemos junto com você, passo a passo:';
   const steps = [
@@ -35,6 +38,7 @@ export default function HowItWorks() {
 
   return (
     <Section
+      ref={ref}
       id="como-funciona"
       title={title}
       subtitle={subtitle}
@@ -112,7 +116,13 @@ export default function HowItWorks() {
                     viewport={{ once: true, amount: 'some' }}
                     transition={{ duration: 0.4, delay: index * 0.2 + 0.3, ease: 'easeOut' }}
                   >
-                    <Button href={step.ctaButton.link} leftIcon={step.ctaButton.icon} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      href={step.ctaButton.link}
+                      leftIcon={step.ctaButton.icon}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppCTA('como-funciona')}
+                    >
                       {step.ctaButton.text}
                     </Button>
                   </motion.div>
