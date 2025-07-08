@@ -5,6 +5,16 @@ import Section from '../Section'
 import Button from '../ui/Button'
 import { motion } from 'motion/react'
 
+type Work = {
+  name: string;
+  description: string;
+  image: string;
+  ctaButton: {
+    text: string;
+    href?: string;
+  }
+}
+
 export default function LatestWorks() {
   const title = 'Nossos últimos trabalhos';
   const subtitle = 'Esses são algumas de nossas últimas entregas. Soluções digitais feitas sob medida, com cuidado em cada detalhe.';
@@ -51,7 +61,7 @@ export default function LatestWorks() {
   )
 }
 
-function Work({ name, description, image, ctaButton, index }: any) {
+function Work({ name, description, image, ctaButton, index }: Work & { index: number }) {
   return (
     <motion.div
       className="flex flex-col sm:flex-row sm:items-center p-3 rounded-b-[30px] rounded-t-[36px] sm:rounded-b-[36px] sm:rounded-t-[36px] bg-background"

@@ -22,15 +22,5 @@ export { default as Section } from './Section';
 export { default as SectionTitle } from './SectionTitle';
 
 // Type exports
-export type { HeaderProps } from './layout/Header';
-export type { FooterProps } from './layout/Footer';
-export type { HeroProps } from './sections/Hero';
-export type { AboutProps } from './sections/About';
-export type { HowItWorksProps, HowItWorksStep } from './sections/HowItWorks';
-export type { ServicesProps, Service } from './sections/Services';
-export type { TestimonialsProps, Testimonial } from './sections/Testimonials';
-export type { LatestWorksProps, Project } from './sections/LatestWorks';
-export type { FinalCTAProps, FinalCTAButton } from './sections/FinalCTA';
-export type { ContactProps } from './sections/Contact';
 export type { ButtonProps } from './ui/Button';
 export type { BrandIconType, WhatsAppIconType, LinkedInIconType } from './ui/BrandIcon';
