@@ -7,13 +7,17 @@ declare global {
 
 }
 
+export type SiteSection = 'header' | 'hero' | 'quem-somos' | 'servicos' | 'trabalhos' | 'cta_final' | 'como-funciona' | 'depoimentos' | 'contato' | 'footer';
+
+
 /**
  * Tipos de eventos suportados
  */
 export type AnalyticsEvent =
   | 'clique_cta_whatsapp'
   | 'envio_formulario'
-  | 'visualizacao_secao';
+  | 'visualizacao_secao'
+  | `visualizacao_secao_${SiteSection}`; // permite eventos dinâmicos por seção
 
 /**
  * Contextos possíveis para eventos
@@ -21,7 +25,6 @@ export type AnalyticsEvent =
 
 export type AnalyticsContext = Record<string, unknown>
 
-export type SiteSection = 'header' | 'hero' | 'quem-somos' | 'servicos' | 'trabalhos' | 'cta_final' | 'como-funciona' | 'depoimentos' | 'contato' | 'footer';
 
 /**
  * Função para rastrear eventos usando o umami
@@ -56,7 +59,7 @@ export function trackFormSubmission(formName: string, data?: Record<string, stri
  * @param section Nome da seção visualizada
  */
 export function trackSectionView(section: SiteSection) {
-  trackEvent('visualizacao_secao', { section });
+  trackEvent(`visualizacao_secao_${section}`, { section });
 }
 
 /**
