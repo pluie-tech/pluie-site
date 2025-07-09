@@ -16,7 +16,7 @@ export default function Hero() {
     <section 
       ref={ref}
       id="home"
-      className="relative flex items-center justify-center p-2 sm:p-7"
+      className="relative flex items-center justify-center p-2 sm:p-7 bg-background"
     >
       <div className="relative w-full rounded-3xl overflow-hidden">
         <img
