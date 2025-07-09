@@ -1,11 +1,15 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
 [[redirects]]
-  # Serve a full size version
-  from = "/images/full/:file"
-  to = "/.netlify/images?url=/images/:file&quality=100"
+  # Serve a versão completa da imagem
+  from = "/images/full/*"
+  to = "/.netlify/images?url=/images/:splat&quality=100"
   status = 200
 
 [[redirects]]
-  # ...or serve a resized version
-  from = "/images/:width/:file"
-  to = "/.netlify/images?url=/images/:file&width=:width&quality=100"
+  # Serve uma versão redimensionada da imagem
+  from = "/images/:width/*"
+  to = "/.netlify/images?url=/images/:splat&width=:width&quality=100"
   status = 200
