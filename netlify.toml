@@ -1,0 +1,11 @@
+[[redirects]]
+  # Serve a full size version
+  from = "/images/full/:file"
+  to = "/.netlify/images?url=/images/:file&quality=100"
+  status = 200
+
+[[redirects]]
+  # ...or serve a resized version
+  from = "/images/:width/:file"
+  to = "/.netlify/images?url=/images/:file&width=:width&quality=100"
+  status = 200

@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import Section from '../Section'
 import { motion } from 'motion/react'
 import { useTrackSectionView } from "@/lib/analytics";
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 type Feature = {
   title: string;
@@ -154,6 +155,7 @@ function ServiceItem({
   inverted: boolean,
   index: number
 }) {
+  const isMobile = useIsMobile();
   return (
     <motion.div 
       className={cn("xl:flex xl:items-center bg-background p-3 rounded-3xl text-foreground", inverted && "flex-row-reverse")}
@@ -230,22 +232,25 @@ function ServiceItem({
           ))}
         </motion.div>
       </div>
+
+      {!isMobile && (
       
-      <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
-        className="h-full hidden xl:block"
-      >
-        <Image
-          src={service.imagePath}
-          alt={service.title}
-          width={460}
-          height={460}
-          className="object-cover w-full xl:w-[460px] rounded-xl mt-2 xl:mt-0"
-        />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 'some' }}
+          transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
+          className="h-full hidden xl:block"
+        >
+          <Image
+            src={service.imagePath}
+            alt={service.title}
+            width={460}
+            height={460}
+            className="object-cover w-full xl:w-[460px] rounded-xl mt-2 xl:mt-0"
+          />
+        </motion.div>
+      )}
     </motion.div>
   )
 }
