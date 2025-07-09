@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export interface LogoProps {
   size?: number;
   withName?: boolean;
@@ -18,5 +16,5 @@ export default function Logo({ size = 64, withName = false, className }: LogoPro
 
   const src = withName ? imageSrcs.logo : imageSrcs.symbol;
 
-  return <Image src={src} alt="Pluie Logo" width={width} height={height} aria-label="Pluie Logo" className={className} />;
+  return <img src={src} alt="Pluie Logo" width={width} height={height} aria-label="Pluie Logo" className={className} />;
 }
