@@ -6,7 +6,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-cabin);
   --font-heading: var(--font-epilogue);
 
   --container-8xl: 1440px;
@@ -60,7 +59,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-cabin);
   background: var(--background);
   color: var(--foreground);
 }
