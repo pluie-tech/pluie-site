@@ -29,10 +29,8 @@ export default function Hero() {
             /images/720/hero.png 720w,
             /images/1024/hero.png 1024w,
             /images/1200/hero.png 1200w,
-            /images/1400/hero.png 1400w,
-            /images/full/hero.png
+            /images/full/hero.png 1400w
           `}
-          sizes="100vw"
           src='/images/full/hero.png'
         />
         <div
