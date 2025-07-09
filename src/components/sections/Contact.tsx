@@ -190,7 +190,7 @@ export default function Contact() {
                 viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.4, delay: 0.7, ease: "easeOut" }}
               >
-                <Button variant="primary" className="w-full">
+                <Button variant="primary" className="w-full" type="submit">
                   Enviar
                 </Button>
               </motion.div>
