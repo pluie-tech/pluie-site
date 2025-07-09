@@ -25,19 +25,26 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can integrate with your preferred form handling service
-    alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
-    setFormData({ name: '', email: '', service: '', message: '' });
-    trackFormSubmission('Contato', {
-      name: formData.name,
-      email: formData.email,
-      service: formData.service,
-      message: formData.message
-    });
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
+      setFormData({ name: '', email: '', service: '', message: '' });
+      trackFormSubmission('Contato', {
+        name: formData.name,
+        email: formData.email,
+        service: formData.service,
+        message: formData.message
+      });
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
