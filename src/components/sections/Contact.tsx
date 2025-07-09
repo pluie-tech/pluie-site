@@ -29,10 +29,14 @@ export default function Contact() {
     e.preventDefault();
 
     try {
+      const formDataToSubmit = {
+        ...formData,
+        'form-name': 'contact-form'
+      }
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
+        body: new URLSearchParams(formDataToSubmit).toString()
       })
       alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
       setFormData({ name: '', email: '', service: '', message: '' });
@@ -91,6 +95,7 @@ export default function Contact() {
             <motion.form 
               id='contact-form'
               data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit} 
               className="grid gap-6"
               initial={{ opacity: 0, y: 30 }}
