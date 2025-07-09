@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { trackWhatsAppCTA, useTrackSectionView } from "@/lib/analytics";
+import Image from 'next/image';
 
 export default function Hero() {
   const ref = useTrackSectionView("hero");
@@ -21,14 +22,16 @@ export default function Hero() {
       id="home"
       className="relative flex items-center justify-center p-2 sm:p-7"
     >
-      <div
-        className="w-full rounded-3xl"
-        style={backgroundImage ? {
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        } : undefined}>
+      <div className="relative w-full rounded-3xl overflow-hidden">
+        {backgroundImage && (
+          <Image
+            src={backgroundImage}
+            alt="Background da seção Hero"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        )}
         <div
           className="relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pn-28 lg:px-8"
         >
