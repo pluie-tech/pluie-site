@@ -242,6 +242,7 @@ function ServiceItem({
           alt={service.title}
           width={460}
           height={460}
+          loading="lazy"
           className="object-cover w-full xl:w-[460px] rounded-xl mt-2 xl:mt-0"
         />
       </motion.div>

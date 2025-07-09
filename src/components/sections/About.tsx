@@ -126,7 +126,7 @@ export default function About() {
                   <IconWrapper icon={Sprout} size="small" />
                 </motion.div>
                 <div className="ml-4">
-                  <motion.h6 
+                  <motion.h5 
                     className="text-2xl font-semibold mb-1 font-heading"
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -134,7 +134,7 @@ export default function About() {
                     transition={{ duration: 0.4, delay: 0.7 + (index * 0.2), ease: "easeOut" }}
                   >
                     {feature.title}
-                  </motion.h6>
+                  </motion.h5>
                   <motion.p 
                     className="text-xl leading-normal"
                     initial={{ opacity: 0, x: 10 }}
