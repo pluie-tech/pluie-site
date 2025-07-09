@@ -32,6 +32,7 @@ export default function Hero() {
             /images/full/hero.png 1400w
           `}
           src='/images/full/hero.png'
+          fetchPriority="high"
         />
         <div
           className="relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pn-28 lg:px-8"

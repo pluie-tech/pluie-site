@@ -42,7 +42,7 @@ export function trackEvent(
  * Rastreia clique em CTA do WhatsApp
  * @param section Seção onde o CTA foi clicado (ex: 'header', 'footer')
  */
-export function trackWhatsAppCTA(section: SiteSection) {
+export function trackWhatsAppCTA(section: SiteSection | 'fab') {
   trackEvent('clique_cta_whatsapp', { section });
 }
 

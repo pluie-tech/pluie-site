@@ -244,6 +244,7 @@ function ServiceItem({
           height={460}
           loading="lazy"
           className="object-cover w-full xl:w-[460px] rounded-xl mt-2 xl:mt-0"
+          fetchPriority="low"
         />
       </motion.div>
     </motion.div>
