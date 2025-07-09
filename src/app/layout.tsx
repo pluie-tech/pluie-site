@@ -28,7 +28,7 @@ const schema: WithContext<LocalBusiness> = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Pluie",
-  "url": "https://pluie.software",
+  "url": "https://pluie.tech",
   "description": "Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.",
   "image": "https://pluie.tech/logo.png",
   "email": "contato@pluie.com",
