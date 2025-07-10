@@ -4,17 +4,14 @@ import { motion } from 'motion/react';
 import Button from '../ui/Button';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
-import { trackWhatsAppCTA, useTrackSectionView } from "@/lib/analytics";
 
 export default function Hero() {
-  const ref = useTrackSectionView("hero");
   const title = 'Tecnologia que resolve, sem complicar.';
   const subtitle = 'Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.';
   const ctaText = 'Agende uma conversa';
 
   return (
     <section 
-      ref={ref}
       id="home"
       className="relative flex items-center justify-center p-2 sm:p-7 bg-background"
     >
@@ -70,7 +67,6 @@ export default function Hero() {
                 leftIcon={WhatsAppIcon}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackWhatsAppCTA('hero')}
               >
                 {ctaText}
               </Button>

@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
-import Script from 'next/script'
 import { WithContext, LocalBusiness } from 'schema-dts'
 import { Header, Footer } from '@/components'
-import { siteConfig } from '@/siteConfig'
 import './globals.css'
 
 const cabin = Cabin({
@@ -30,7 +28,7 @@ const schema: WithContext<LocalBusiness> = {
   url: 'https://pluie.tech',
   description: 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.',
   image: 'https://pluie.tech/logo.png',
-  email: 'contato@pluie.com',
+  email: 'contato@pluie.tech',
   telephone: '+55 41 98492-6574',
   address: {
     '@type': 'PostalAddress',
@@ -88,10 +86,6 @@ const schema: WithContext<LocalBusiness> = {
   ]
 }
 
-function isProduction(): boolean {
-  return process.env.NODE_ENV === 'production'
-}
-
 export default function RootLayout({
   children
 }: Readonly<{
@@ -106,7 +100,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        {isProduction() && <Script src="https://analytics.pluie.tech/script.js" data-website-id={siteConfig.umamiSiteId} strategy="afterInteractive" />}
       </body>
     </html>
   )

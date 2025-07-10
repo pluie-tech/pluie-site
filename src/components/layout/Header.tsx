@@ -9,7 +9,6 @@ import { useClickAway } from '@/hooks/useClickAway';
 import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/siteConfig';
 import { cn } from '@/lib/utils';
-import { trackWhatsAppCTA } from '@/lib/analytics';
 
 const navigation = [
   { name: 'Quem somos', href: '#quem-somos' },
@@ -71,7 +70,6 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-foreground text-background hover:bg-black transition-colors duration-200"
-              onClick={() => trackWhatsAppCTA('header')}
             >
                 Fale conosco
             </Button>
@@ -138,7 +136,6 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className='w-fit pb-4 pt-5 text-xl font-medium bg-foreground text-background hover:bg-black transition-colors duration-200'
-                        onClick={() => trackWhatsAppCTA('header')}
                       >
                         Fale conosco
                       </Button>
