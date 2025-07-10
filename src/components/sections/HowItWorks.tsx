@@ -35,7 +35,6 @@ export default function HowItWorks() {
 
   return (
     <Section
-      ref={ref}
       id="como-funciona"
       title={title}
       subtitle={subtitle}
