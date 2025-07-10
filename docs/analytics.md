@@ -1,4 +1,4 @@
-# Guia de Uso — Analytics (Umami)
+# Guia de Uso — Analytics (Umami) (DISABLED)
 
 Este projeto utiliza o [Umami](https://umami.is/) para rastreamento de eventos de analytics. Os eventos são disparados por meio de funções utilitárias e hooks React, com nomes de eventos em português para facilitar a análise.
 
