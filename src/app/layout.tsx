@@ -25,10 +25,10 @@ const schema: WithContext<LocalBusiness> = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Pluie',
-  url: 'https://pluie.tech',
+  url: 'https://pluie.com.br',
   description: 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.',
-  image: 'https://pluie.tech/logo.png',
-  email: 'contato@pluie.tech',
+  image: 'https://pluie.com.br/logo.png',
+  email: 'contato@pluie.com.br',
   telephone: '+55 41 98492-6574',
   address: {
     '@type': 'PostalAddress',

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://pluie.tech/sitemap.xml
+Sitemap: https://pluie.com.br/sitemap.xml

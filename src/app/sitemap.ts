@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   const sitemap: MetadataRoute.Sitemap = [
     {
-      url: 'https://pluie.tech',
+      url: 'https://pluie.com.br',
       lastModified: new Date().toISOString(),
       changeFrequency: 'weekly',
       priority: 1,
