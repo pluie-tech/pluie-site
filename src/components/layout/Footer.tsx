@@ -52,7 +52,7 @@ export default function Footer({ sticky = false }: FooterProps) {
             <ul className="space-y-3 font-medium">
               {navigation.map((link, index) => (
                 <li key={index}>
-                  <Link key={link.name} href={link.href} className="text-background transition-colors duration-200 hover:underline">
+                  <Link key={link.name} href={link.href} className="text-background hover:underline">
                     {link.name}
                   </Link>
                 </li>
@@ -86,9 +86,9 @@ export default function Footer({ sticky = false }: FooterProps) {
           </div>
         </div>
         <div className="mt-4 border-t border-neutral-800 pt-4 flex justify-between items-center">
-          <Link href="/politica-de-privacidade" className="text-sm text-background hover:underline">
+          <a href="/politica-de-privacidade/" className="text-sm text-background hover:underline">
             Política de privacidade
-          </Link>
+          </a>
         </div>
       </div>
     </footer>
