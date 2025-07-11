@@ -113,33 +113,17 @@ export default function About() {
                 viewport={{ once: true, amount: 'some' }}
                 transition={{ duration: 0.4, delay: 0.5 + (index * 0.2), ease: "easeOut" }}
               >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 'some' }}
-                  transition={{ duration: 0.6, delay: 0.6 + (index * 0.2), ease: "easeOut" }}
-                >
-                  <IconWrapper icon={Sprout} size="small" />
-                </motion.div>
+                <IconWrapper icon={Sprout} size="small" />
                 <div className="ml-4">
-                  <motion.h5 
+                  <h5 
                     className="text-2xl font-semibold mb-1 font-heading"
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 'some' }}
-                    transition={{ duration: 0.4, delay: 0.7 + (index * 0.2), ease: "easeOut" }}
                   >
                     {feature.title}
-                  </motion.h5>
-                  <motion.p 
-                    className="text-xl leading-normal"
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 'some' }}
-                    transition={{ duration: 0.4, delay: 0.8 + (index * 0.2), ease: "easeOut" }}
-                  >
+                  </h5>
+                  <p 
+                    className="text-xl leading-normal"                  >
                     {feature.description}
-                  </motion.p>
+                  </p>
                 </div>
               </motion.div>
             ))}

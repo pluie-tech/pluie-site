@@ -189,35 +189,18 @@ function ServiceItem({
           {service.features.map((feature, featureIndex: number) => (
             <motion.div 
               key={featureIndex} 
-              className="pb-4 mb-4 pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 'some' }}
-              transition={{ duration: 0.4, delay: index * 0.1 + 0.2 + (featureIndex * 0.1), ease: "easeOut" }}
+              className="mb-4 pt-4 sm:pb-4 sm:pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.3 + (featureIndex * 0.1), ease: "easeOut" }}
-              >
+              <motion.div>
                 <feature.icon size={40} className="w-10 h-10 mb-4" />
               </motion.div>
               <motion.h4 
                 className="text-2xl leading-body font-semibold mb-3"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.4 + (featureIndex * 0.1), ease: "easeOut" }}
               >
                 {feature.title}
               </motion.h4>
               <motion.p 
                 className="text-lg leading-body"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.6, delay: index * 0.1 + 0.4 + (featureIndex * 0.1), ease: "easeOut" }}
               >
                 {feature.description}
               </motion.p>

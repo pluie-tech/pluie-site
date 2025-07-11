@@ -179,16 +179,9 @@ export default function Contact() {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 'some' }}
-                transition={{ duration: 0.4, delay: 0.7, ease: "easeOut" }}
-              >
-                <Button variant="primary" className="w-full" type="submit" as="button">
-                  Enviar
-                </Button>
-              </motion.div>
+              <Button variant="primary" className="w-full" type="submit" as="button">
+                Enviar
+              </Button>
             </motion.form>
           </div>
         </motion.div>

@@ -105,12 +105,8 @@ export default function HowItWorks() {
                 </motion.p>
 
                 {step.ctaButton && (
-                  <motion.div
+                  <div
                     className="mt-6 xl:mt-9"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 'some' }}
-                    transition={{ duration: 0.4, delay: index * 0.2 + 0.3, ease: 'easeOut' }}
                   >
                     <Button
                       href={step.ctaButton.link}
@@ -120,7 +116,7 @@ export default function HowItWorks() {
                     >
                       {step.ctaButton.text}
                     </Button>
-                  </motion.div>
+                  </div>
                 )}
               </div>
             </div>
