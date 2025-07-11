@@ -129,7 +129,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           {services && services.map((service, index) => (
             <ServiceItem service={service} inverted key={index} index={index} />
@@ -155,7 +155,7 @@ function ServiceItem({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 'some' }}
-      transition={{ duration: 0.2, delay: index * 0.05, ease: "easeOut" }}
+      transition={{ duration: 0.1, ease: "easeOut" }}
     >
       <div 
         className="flex-1 p-6 sm:p-12 md:p-10 xl:p-12 flex flex-col"
@@ -165,7 +165,7 @@ function ServiceItem({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.4, delay: index * 0.1 + 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.3, delay: index * 0.1 + 0.1, ease: "easeOut" }}
         >
           {service.title}
         </motion.h3>
@@ -174,7 +174,7 @@ function ServiceItem({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.4, delay: index * 0.1 + 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.3, delay: index * 0.1 + 0.2, ease: "easeOut" }}
         >
           {service.description}
         </motion.p>

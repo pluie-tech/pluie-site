@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react'
+import { motion, AnimatePresence, useScroll, useMotionValueEvent, useTransform } from 'motion/react'
 import Logo from '../ui/Logo';
 import { useEffect, useRef, useState } from 'react';
 import Button from '../ui/Button';
@@ -17,16 +17,19 @@ const navigation = [
 ];
 
 export default function Header() {
-  const { scrollYProgress } = useScroll()
+  const { scrollY } = useScroll()
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const ref = useRef(null);
 
   useClickAway(ref, () => setMobileMenuOpen(false));
 
-  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    setHasScrolled(latest > 0.05);
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setHasScrolled(latest > 40);
   });
+
+  const headerHeight = useTransform(scrollY, [0, 400], ['80px', '72px']);
+  const logoSize = useTransform(scrollY, [0, 400], [110, 92]);
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
@@ -39,12 +42,12 @@ export default function Header() {
       })}
     >
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between py-4">
+        <motion.div className="flex w-full items-center justify-between" style={{ height: headerHeight  }}>
           <div className="flex justify-around items-center">
             <Link href="/">
               <span className="sr-only">Pluie</span>
               <div className="inline">
-                <Logo size={120} withName />
+                <Logo size={logoSize} withName />
               </div>
             </Link>
           </div>
@@ -155,7 +158,7 @@ export default function Header() {
               <Menu className="h-8 w-8 stroke-2 text-foreground" />
             </button>
           </div>
-        </div>
+        </motion.div>
       </nav>
     </header>
   );

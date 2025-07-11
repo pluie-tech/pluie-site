@@ -36,7 +36,7 @@ export default function Section({ ref, title, subtitle, id, color = 'white', rou
         initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {(title || subtitle) && (
           <div className="text-center px-5">
