@@ -9,6 +9,10 @@ import { siteConfig } from '@/siteConfig'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import { cn } from '@/lib/utils'
 
+type FooterProps = {
+  sticky?: boolean
+}
+
 const navigation = [
   { name: 'Quem somos', href: '#quem-somos' },
   { name: 'Como funciona', href: '#como-funciona' },
@@ -18,7 +22,7 @@ const navigation = [
 
 const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.'
 
-export default function Footer() {
+export default function Footer({ sticky = false }: FooterProps) {
   const { scrollYProgress } = useScroll()
   const [hasScrolled, setHasScrolled] = useState(false)
 
@@ -27,15 +31,19 @@ export default function Footer() {
   })
 
   return (
-    <footer className={cn('text-background fixed bottom-0 left-0 w-full z-10', hasScrolled ? 'bg-foreground' : 'bg-background')}>
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+    <footer className={cn(
+      'text-background',
+      hasScrolled ? 'bg-foreground' : 'bg-foreground',
+      sticky ? 'sticky bottom-0 left-0 w-full z-10' : '',
+    )}>
+      <div className="mx-auto max-w-7xl px-4 pt-6 pb-4 sm:py-12 sm:px-6 lg:px-8 lg:py-14">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Company Information */}
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-4">
               <Logo size={36} />
             </div>
-            <p className="mb-6 max-w-64">{description}</p>
+            <p className="md:mb-6 max-w-64">{description}</p>
           </div>
 
           {/* Quick Links */}
@@ -76,6 +84,11 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="mt-4 border-t border-neutral-800 pt-4 flex justify-between items-center">
+          <Link href="/politica-de-privacidade" className="text-sm text-background hover:underline">
+            Política de privacidade
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { LucideIcon } from 'lucide-react';
 import { BrandIconType } from './BrandIcon';
 import { ComponentPropsWithoutRef, ElementType } from 'react';
@@ -19,7 +20,7 @@ export default function Button({
   className = "",
   leftIcon: LeftIcon = null,
   leftIconSize = 16,
-  as: Component = 'a',
+  as: Component = Link,
   children,
   ...props
 }: ButtonProps & ComponentPropsWithoutRef<'a'> & ComponentPropsWithoutRef<'button'>) {

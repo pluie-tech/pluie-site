@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
 import { WithContext, LocalBusiness } from 'schema-dts'
-import { Header, Footer } from '@/components'
 import './globals.css'
 
 const cabin = Cabin({
@@ -97,9 +96,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </head>
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   )

@@ -213,7 +213,7 @@ function ServiceItem({
         initial={{ opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, delay: index * 0.3 + 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.4, delay: index * 0.2 + 0.2, ease: "easeOut" }}
         className="h-full hidden xl:block"
       >
         <img

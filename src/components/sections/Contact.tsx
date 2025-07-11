@@ -59,14 +59,14 @@ export default function Contact() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <motion.div 
           className="lg:col-span-2 place-content-center px-5 sm:px-0 mb-10 sm:mb-15 lg:mb-0"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
         >
           <Logo className="w-[58px] sm:w-[88] mb-6 sm:mb-8" />
           <SectionTitle title={title} subtitle={subtitle} className="max-w-md text-left" />

@@ -1,11 +1,11 @@
 "use client";
 
-import { Hero, About, HowItWorks, Services, FinalCTA, Contact } from '@/components';
+import { Hero, About, HowItWorks, Services, FinalCTA, Contact, BaseLayout } from '@/components';
 import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden mb-[630px] lg:mb-[284px] relative z-20">
+    <BaseLayout footerSticky={true}>
       <Hero />
       <About />
       <HowItWorks />
@@ -13,6 +13,6 @@ export default function Home() {
       <FinalCTA />
       <Contact />
       <WhatsAppFAB />
-    </main>
+    </BaseLayout>
   );
 }

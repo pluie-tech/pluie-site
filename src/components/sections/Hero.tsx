@@ -38,13 +38,13 @@ export default function Hero() {
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <motion.h1 
               className="text-[34px] font-black tracking-title leading-small text-background sm:text-[54px] md:text-7xl font-heading"
               initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             >
               {title}
             </motion.h1>
@@ -52,7 +52,7 @@ export default function Hero() {
               className="mt-6 sm:text-xl md:text-2xl leading-body text-background max-w-xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
             >
               {subtitle}
             </motion.p>
@@ -60,7 +60,7 @@ export default function Hero() {
               className="mt-10 flex items-center justify-center gap-x-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
             >
               <Button
                 href={siteConfig.whatsappLink}

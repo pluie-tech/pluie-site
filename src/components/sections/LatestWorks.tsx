@@ -51,7 +51,7 @@ export default function LatestWorks() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         {projects.map((project, index) => (
           <Work key={index} index={index} {...project} />
@@ -68,14 +68,14 @@ function Work({ name, description, image, ctaButton, index }: Work & { index: nu
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 'some' }}
-      transition={{ duration: 0.8, delay: index * 0.3, ease: 'easeOut' }}
+      transition={{ duration: 0.4, delay: index * 0.3, ease: 'easeOut' }}
     >
       <motion.div
         className="mb-4 sm:mb-0"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 'some' }}
-        transition={{ duration: 0.8, delay: index * 0.3 + 0.2, ease: 'easeOut' }}
+        transition={{ duration: 0.4, delay: index * 0.3 + 0.2, ease: 'easeOut' }}
       >
         <Image src={image} width={240} height={240} alt={`Imagem do projeto ${name}`} className="object-cover size-fit rounded-[32px] sm:min-w-60 sm:max-w-60" />
       </motion.div>
@@ -86,7 +86,7 @@ function Work({ name, description, image, ctaButton, index }: Work & { index: nu
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.4, ease: 'easeOut' }}
+          transition={{ duration: 0.4, delay: index * 0.3 + 0.4, ease: 'easeOut' }}
         >
           {name}
         </motion.h3>
@@ -96,7 +96,7 @@ function Work({ name, description, image, ctaButton, index }: Work & { index: nu
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.4, delay: index * 0.3 + 0.5, ease: 'easeOut' }}
         >
           {description}
         </motion.p>
@@ -106,7 +106,7 @@ function Work({ name, description, image, ctaButton, index }: Work & { index: nu
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, delay: index * 0.3 + 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.4, delay: index * 0.3 + 0.6, ease: 'easeOut' }}
         >
           <Button variant="outline" href={ctaButton.href} target="_blank" rel="noopener noreferrer">
             {ctaButton.text}

@@ -38,7 +38,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           {quotes.map((testimonial, index) => (
             <motion.div
@@ -47,7 +47,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 'some' }}
-              transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: index * 0.2, ease: "easeOut" }}
             >
               <div className="">
                 <motion.div
@@ -69,7 +69,7 @@ export default function Testimonials() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 'some' }}
-                  transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
+                  transition={{ duration: 0.4, delay: index * 0.2 + 0.4, ease: "easeOut" }}
                 >
                   {testimonial.quote}
                 </motion.blockquote>
@@ -78,7 +78,7 @@ export default function Testimonials() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 'some' }}
-                  transition={{ duration: 0.8, delay: index * 0.2 + 0.5, ease: "easeOut" }}
+                  transition={{ duration: 0.4, delay: index * 0.2 + 0.5, ease: "easeOut" }}
                 >
                   — {testimonial.author}
                 </motion.cite>

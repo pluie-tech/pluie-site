@@ -9,15 +9,17 @@ import { useClickAway } from '@/hooks/useClickAway';
 import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/siteConfig';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const navigation = [
-  { name: 'Quem somos', href: '#quem-somos' },
-  { name: 'Como funciona', href: '#como-funciona' },
-  { name: 'Soluções', href: '#solucoes' },
+  { name: 'Quem somos', href: '/#quem-somos' },
+  { name: 'Como funciona', href: '/#como-funciona' },
+  { name: 'Soluções', href: '/#solucoes' }
 ];
 
 export default function Header() {
   const { scrollY } = useScroll()
+  const isMobile = useIsMobile()
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const ref = useRef(null);
@@ -28,8 +30,11 @@ export default function Header() {
     setHasScrolled(latest > 40);
   });
 
-  const headerHeight = useTransform(scrollY, [0, 400], ['80px', '72px']);
-  const logoSize = useTransform(scrollY, [0, 400], [110, 92]);
+  const dynamicHeaderHeight = useTransform(scrollY, [0, 400], ['80px', '68px']);
+  const dynamicLogoSize = useTransform(scrollY, [0, 400], [110, 84]);
+
+  const headerHeight = isMobile ? dynamicHeaderHeight : '80px';
+  const logoSize = isMobile ? dynamicLogoSize : 110;
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
@@ -91,7 +96,7 @@ export default function Header() {
                 <>
                   <button
                     type="button"
-                    className="absolute top-6 right-9 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 cursor-pointer"
+                    className="absolute top-6 right-7 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 cursor-pointer"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <span className="sr-only">Close menu</span>
@@ -155,7 +160,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen((prev) => !prev)}
             >
               <span className="sr-only">Abrir menu</span>
-              <Menu className="h-8 w-8 stroke-2 text-foreground" />
+              <Menu className="h-7 w-7 stroke-2 text-foreground" />
             </button>
           </div>
         </motion.div>

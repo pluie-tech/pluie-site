@@ -10,7 +10,7 @@ interface SectionProps {
   id: string
   color?: 'black' | 'white'
   rounded?: 'full' | 'top' | 'bottom' | 'none'
-  preSection?: React.ReactNode
+  preSection?: React.ReactNode | boolean
   className?: string
   titleClassName?: string
   contentClassName?: string
@@ -26,8 +26,12 @@ const roundClassMap = {
 }
 
 export default function Section({ ref, title, subtitle, id, color = 'white', rounded = 'none', preSection, className, titleClassName, contentClassName, children }: SectionProps) {
-  const sectionBgColorClass = color === 'black' ? 'bg-foreground' : 'bg-background'
+  const sectionBgColorClass = color === 'black' ? 'bg-foreground' : ''
   const sectionRoundedClass = roundClassMap[rounded]
+
+  if (preSection) {
+    console.log({ preSection })
+  }
 
   return (
     <section id={id} ref={ref} className={cn(sectionBgColorClass, sectionRoundedClass, className)}>
