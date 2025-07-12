@@ -180,7 +180,7 @@ function ServiceItem({
         </motion.p>
 
         <motion.div 
-          className="grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border mt-9"
+          className="grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border mt-6 sm:mt-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
