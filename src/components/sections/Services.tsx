@@ -180,7 +180,7 @@ function ServiceItem({
         </motion.p>
 
         <motion.div 
-          className="grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border mt-6 sm:mt-0"
+          className="grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border mt-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 'some' }}
@@ -189,7 +189,7 @@ function ServiceItem({
           {service.features.map((feature, featureIndex: number) => (
             <motion.div 
               key={featureIndex} 
-              className="mb-4 pt-4 sm:pb-4 sm:pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
+              className="mb-4 sm:pb-4 pt-8 xl:pt-0 xl:pr-6 xl:mr-6 xl:pb-0 xl:mb-0 border-t-3 border-border xl:border-t-0"
             >
               <motion.div>
                 <feature.icon size={40} className="w-10 h-10 mb-4" />
