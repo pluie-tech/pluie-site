@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { WithContext, LocalBusiness } from 'schema-dts'
 import './globals.css'
 
@@ -98,6 +99,7 @@ export default function RootLayout({
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
         {children}
       </body>
+      <GoogleAnalytics gaId='G-B6V7NTQDR0' />
     </html>
   )
 }
