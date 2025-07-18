@@ -33,6 +33,7 @@ interface ServiceItemProps {
   inverted?: boolean;
   index?: number;
   className?: string;
+  initialHeading: number;
 }
 
 interface ServiceContentProps {
@@ -56,6 +57,7 @@ interface ServiceFeaturesProps {
   features: Feature[];
   index?: number;
   className?: string;
+  heading: number;
 }
 
 interface ServiceImageProps {
@@ -120,7 +122,8 @@ function ServiceItem({
   imageSize = 460,
   inverted = false,
   index = 0,
-  className = ""
+  className = "",
+  initialHeading = 2
 }: ServiceItemProps) {
   return (
     <motion.div 
@@ -135,7 +138,7 @@ function ServiceItem({
           {title && <Services.Title index={index}>{title}</Services.Title>}
           {description && <Services.Description index={index}>{description}</Services.Description>}
         </div>
-        <Services.Features features={features} index={index} />
+        <Services.Features features={features} index={index} heading={title ? initialHeading + 1 : initialHeading} />
       </Services.Content>
       
       {imagePath && (
@@ -189,7 +192,7 @@ function ServiceDescription({ children, index = 0, className = "" }: ServiceDesc
   );
 }
 
-function ServiceFeatures({ features, index = 0, className = "" }: ServiceFeaturesProps) {
+function ServiceFeatures({ features, index = 0, heading = 4, className = "" }: ServiceFeaturesProps) {
   return (
     <motion.div 
       className={cn('grid xl:grid-cols-3 xl:divide-x-[3px] xl:divide-y-0 divide-border', className)}
@@ -211,12 +214,27 @@ function ServiceFeatures({ features, index = 0, className = "" }: ServiceFeature
           <motion.div>
             <feature.icon size={40} className="w-10 h-10 mb-4" />
           </motion.div>
-          <motion.p
-            role="heading" 
-            className="text-2xl leading-body font-semibold mb-3"
-          >
-            {feature.title}
-          </motion.p>
+          {heading === 4 && (
+            <motion.h4 
+              className="text-2xl leading-body font-semibold mb-3"
+            >
+              {feature.title}
+            </motion.h4>
+          )}
+          {heading === 3 && (
+            <motion.h3 
+              className="text-2xl leading-body font-semibold mb-3"
+            >
+              {feature.title}
+            </motion.h3>
+          )}
+          {heading === 2 && (
+            <motion.h2 
+              className="text-2xl leading-body font-semibold mb-3"
+            >
+              {feature.title}
+            </motion.h2>
+          )}
           <motion.p 
             className="text-lg leading-body"
           >

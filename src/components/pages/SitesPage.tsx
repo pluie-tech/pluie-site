@@ -102,6 +102,7 @@ export default function SitesPage() {
                 features={webServicesData.features}
                 imagePath={webServicesData.imagePath ? generateImageUrl(webServicesData.imagePath, 280) : undefined}
                 imageSize={280}
+                initialHeading={2}
                 inverted
               />
             </Services.List>

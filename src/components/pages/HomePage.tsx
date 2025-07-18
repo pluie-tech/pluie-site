@@ -64,6 +64,7 @@ export default function HomePage() {
                 features={service.features}
                 imagePath={service.imagePath}
                 inverted={true}
+                initialHeading={3}
                 index={index}
               />
             ))}

@@ -98,6 +98,7 @@ export default function DesignPage() {
                 features={designServicesData.features}
                 imagePath={designServicesData.imagePath ? generateImageUrl(designServicesData.imagePath, 280) : undefined}
                 imageSize={280}
+                initialHeading={2}
                 inverted
               />
             </Services.List>
@@ -113,7 +114,7 @@ export default function DesignPage() {
             transition={{ duration: 0.4, ease: 'easeOut' }}
           >
             <div>
-              <h4 className="font-heading font-black text-[40px] leading-small tracking-title mb-9">Para quem é</h4>
+              <h3 className="font-heading font-black text-[40px] leading-small tracking-title mb-9">Para quem é</h3>
               <div className="grid grid-cols-1 gap-6">
                 {targetAudience.map((audience, index) => (
                   <motion.div
