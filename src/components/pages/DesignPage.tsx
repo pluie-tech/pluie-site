@@ -31,11 +31,6 @@ const designServicesData: Service = {
       title: 'Prototipação e wireframes interativos',
       description: 'Validação de ideias antes do desenvolvimento.',
       icon: Layers
-    },
-    {
-      title: 'Implementação front-end',
-      description: 'Desenvolvimento com foco em clareza e performance.',
-      icon: Code
     }
   ]
 };
