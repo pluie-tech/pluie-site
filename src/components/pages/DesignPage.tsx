@@ -167,7 +167,7 @@ export default function DesignPage() {
         </Section>
         
         <FinalCTA
-          title="Seu design está ajudando ou atrapalhando?"
+          title="Agende uma conversa gratuita"
           subtitle="Deixe a Pluie criar algo que represente você com clareza e sofisticação."
           color="black"
           rounded="full"
