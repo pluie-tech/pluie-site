@@ -44,6 +44,7 @@ export default function NotFoundPage() {
               leftIcon={Home}
               variant="primary"
               className="text-lg px-8 py-4"
+              aria-label="Voltar para a página inicial"
             >
               Voltar para a página inicial
             </Button>

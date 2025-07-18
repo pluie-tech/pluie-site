@@ -37,7 +37,6 @@ export default function Button({
     <Component
       {...props}
       className={cn(baseClasses, variantClasses[variant], className)}
-      aria-label={String(children)}
     >
       {LeftIcon && (
         <span className="mr-2 -translate-y-0.5">

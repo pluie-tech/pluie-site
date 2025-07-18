@@ -103,6 +103,7 @@ function CTAButton({
       leftIcon={leftIcon}
       className={className}
       onClick={onClick}
+      aria-label="Fale conosco"
     >
       {children}
     </Button>

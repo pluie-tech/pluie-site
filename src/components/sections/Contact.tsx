@@ -241,7 +241,7 @@ function ContactForm({
             />
           </Contact.Field>
 
-          <Button variant="primary" className="w-full" type="submit" as="button">
+          <Button variant="primary" className="w-full" type="submit" as="button" aria-label="Enviar mensagem">
             {submitButtonText}
           </Button>
         </motion.form>

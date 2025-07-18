@@ -72,7 +72,7 @@ export default function SitesPage() {
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
       <div className="flex justify-center pt-4 md:pt-6 lg:pt-8">
-        <Button variant="outline" leftIcon={Home} href="/">
+        <Button variant="outline" leftIcon={Home} href="/" aria-label="Voltar para a página inicial">
           Voltar para a página inicial
         </Button>
       </div>
@@ -91,6 +91,7 @@ export default function SitesPage() {
                 leftIcon={WhatsAppIcon}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Fale conosco"
               >
                 Começar meu projeto
               </Button>

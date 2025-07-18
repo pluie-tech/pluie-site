@@ -113,6 +113,7 @@ export default function HowItWorks() {
                       leftIcon={step.ctaButton.icon}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Fale conosco"
                     >
                       {step.ctaButton.text}
                     </Button>

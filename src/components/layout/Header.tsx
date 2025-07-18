@@ -84,6 +84,7 @@ export default function Header() {
               href={siteConfig.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label='Fale conosco'
               className="bg-foreground text-background hover:bg-black transition-colors duration-200"
             >
                 Fale conosco
@@ -151,6 +152,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className='w-fit pb-4 pt-5 text-xl font-medium bg-foreground text-background hover:bg-black transition-colors duration-200'
+                        aria-label='Fale conosco'
                       >
                         Fale conosco
                       </Button>

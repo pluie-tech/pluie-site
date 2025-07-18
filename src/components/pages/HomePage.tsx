@@ -39,6 +39,7 @@ export default function HomePage() {
                 leftIcon={WhatsAppIcon}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label='Fale conosco'
               >
                 Agende uma conversa
               </Button>
