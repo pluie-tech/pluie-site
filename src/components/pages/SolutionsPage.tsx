@@ -3,11 +3,11 @@
 import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
-import Button from '@/components/ui/Button';
-import { Home, Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
+import { Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
+import Button from '@/components/ui/Button';
 
 type TargetAudience = {
   icon: LucideIcon,
@@ -66,14 +66,14 @@ const howWeWorkSteps = [
   'SEO técnico e integração com ferramentas como WhatsApp, Google Maps e Analytics'
 ];
 
-export default function SitesPage() {
+export default function SolutionsPage() {
   return (
     <BaseLayout footerSticky={true}>
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
       <BackToHomeButton />
 
-        <Hero id="sites-hero" className="bg-transparent p-0">
+        <Hero id="solutions-hero" className="bg-transparent p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Site profissional para empresas
@@ -87,7 +87,6 @@ export default function SitesPage() {
                 leftIcon={WhatsAppIcon}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Fale conosco"
               >
                 Começar meu projeto
               </Button>
@@ -95,7 +94,7 @@ export default function SitesPage() {
           </Hero.Content>
         </Hero>
 
-        <Section id="web-sites" className="bg-transparent mb-8 sm:mb-10 lg:mb-15">
+        <Section id="web-solutions" className="bg-transparent mb-8 sm:mb-10 lg:mb-15">
           <div className="px-2 sm:px-8 xl:px-0">
             <Services.List className="max-w-7xl mx-auto">
               <Services.Item

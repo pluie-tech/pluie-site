@@ -18,6 +18,7 @@ export { HomePage, SitesPage, DesignPage, NotFoundPage } from './pages';
 
 // UI components
 export { default as Button } from './ui/Button';
+export { default as BackToHomeButton } from './ui/BackToHomeButton';
 export { default as IconWrapper } from './ui/IconWrapper';
 export { WhatsAppIcon, LinkedInIcon } from './ui/BrandIcon';
 

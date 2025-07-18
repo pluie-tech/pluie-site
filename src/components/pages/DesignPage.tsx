@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { Hero, Services, FinalCTA, Contact, BaseLayout, Section } from '@/components';
+import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
-import Button from '@/components/ui/Button';
-import { Home, Lightbulb, LucideIcon, Palette, Monitor, Layers, Code } from 'lucide-react';
+import { Lightbulb, LucideIcon, Palette, Monitor, Layers, Code } from 'lucide-react';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
+import Button from '@/components/ui/Button';
 
 type TargetAudience = {
   icon: LucideIcon,
@@ -64,11 +64,7 @@ export default function DesignPage() {
     <BaseLayout footerSticky={true}>
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
-        <div className="flex justify-center pt-4 md:pt-6 lg:pt-8">
-          <Button variant="outline" leftIcon={Home} href="/" aria-label="Voltar para a página inicial">
-            Voltar para a página inicial
-          </Button>
-        </div>
+        <BackToHomeButton />
 
         <Hero id="design-hero" className="bg-transparent p-0">
           <Hero.Content className="py-8!">

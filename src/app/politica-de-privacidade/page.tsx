@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Section from '@/components/Section';
 import SectionTitle from '@/components/SectionTitle';
-import { BaseLayout, Button } from '@/components';
+import { BaseLayout, BackToHomeButton } from '@/components';
 import { siteConfig } from '@/siteConfig';
-import { Home } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade - Pluie',
@@ -16,11 +15,7 @@ export default function PrivacyPolicy() {
 
   return (
     <BaseLayout footerSticky={false}>
-      <div className="flex justify-center mt-4 md:mt-6 lg:mt-8">
-        <Button variant="outline" leftIcon={Home} href="/" aria-label="Voltar para a página inicial">
-          Voltar para a página inicial
-        </Button>
-      </div>
+      <BackToHomeButton />
       <Section id="privacidade" color="white" className="px-4 sm:px-8" contentClassName='mt-12 md:mt-16'>
         <div className="max-w-4xl mx-auto">
           <SectionTitle 
