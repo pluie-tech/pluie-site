@@ -32,19 +32,24 @@ export default function Header() {
 
   const dynamicHeaderHeight = useTransform(scrollY, [0, 400], ['80px', '68px']);
   const dynamicLogoSize = useTransform(scrollY, [0, 400], [110, 84]);
+  const dynamicTop = useTransform(scrollY, [0, 400], ['0px', '16px']);
 
   const headerHeight = isMobile ? dynamicHeaderHeight : '80px';
   const logoSize = isMobile ? dynamicLogoSize : 110;
+  const top = isMobile ? '0px' : dynamicTop;
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
   }, [isMobileMenuOpen]);
 
   return (
-    <header
-      className={cn("sticky z-50 bg-background max-w-7xl lg:rounded-4xl lg:mx-auto top-0 lg:top-4", {
+    <motion.header
+      className={cn("sticky z-50 bg-background max-w-7xl lg:rounded-4xl lg:mx-auto top-0", {
         'shadow-sm': hasScrolled,
       })}
+      style={{
+        top
+      }}
     >
       <nav className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8" aria-label="Top">
         <motion.div className="flex w-full items-center justify-between" style={{ height: headerHeight  }}>
@@ -59,15 +64,17 @@ export default function Header() {
           
           {/* Desktop navigation */}
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-8 font-medium">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground px-3 py-2 transition-colors duration-200 hover:underline"
-                >
-                  {item.name}
-                </Link>
+            <div className="flex items-baseline font-medium">
+              {navigation.map((item, index) => (
+                <div key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-foreground px-5 py-2 transition-colors duration-200 hover:underline"
+                  >
+                    {item.name}
+                  </Link>
+                  {index < navigation.length - 1 && <span>•</span>}
+                </div>
               ))}
             </div>
           </div>
@@ -165,6 +172,6 @@ export default function Header() {
           </div>
         </motion.div>
       </nav>
-    </header>
+    </motion.header>
   );
 }

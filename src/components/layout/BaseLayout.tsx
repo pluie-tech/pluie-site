@@ -1,6 +1,8 @@
 'use client';
 
 import { Header, Footer } from '@/components';
+import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
+
 
 interface BaseLayoutProps {
   children: React.ReactNode;
@@ -13,6 +15,7 @@ export default function BaseLayout({ children, footerSticky = false }: BaseLayou
       <Header />
       <main className="overflow-hidden relative z-20 bg-background">{children}</main>
       <Footer sticky={footerSticky} />
+      <WhatsAppFAB />
     </>
   );
 }
