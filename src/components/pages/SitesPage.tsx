@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
 import Button from '@/components/ui/Button';
-import { Home, Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
+import { Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
