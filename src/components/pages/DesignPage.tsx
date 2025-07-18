@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
-import { Lightbulb, LucideIcon, Palette, Monitor, Layers, Code } from 'lucide-react';
+import { Lightbulb, LucideIcon, Palette, Monitor, Layers } from 'lucide-react';
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
