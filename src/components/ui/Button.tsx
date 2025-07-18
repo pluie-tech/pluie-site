@@ -29,8 +29,8 @@ export default function Button({
   
   // Classes específicas para cada variante
   const variantClasses = {
-    primary: "px-6 py-4 bg-primary text-foreground shadow hover:bg-primary/90",
-    outline: "px-6 py-3 pb-2.5 border border-border-dark bg-background text-foreground hover:bg-gray-100 shadow-button"
+    primary: "px-6 pt-4 pb-3.5 bg-primary text-foreground shadow hover:bg-primary/90",
+    outline: "px-6 pt-3 pb-2.5 border border-border-dark bg-background text-foreground hover:bg-gray-100 shadow-button"
   };
 
   return (
