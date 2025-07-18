@@ -66,18 +66,18 @@ const howWeWorkSteps = [
   'SEO técnico e integração com ferramentas como WhatsApp, Google Maps e Analytics'
 ];
 
-export default function SolutionsPage() {
+export default function SitesPage() {
   return (
     <BaseLayout footerSticky={true}>
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
       <div className="flex justify-center pt-4 md:pt-6 lg:pt-8">
-        <Button variant="outline" leftIcon={Home} href="/">
+        <Button variant="outline" leftIcon={Home} href="/" aria-label="Voltar para a página inicial">
           Voltar para a página inicial
         </Button>
       </div>
 
-        <Hero id="solutions-hero" className="bg-transparent p-0">
+        <Hero id="sites-hero" className="bg-transparent p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Site profissional para empresas
@@ -91,6 +91,7 @@ export default function SolutionsPage() {
                 leftIcon={WhatsAppIcon}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Fale conosco"
               >
                 Começar meu projeto
               </Button>
@@ -98,7 +99,7 @@ export default function SolutionsPage() {
           </Hero.Content>
         </Hero>
 
-        <Section id="web-solutions" className="bg-transparent mb-8 sm:mb-10 lg:mb-15">
+        <Section id="web-sites" className="bg-transparent mb-8 sm:mb-10 lg:mb-15">
           <div className="px-2 sm:px-8 xl:px-0">
             <Services.List className="max-w-7xl mx-auto">
               <Services.Item

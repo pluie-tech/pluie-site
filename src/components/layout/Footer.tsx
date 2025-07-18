@@ -13,11 +13,9 @@ type FooterProps = {
   sticky?: boolean
 }
 
-const navigation = [
-  { name: 'Quem somos', href: '#quem-somos' },
-  { name: 'Como funciona', href: '#como-funciona' },
-  { name: 'Soluções', href: '#solucoes' },
-  { name: 'Contato', href: '#contato' }
+const solutions = [
+  { name: 'Sites profissionais', href: '/sites' },
+  { name: 'Design & UX', href: '/design' }
 ]
 
 const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.'
@@ -46,11 +44,11 @@ export default function Footer({ sticky = false }: FooterProps) {
             <p className="md:mb-6 max-w-64">{description}</p>
           </div>
 
-          {/* Quick Links */}
+          {/* Solutions */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Navegação</h3>
+            <h3 className="text-lg font-semibold mb-3">Soluções</h3>
             <ul className="space-y-3 font-medium">
-              {navigation.map((link, index) => (
+              {solutions.map((link, index) => (
                 <li key={index}>
                   <Link key={link.name} href={link.href} className="text-background hover:underline">
                     {link.name}

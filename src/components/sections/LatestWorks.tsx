@@ -108,7 +108,7 @@ function Work({ name, description, image, ctaButton, index }: Work & { index: nu
           viewport={{ once: true, amount: 'some' }}
           transition={{ duration: 0.4, delay: index * 0.3 + 0.6, ease: 'easeOut' }}
         >
-          <Button variant="outline" href={ctaButton.href} target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" href={ctaButton.href} target="_blank" rel="noopener noreferrer" aria-label={ctaButton.text}>
             {ctaButton.text}
           </Button>
         </motion.div>

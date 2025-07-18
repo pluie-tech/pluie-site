@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
   return (
     <BaseLayout footerSticky={false}>
       <div className="flex justify-center mt-4 md:mt-6 lg:mt-8">
-        <Button variant="outline" leftIcon={Home} href="/">
+        <Button variant="outline" leftIcon={Home} href="/" aria-label="Voltar para a página inicial">
           Voltar para a página inicial
         </Button>
       </div>

@@ -13,6 +13,9 @@ export { default as LatestWorks } from './sections/LatestWorks';
 export { default as FinalCTA } from './sections/FinalCTA';
 export { default as Contact } from './sections/Contact';
 
+// Page components
+export { HomePage, SitesPage, DesignPage, NotFoundPage } from './pages';
+
 // UI components
 export { default as Button } from './ui/Button';
 export { default as IconWrapper } from './ui/IconWrapper';
