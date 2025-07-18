@@ -20,7 +20,8 @@ export default function Home() {
               /images/480/hero.png 480w,
               /images/640/hero.png 640w,
               /images/800/hero.png 800w,
-              /images/1152/hero.png 1152w,
+               /images/720/hero.png 720w,
+              /images/1024/hero.png 1024w,
               /images/full/hero.png 1400w
             `}
             fetchPriority="high"
