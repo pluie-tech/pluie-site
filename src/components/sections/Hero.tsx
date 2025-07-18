@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
 interface HeroProps {
   children: ReactNode;
@@ -36,7 +37,7 @@ function HeroRoot({ children, id = "hero", className = "" }: HeroProps) {
   return (
     <section 
       id={id}
-      className={`relative flex items-center justify-center p-2 sm:p-7 bg-background ${className}`}
+      className={cn("relative flex items-center justify-center p-2 sm:p-7 bg-background", className)}
     >
       <div className="relative w-full rounded-3xl overflow-hidden">
         {children}
@@ -48,7 +49,10 @@ function HeroRoot({ children, id = "hero", className = "" }: HeroProps) {
 function HeroTitle({ children, className = "" }: HeroTitleProps) {
   return (
     <motion.h1 
-      className={`text-[34px] font-black tracking-title leading-small text-background sm:text-[54px] md:text-7xl font-heading ${className}`}
+      className={cn(
+        "text-[34px] font-black tracking-title leading-small text-background sm:text-[54px] md:text-7xl font-heading",
+        className
+      )}
       initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
@@ -61,7 +65,10 @@ function HeroTitle({ children, className = "" }: HeroTitleProps) {
 function HeroSubtitle({ children, className = "" }: HeroSubtitleProps) {
   return (
     <motion.p 
-      className={`mt-6 sm:text-xl md:text-2xl leading-body text-background max-w-xl mx-auto ${className}`}
+      className={cn(
+        "mt-6 sm:text-xl md:text-2xl leading-body text-background max-w-xl mx-auto",
+        className
+      )}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
@@ -81,7 +88,10 @@ function HeroBackgroundImage({
   return (
     <img
       alt={alt}
-      className={`object-cover object-center absolute w-full h-full inset-0 text-transparent ${className}`}
+      className={cn(
+        "object-cover object-center absolute w-full h-full inset-0 text-transparent",
+        className
+      )}
       srcSet={srcSet}
       src={src}
       fetchPriority={fetchPriority}
@@ -92,7 +102,10 @@ function HeroBackgroundImage({
 function HeroAction({ children, className = "" }: HeroActionProps) {
   return (
     <motion.div 
-      className={`mt-10 flex items-center justify-center gap-x-6 ${className}`}
+      className={cn(
+        "mt-10 flex items-center justify-center gap-x-6",
+        className
+      )}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
@@ -105,7 +118,10 @@ function HeroAction({ children, className = "" }: HeroActionProps) {
 // Content wrapper for the hero content
 function HeroContent({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pn-28 lg:px-8 ${className}`}>
+    <div className={cn(
+      "relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-28 lg:px-8",
+      className
+    )}>
       <motion.div 
         className="text-center"
         initial={{ opacity: 0, y: 30 }}

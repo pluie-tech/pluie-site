@@ -1,6 +1,7 @@
 "use client";
 
 import { Hero, About, HowItWorks, Services, FinalCTA, Contact, BaseLayout } from '@/components';
+import { servicesData } from '@/components/sections/Services';
 import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
 import Button from '@/components/ui/Button';
 import { WhatsAppIcon } from '@/components';
@@ -46,9 +47,46 @@ export default function Home() {
         </Hero>
         <About />
         <HowItWorks />
-        <Services />
-        <FinalCTA />
-        <Contact />
+        <Services
+          id="solucoes"
+          title="Soluções"
+          subtitle="De sites a sistemas completos, desenvolvemos o que o seu negócio precisa. Sempre sob medida, para resolver seu desafio."
+          color="black"
+          rounded="top"
+        >
+          <Services.List>
+            {servicesData.map((service, index) => (
+              <Services.Item
+                key={index}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                imagePath={service.imagePath}
+                inverted={true}
+                index={index}
+              />
+            ))}
+          </Services.List>
+        </Services>
+        <FinalCTA
+          title="Agende uma conversa gratuita"
+          subtitle="A gente escuta, entende e mostra como pode ajudar."
+        >
+          <FinalCTA.Action>
+            <FinalCTA.Button>
+              Fale conosco
+            </FinalCTA.Button>
+          </FinalCTA.Action>
+        </FinalCTA>
+        <Contact>
+          <Contact.Container>
+            <Contact.Info
+              title="Pronto para começar seu projeto?"
+              subtitle="Conte com a Pluie para desenvolver ou aprimorar sua solução digital."
+            />
+            <Contact.Form />
+          </Contact.Container>
+        </Contact>
         <WhatsAppFAB />
       </main>
     </BaseLayout>

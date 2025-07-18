@@ -23,3 +23,10 @@ export function generateWhatsappLink(phoneNumber: string, message: string): stri
   const whatsAppLink = `${baseUrl}/${formattedNumber}?${searchParams.toString()}`
   return whatsAppLink
 }
+
+export function generateImageUrl(imagePath: string, size: number = 280): string {
+  if (process.env.NODE_ENV === 'development') {
+    return `/images${imagePath}`
+  }
+  return `/images/${size}${imagePath}`
+}
