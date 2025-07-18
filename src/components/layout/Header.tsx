@@ -67,12 +67,12 @@ export default function Header() {
             <div className="flex items-baseline font-medium">
               {navigation.map((item, index) => (
                 <div key={item.name}>
-                  <Link
+                  <a
                     href={item.href}
                     className="text-foreground px-5 py-2 transition-colors duration-200 hover:underline"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                   {index < navigation.length - 1 && <span>•</span>}
                 </div>
               ))}

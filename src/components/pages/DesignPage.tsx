@@ -95,7 +95,6 @@ export default function DesignPage() {
           <div className="px-2 sm:px-8 xl:px-0">
             <Services.List className="max-w-7xl mx-auto">
               <Services.Item
-                title="O que entregamos"
                 features={designServicesData.features}
                 imagePath={designServicesData.imagePath ? generateImageUrl(designServicesData.imagePath, 280) : undefined}
                 imageSize={280}

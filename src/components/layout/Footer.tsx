@@ -3,7 +3,6 @@
 import { Linkedin, Mail } from 'lucide-react'
 import { useState } from 'react'
 import Logo from '../ui/Logo'
-import Link from 'next/link'
 import { WhatsAppIcon } from '../ui/BrandIcon'
 import { siteConfig } from '@/siteConfig'
 import { useMotionValueEvent, useScroll } from 'motion/react'
@@ -50,9 +49,9 @@ export default function Footer({ sticky = false }: FooterProps) {
             <ul className="space-y-3 font-medium">
               {solutions.map((link, index) => (
                 <li key={index}>
-                  <Link key={link.name} href={link.href} className="text-background hover:underline">
+                  <a key={link.name} href={link.href} className="text-background hover:underline">
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -71,15 +70,15 @@ export default function Footer({ sticky = false }: FooterProps) {
             </div>
             {/* Social Links */}
             <div className="flex space-x-4 text-lg mt-4">
-              <Link href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <WhatsAppIcon className="text-background fill-background" />
-              </Link>
-              <Link href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              </a>
+              <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="text-background stroke-2" />
-              </Link>
-              <Link href={`mailto:${siteConfig.email}`} target="_blank" rel="noopener noreferrer" aria-label="E-mail">
+              </a>
+              <a href={`mailto:${siteConfig.email}`} target="_blank" rel="noopener noreferrer" aria-label="E-mail">
                 <Mail className="text-background stroke-2" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
