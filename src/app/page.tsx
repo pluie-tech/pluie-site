@@ -19,8 +19,7 @@ export default function Home() {
               /images/400/hero.png 400w,
               /images/480/hero.png 480w,
               /images/640/hero.png 640w,
-              /images/720/hero.png 720w,
-              /images/1024/hero.png 1024w,
+              /images/800/hero.png 800w,
               /images/1200/hero.png 1200w,
               /images/full/hero.png 1400w
             `}
