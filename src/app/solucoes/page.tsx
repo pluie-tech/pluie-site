@@ -8,17 +8,11 @@ import { Home, Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react'
 import { WhatsAppIcon } from '@/components';
 import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
-import { Metadata } from 'next';
 
 type TargetAudience = {
   icon: LucideIcon,
   name: string,
 }
-
-export const metadata: Metadata = {
-  title: 'Soluções digitais sob medida | Pluie',
-  description: 'Criamos sites que unem performance, identidade visual e experiência do usuário. Da arquitetura à publicação, entregamos soluções pensadas para atrair, converter e fidelizar seus clientes.'
-};
 
 const webServicesData: Service = {
   imagePath: '/services/applications.jpg',
