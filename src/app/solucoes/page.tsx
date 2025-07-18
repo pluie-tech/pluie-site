@@ -157,7 +157,7 @@ export default function SolutionsPage() {
                       </span>
                       <h6 className="text-2xl font-semibold text-azulao">{step}</h6>
                     </motion.div>
-                    {index < howWeWorkSteps.length - 1 && <div className="absolute top-[33px] left-3.5 border-l-2 h-full border-dashed border-azulao"></div>}
+                    {index < howWeWorkSteps.length - 1 && <div className="absolute top-[33px] left-[15px] border-l-2 h-full border-dashed border-azulao"></div>}
                   </div>
                 ))}
               </div>
@@ -170,6 +170,7 @@ export default function SolutionsPage() {
           subtitle="A gente escuta, entende e mostra como pode ajudar."
           color="black"
           rounded="full"
+          className="py-13 sm:py-15 lg:py-20"
         >
           <FinalCTA.Action>
             <FinalCTA.Button>
