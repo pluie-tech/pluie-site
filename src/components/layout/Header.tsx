@@ -64,15 +64,17 @@ export default function Header() {
           
           {/* Desktop navigation */}
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-8 font-medium">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground px-3 py-2 transition-colors duration-200 hover:underline"
-                >
-                  {item.name}
-                </Link>
+            <div className="flex items-baseline font-medium">
+              {navigation.map((item, index) => (
+                <div key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-foreground px-5 py-2 transition-colors duration-200 hover:underline"
+                  >
+                    {item.name}
+                  </Link>
+                  {index < navigation.length - 1 && <span>•</span>}
+                </div>
               ))}
             </div>
           </div>
