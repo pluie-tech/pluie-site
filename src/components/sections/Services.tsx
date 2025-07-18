@@ -211,11 +211,12 @@ function ServiceFeatures({ features, index = 0, className = "" }: ServiceFeature
           <motion.div>
             <feature.icon size={40} className="w-10 h-10 mb-4" />
           </motion.div>
-          <motion.h4 
+          <motion.p
+            role="heading" 
             className="text-2xl leading-body font-semibold mb-3"
           >
             {feature.title}
-          </motion.h4>
+          </motion.p>
           <motion.p 
             className="text-lg leading-body"
           >
