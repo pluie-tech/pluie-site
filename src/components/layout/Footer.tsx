@@ -14,7 +14,7 @@ type FooterProps = {
 
 const solutions = [
   { name: 'Sites profissionais', href: '/sites' },
-  { name: 'Design & UX', href: '/design' }
+  { name: 'Design UX/UI', href: '/design' }
 ]
 
 const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.'
