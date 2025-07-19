@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Política de Privacidade da Pluie. Saiba como coletamos, usamos, armazenamos e protegemos seus dados pessoais.',
 };
 
-const lastUpdated = "11 de julho de 2025";
+const lastUpdated = "19 de julho de 2025";
 
 export default function PrivacyPolicy() {
 

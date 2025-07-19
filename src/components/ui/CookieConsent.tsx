@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Cookie } from 'lucide-react';
+import { X } from 'lucide-react';
 import Button from './Button';
 import { cn } from '@/lib/utils';
 import { useConsent } from '@/contexts/ConsentContext';
@@ -38,28 +38,18 @@ export default function CookieConsent({ className }: CookieConsentProps) {
             damping: 30
           }}
         >
-          <div className="p-6">
+          <div className="p-6 relative">
             {/* Header */}
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-50 rounded-lg">
-                  <Cookie className="w-5 h-5 text-blue-600" />
-                </div>
-                <h3 className="font-semibold text-gray-900 text-lg">
-                  Melhorar sua experiência
-                </h3>
-              </div>
-              <button
-                onClick={rejectCookies}
-                className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="Fechar"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            <button
+              onClick={rejectCookies}
+              className="absolute top-5 right-5 p-1 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors cursor-pointer"
+              aria-label="Fechar"
+            >
+              <X className="w-4 h-4" />
+            </button>
 
             {/* Content */}
-            <div className="space-y-3 mb-6">
+            <div className="space-y-3 mb-6 pr-8">
               <p className="text-gray-700 text-sm leading-relaxed">
                 Utilizamos o Google Analytics para entender como você interage com nosso site e melhorar continuamente nossos serviços. 
                 Os dados coletados são completamente anônimos e não permitem sua identificação.
@@ -96,7 +86,7 @@ export default function CookieConsent({ className }: CookieConsentProps) {
 
             {/* Fine print */}
             <p className="text-xs text-gray-500 mt-3 text-center">
-              Você pode alterar suas preferências a qualquer momento na nossa política de privacidade.
+              Você pode alterar suas preferências a qualquer momento na nossa página de política de privacidade.
             </p>
           </div>
         </motion.div>
