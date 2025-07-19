@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Section from '@/components/Section';
 import SectionTitle from '@/components/SectionTitle';
-import { BaseLayout, BackToHomeButton } from '@/components';
+import { BaseLayout, BackToHomeButton, CookiePreferences } from '@/components';
 import { siteConfig } from '@/siteConfig';
 
 export const metadata: Metadata = {
@@ -151,7 +151,7 @@ export default function PrivacyPolicy() {
             <section className="border-l-4 border-gray-800 pl-6">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Dados de analytics</h2>
               <p className="text-gray-700 leading-relaxed mb-3">
-                Para melhorar nosso site e serviços, coletamos dados anônimos sobre como os visitantes interagem com nossas páginas:
+                Utilizamos o Google Analytics 4 (GA4) para entender como os visitantes interagem com nosso site e melhorar continuamente nossos serviços. Esse serviço coleta informações anônimas como:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4 mb-4">
                 <li>Tipo de navegador utilizado</li>
@@ -161,22 +161,32 @@ export default function PrivacyPolicy() {
               </ul>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <p className="text-sm">
-                  <strong>🔒 Privacidade Garantida:</strong> Estes dados são completamente anônimos e não podem ser vinculados à sua identidade. Não utilizamos cookies nem coletamos endereços IP.
+                  Esses dados são coletados por meio de cookies e tecnologias similares. O Google Analytics utiliza técnicas de anonimização, e os relatórios gerados não contêm informações que permitam a identificação direta de visitantes. O endereço IP é processado apenas para fins de geolocalização e não é armazenado.
                 </p>
+                <p className="text-sm">
+                  Para mais informações sobre como o Google Analytics coleta e processa dados, você pode visitar a página de
+                  <a href="https://policies.google.com/technologies/partner-sites" className="text-blue-600 hover:underline"> políticas de privacidade do Google</a>.
+                </p>
+              </div>
+              
+              {/* Cookie Preferences */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                <h4 className="text-sm font-semibold text-blue-900 mb-3">Gerenciar preferências de cookies</h4>
+                <CookiePreferences showIcon={false} />
               </div>
             </section>
 
-            {/* 8. Alterações */}
+            {/* 9. Alterações */}
             <section className="border-l-4 border-gray-800 pl-6">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Alterações nesta Política</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Alterações nesta Política</h2>
               <p className="text-gray-700 leading-relaxed">
                 Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou na legislação aplicável. Recomendamos que você revise esta página regularmente para estar ciente de eventuais alterações.
               </p>
             </section>
 
-            {/* 9. Contato */}
+            {/* 10. Contato */}
             <section className="border-l-4 border-gray-800 pl-6">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Como nos contatar</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Como nos contatar</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Se você tiver dúvidas sobre esta Política de Privacidade ou sobre como tratamos seus dados pessoais, entre em contato conosco:
               </p>
