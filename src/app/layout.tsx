@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { WithContext, LocalBusiness } from 'schema-dts'
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
+import { ConsentProvider } from '@/contexts/ConsentContext'
 
 const cabin = Cabin({
   variable: '--font-cabin',
@@ -97,9 +98,11 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </head>
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
-        {children}
+        <ConsentProvider>
+          {children}
+          <GoogleAnalytics gaId="G-B6V7NTQDR0" />;
+        </ConsentProvider>
       </body>
-      <GoogleAnalytics gaId='G-B6V7NTQDR0' />
     </html>
   )
 }
