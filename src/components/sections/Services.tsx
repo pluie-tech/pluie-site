@@ -209,7 +209,7 @@ function ServiceFeatures({ features, index = 0, heading = 4, className = "" }: S
           )}
         >
           {featureIndex > 0 && (
-            <hr className="border-t-3 border-border xl:border-t-0 my-4 xl:mt-0" />
+            <hr className="lg:hidden border-t-3 border-border xl:border-t-0 my-4 xl:mt-0" />
           )}
           <motion.div>
             <feature.icon size={40} className="w-10 h-10 mb-4" />
