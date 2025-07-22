@@ -100,7 +100,7 @@ export default function RootLayout({
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
         <ConsentProvider>
           {children}
-          <GoogleAnalytics gaId="G-B6V7NTQDR0" />;
+          <GoogleAnalytics gaId="G-B6V7NTQDR0" />
         </ConsentProvider>
       </body>
     </html>
