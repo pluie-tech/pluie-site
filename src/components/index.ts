@@ -14,7 +14,7 @@ export { default as FinalCTA } from './sections/FinalCTA';
 export { default as Contact } from './sections/Contact';
 
 // Page components
-export { HomePage, SitesPage, DesignPage, NotFoundPage } from './pages';
+export { HomePage, SitesPage, DesignPage, NotFoundPage, SchedulePage } from './pages';
 
 // UI components
 export { default as Button } from './ui/Button';
