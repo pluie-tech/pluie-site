@@ -140,7 +140,6 @@ export default function Header() {
                     >
                       <WhatsAppHeaderButton 
                         className='w-fit pb-4 pt-5 text-xl font-medium'
-                        showIcon={false}
                       />
                     </motion.li>
                   </ul>

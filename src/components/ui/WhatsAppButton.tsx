@@ -96,6 +96,7 @@ export const WhatsAppHeaderButton = (props: Omit<WhatsAppButtonWithMessageProps,
     <WhatsAppButton 
       variant="primary" 
       className={`bg-foreground text-background hover:bg-black transition-colors duration-200 ${className || ''}`}
+      showIcon={false}
       {...otherProps}
     />
   );
