@@ -4,10 +4,9 @@ import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useTransform } from 'motion/react'
 import Logo from '../ui/Logo';
 import { useEffect, useRef, useState } from 'react';
-import Button from '../ui/Button';
 import { useClickAway } from '@/hooks/useClickAway';
 import { Menu, X } from 'lucide-react';
-import { siteConfig } from '@/siteConfig';
+import { WhatsAppHeaderButton } from '../ui/WhatsAppButton';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/useIsMobile';
 
@@ -19,7 +18,7 @@ const navigation = [
 
 export default function Header() {
   const { scrollY } = useScroll()
-  const isMobile = useIsMobile()
+  const isMobile = useIsMobile(1024)
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const ref = useRef(null);
@@ -80,15 +79,7 @@ export default function Header() {
           </div>
 
           <div className="hidden lg:inline">
-            <Button
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label='Fale conosco'
-              className="bg-foreground text-background hover:bg-black transition-colors duration-200"
-            >
-                Fale conosco
-            </Button>
+            <WhatsAppHeaderButton />
           </div>
 
           {/* Mobile navigation */}
@@ -125,14 +116,14 @@ export default function Header() {
                             key={item.name}
                             className="w-full text-center"
                           >
-                            <Link
+                            <a
                               key={item.name}
                               href={item.href}
                               onClick={() => setMobileMenuOpen(false)}
                               className="text-foreground py-4 font-heading text-2xl transition-colors duration-200 hover:underline"
                             >
                               {item.name}
-                            </Link>
+                            </a>
                           </motion.li>
                       );
                     })}
@@ -147,15 +138,10 @@ export default function Header() {
                       }}
                       className="mt-10"
                     >
-                      <Button
-                        href={siteConfig.whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='w-fit pb-4 pt-5 text-xl font-medium bg-foreground text-background hover:bg-black transition-colors duration-200'
-                        aria-label='Fale conosco'
-                      >
-                        Fale conosco
-                      </Button>
+                      <WhatsAppHeaderButton 
+                        className='w-fit pb-4 pt-5 text-xl font-medium'
+                        showIcon={false}
+                      />
                     </motion.li>
                   </ul>
                 </>

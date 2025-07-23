@@ -3,9 +3,7 @@
 import { Hero, About, HowItWorks, Services, FinalCTA, Contact, BaseLayout } from '@/components';
 import { servicesData } from '@/components/sections/Services';
 import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
-import Button from '@/components/ui/Button';
-import { WhatsAppIcon } from '@/components';
-import { siteConfig } from '@/siteConfig';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 export default function HomePage() {
   return (
@@ -33,15 +31,10 @@ export default function HomePage() {
             Entendemos as necessidades da sua empresa e criamos soluções digitais sob medida para promover eficiência e crescimento.
           </Hero.Subtitle>
           <Hero.Action>
-            <Button
-              href={siteConfig.whatsappLink}
-              leftIcon={WhatsAppIcon}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label='Fale conosco'
-            >
-              Agende uma conversa
-            </Button>
+            <WhatsAppButton
+              text="Agende uma conversa"
+              messageType="agendar"
+            />
           </Hero.Action>
         </Hero.Content>
       </Hero>

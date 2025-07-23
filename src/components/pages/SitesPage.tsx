@@ -3,10 +3,8 @@
 import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
-import Button from '@/components/ui/Button';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import { Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
-import { WhatsAppIcon } from '@/components';
-import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
 
 type TargetAudience = {
@@ -82,15 +80,10 @@ export default function SitesPage() {
               Criamos sites que unem performance, identidade visual e experiência do usuário. Da arquitetura à publicação, entregamos soluções pensadas para atrair, converter e fidelizar seus clientes.
             </Hero.Subtitle>
             <Hero.Action>
-              <Button
-                href={siteConfig.whatsappLink}
-                leftIcon={WhatsAppIcon}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Fale conosco"
-              >
-                Começar meu projeto
-              </Button>
+              <WhatsAppButton
+                text="Começar meu projeto"
+                messageType="sites"
+              />
             </Hero.Action>
           </Hero.Content>
         </Hero>

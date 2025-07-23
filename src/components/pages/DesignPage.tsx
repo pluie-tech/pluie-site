@@ -4,10 +4,8 @@ import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
 import { Service } from '@/types';
 import { Lightbulb, LucideIcon, Palette, Monitor, Layers } from 'lucide-react';
-import { WhatsAppIcon } from '@/components';
-import { siteConfig } from '@/siteConfig';
 import { generateImageUrl } from '@/lib/utils';
-import Button from '@/components/ui/Button';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 type TargetAudience = {
   icon: LucideIcon,
@@ -78,15 +76,10 @@ export default function DesignPage() {
               A identidade visual e a experiência do seu site ou sistema são o primeiro ponto de contato com o cliente. Criamos marcas e interfaces coerentes, limpas e memoráveis.
             </motion.p>
             <Hero.Action>
-              <Button
-                href={siteConfig.whatsappLink}
-                leftIcon={WhatsAppIcon}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label='Fale conosco'
-              >
-                Começar meu projeto
-              </Button>
+              <WhatsAppButton
+                text="Começar meu projeto"
+                messageType="design"
+              />
             </Hero.Action>
           </Hero.Content>
         </Hero>

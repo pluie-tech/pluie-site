@@ -4,8 +4,7 @@ import { BicepsFlexed, Calendar, CalendarCheck, FileText } from 'lucide-react'
 import IconWrapper from '../ui/IconWrapper'
 import Section from '../Section'
 import { motion } from 'motion/react'
-import Button from '../ui/Button'
-import { siteConfig } from '@/siteConfig'
+import WhatsAppButton from '../ui/WhatsAppButton'
 
 export default function HowItWorks() {
   const title = 'Como funciona';
@@ -18,7 +17,7 @@ export default function HowItWorks() {
       ctaButton: {
         text: 'Agendar',
         icon: Calendar,
-        link: siteConfig.whatsappLink
+        messageType: 'agendar' as const
       }
     },
     {
@@ -108,15 +107,11 @@ export default function HowItWorks() {
                   <div
                     className="mt-6 xl:mt-9"
                   >
-                    <Button
-                      href={step.ctaButton.link}
+                    <WhatsAppButton
+                      text={step.ctaButton.text}
+                      messageType={step.ctaButton.messageType}
                       leftIcon={step.ctaButton.icon}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Fale conosco"
-                    >
-                      {step.ctaButton.text}
-                    </Button>
+                    />
                   </div>
                 )}
               </div>

@@ -22,6 +22,7 @@ export { default as BackToHomeButton } from './ui/BackToHomeButton';
 export { default as CookieConsent } from './ui/CookieConsent';
 export { default as CookiePreferences } from './ui/CookiePreferences';
 export { default as IconWrapper } from './ui/IconWrapper';
+export { default as WhatsAppButton, WhatsAppCTAButton, WhatsAppHeaderButton, WhatsAppFAB } from './ui/WhatsAppButton';
 export { WhatsAppIcon, LinkedInIcon } from './ui/BrandIcon';
 
 // Shared components
@@ -31,3 +32,4 @@ export { default as SectionTitle } from './SectionTitle';
 // Type exports
 export type { ButtonProps } from './ui/Button';
 export type { BrandIconType, WhatsAppIconType, LinkedInIconType } from './ui/BrandIcon';
+export type { WhatsAppButtonProps, MessageType } from './ui/WhatsAppButton';
