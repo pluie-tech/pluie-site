@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
 import { WithContext, LocalBusiness } from 'schema-dts'
 import './globals.css'
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { ConsentProvider } from '@/contexts/ConsentContext'
 
 const cabin = Cabin({
@@ -96,12 +96,11 @@ export default function RootLayout({
     <html lang="pt-BR" className="scroll-smooth">
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <GoogleTagManager gtmId="GTM-5VLQP24G" />
       </head>
       <body className={`${cabin.variable} ${epilogue.variable} antialiased`}>
         <ConsentProvider>
           {children}
-          <GoogleAnalytics gaId="G-B6V7NTQDR0" />
-          <GoogleTagManager gtmId="AW-17383313168" />
         </ConsentProvider>
       </body>
     </html>
