@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Epilogue, Cabin } from 'next/font/google'
 import { WithContext, LocalBusiness } from 'schema-dts'
 import './globals.css'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { ConsentProvider } from '@/contexts/ConsentContext'
 
 const cabin = Cabin({
@@ -101,6 +101,7 @@ export default function RootLayout({
         <ConsentProvider>
           {children}
           <GoogleAnalytics gaId="G-B6V7NTQDR0" />
+          <GoogleTagManager gtmId="AW-17383313168" />
         </ConsentProvider>
       </body>
     </html>
