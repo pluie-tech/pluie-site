@@ -19,7 +19,9 @@ export default function HomePage() {
             /images/800/hero.png 800w,
               /images/720/hero.png 720w,
             /images/1024/hero.png 1024w,
-            /images/full/hero.png 1400w
+            /images/1400/hero.png 1400w,
+            /images/1600/hero.png 1600w,
+            /images/1920/hero.png 1920w,
           `}
           fetchPriority="high"
         />
