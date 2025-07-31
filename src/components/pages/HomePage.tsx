@@ -1,7 +1,7 @@
 "use client";
 
 import { Hero, About, HowItWorks, Services, FinalCTA, Contact, BaseLayout } from '@/components';
-import { servicesData } from '@/components/sections/Services';
+import { homeServicesData } from '@/data/services';
 import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
@@ -50,7 +50,7 @@ export default function HomePage() {
         rounded="top"
       >
         <Services.List>
-          {servicesData.map((service, index) => (
+          {homeServicesData.map((service, index) => (
             <Services.Item
               key={index}
               title={service.title}
