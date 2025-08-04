@@ -43,11 +43,11 @@ export default function Section({ ref, title, subtitle, id, color = 'white', rou
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {(title || subtitle) && (
-          <div className="text-center px-5">
+          <div className="text-center px-5 mb-16">
             <SectionTitle title={title || ''} subtitle={subtitle} color={color === 'black' ? 'white' : 'black'} className={titleClassName} />
           </div>
         )}
-        <div className={cn("mx-auto mt-16", contentClassName)}>{children}</div>
+        <div className={cn("mx-auto", contentClassName)}>{children}</div>
       </motion.div>
     </section>
   )

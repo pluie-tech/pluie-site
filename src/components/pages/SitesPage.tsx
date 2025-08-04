@@ -39,7 +39,7 @@ export default function SitesPage() {
 
       <BackToHomeButton />
 
-        <Hero id="sites-hero" className="bg-transparent p-0">
+        <Hero id="sites-hero" className="p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Site profissional para empresas

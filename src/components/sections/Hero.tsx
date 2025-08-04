@@ -37,7 +37,7 @@ function HeroRoot({ children, id = "hero", className = "" }: HeroProps) {
   return (
     <section 
       id={id}
-      className={cn("relative flex items-center justify-center p-2 sm:p-7 bg-background", className)}
+      className={cn("relative flex items-center justify-center p-2 sm:p-7", className)}
     >
       <div className="relative w-full rounded-3xl overflow-hidden">
         {children}

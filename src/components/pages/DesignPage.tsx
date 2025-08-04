@@ -84,7 +84,7 @@ export default function DesignPage() {
 
         <BackToHomeButton />
 
-        <Hero id="design-hero" className="bg-transparent p-0">
+        <Hero id="design-hero" className="p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Design estratégico pela Pluie
