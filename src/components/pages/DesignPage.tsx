@@ -6,6 +6,7 @@ import { Service } from '@/types';
 import { Lightbulb, LucideIcon, Palette, Monitor, Layers } from 'lucide-react';
 import { generateImageUrl } from '@/lib/utils';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import { generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema';
 
 type TargetAudience = {
   icon: LucideIcon,
@@ -53,8 +54,32 @@ const targetAudience: TargetAudience[] = [
 ];
 
 export default function DesignPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://pluie.com.br' },
+    { name: 'Design', url: 'https://pluie.com.br/design' }
+  ]);
+
+  const serviceSchema = generateServiceSchema({
+    name: 'Design Estratégico e UX/UI',
+    description: 'A identidade visual e a experiência do seu site ou sistema são o primeiro ponto de contato com o cliente. Criamos marcas e interfaces coerentes, limpas e memoráveis.',
+    url: 'https://pluie.com.br/design',
+    provider: {
+      name: 'Pluie',
+      url: 'https://pluie.com.br'
+    },
+    serviceType: 'Design Service'
+  });
+
   return (
     <BaseLayout footerSticky={true}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
         <BackToHomeButton />

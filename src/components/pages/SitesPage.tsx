@@ -6,6 +6,7 @@ import { Service } from '@/types';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import { Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
 import { generateImageUrl } from '@/lib/utils';
+import { generateBreadcrumbSchema, generateServiceSchema, serializeSchema } from '@/lib/schema';
 
 type TargetAudience = {
   icon: LucideIcon,
@@ -65,8 +66,32 @@ const howWeWorkSteps = [
 ];
 
 export default function SitesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://pluie.com.br' },
+    { name: 'Sites', url: 'https://pluie.com.br/sites' }
+  ]);
+
+  const serviceSchema = generateServiceSchema({
+    name: 'Desenvolvimento de Sites Profissionais',
+    description: 'Criamos sites que unem performance, identidade visual e experiência do usuário. Da arquitetura à publicação, entregamos soluções pensadas para atrair, converter e fidelizar seus clientes.',
+    url: 'https://pluie.com.br/sites',
+    provider: {
+      name: 'Pluie',
+      url: 'https://pluie.com.br'
+    },
+    serviceType: 'Web Development'
+  });
+
   return (
     <BaseLayout footerSticky={true}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeSchema(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeSchema(serviceSchema) }}
+      />
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
       <BackToHomeButton />
