@@ -1,0 +1,17 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g transform="translate(50 50)">
+    <defs>
+      <path id="pointed-petal" fill="#FF6633" opacity="0.4" d="M 0,-60 Q -30,-30 0,0 Q 30,-30 0,-60 Z"/>
+    </defs>
+
+    <use href="#pointed-petal" transform="rotate(0) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(45) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(90) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(135) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(180) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(225) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(270) translate(0 10)"/>
+    <use href="#pointed-petal" transform="rotate(315) translate(0 10)"/>
+  </g>
+</svg>

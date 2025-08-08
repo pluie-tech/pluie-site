@@ -1,25 +1,22 @@
-import { LucideIcon } from 'lucide-react';
-import { 
-  Database, 
-  Palette, 
-  Code2, 
-  Figma,
-  User,
-  Target,
-  Timer,
-  TrendingUp
+import { generateImageUrl } from '@/lib/utils';
+import { Apple, BellRing, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, CircleUser, Dumbbell, Flower, Glasses, Heart, LucideIcon, Mail, MessageSquareDot, Music, Notebook, Pointer, Proportions, Route, ShieldCheck, SoapDispenserDroplet, SquaresSubtract, Star, TabletSmartphone, Trophy, Wallet, WandSparkles } from 'lucide-react';
+import {
+  Database,
+  Palette,
+  Code2,
+  Figma, TrendingUp
 } from 'lucide-react';
 
 export type CaseStudySection = {
   icon: LucideIcon;
   title: string;
   content: string;
+  items?: { color: string; icon: LucideIcon }[];
 }
 
 export type CaseStudyResource = {
   icon: LucideIcon;
   name: string;
-  category: 'frontend' | 'backend' | 'design' | 'other';
 }
 
 export type CaseStudyVisualGuideline = {
@@ -49,7 +46,12 @@ export type CaseStudy = {
     subtitle?: string;
     items: string[];
   };
-  sections: CaseStudySection[];
+  sections: {
+    image?: string;
+    icon?: LucideIcon;
+    title: string;
+    items: CaseStudySection[];
+  };
   resources: CaseStudyResource[];
   visualGuidelines: CaseStudyVisualGuideline[];
 }
@@ -76,35 +78,56 @@ export const desafiadoCaseStudy: CaseStudy = {
       'Notificações inteligentes'
     ]
   },
-  sections: [
-    {
-      icon: User,
-      title: 'Experiência do usuário',
-      content: 'Interface clean e intuitiva que torna o acompanhamento de metas uma experiência agradável e motivadora.'
-    },
-    {
-      icon: Target,
-      title: 'Gamificação',
-      content: 'Sistema de pontos, conquistas e rankings que mantém os usuários engajados e motivados.'
-    },
-    {
-      icon: Timer,
-      title: 'Produtividade',
-      content: 'Ferramentas de acompanhamento que ajudam a manter o foco e a consistência nas metas.'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Resultados',
-      content: 'Analytics detalhados do progresso e insights personalizados para melhorar performance.'
-    }
-  ],
+  sections: {
+    image: '/images/cases/desafiado/logo.svg',
+    title: 'Mantenha o foco',
+    items: [
+      {
+        icon: WandSparkles,
+        title: 'Crie seus desafios',
+        content: '10 categorias para se inspirar.',
+        items: [
+          { color: '#00C951', icon: Apple },
+          { color: '#FB2C36', icon: Dumbbell },
+          { color: '#FE9A00', icon: Wallet },
+          { color: '#00BBA7', icon: ChartNoAxesCombined },
+          { color: '#F0B100', icon: Glasses },
+          { color: '#AD46FF', icon: Music },
+          { color: '#615FFF', icon: Flower },
+          { color: '#F6339A', icon: Heart },
+          { color: '#00B8DB', icon: Notebook },
+          { color: '#8E51FF', icon: SoapDispenserDroplet },
+        ]
+      },
+      {
+        icon: TrendingUp,
+        title: 'Acompanhe seu progresso',
+        content: 'Tenha acesso a um contador de sequências e estatísticas detalhadas. Pequenas ações diárias criam grandes transformações.'
+      },
+      {
+        icon: Star,
+        title: 'Sistema de conquistas',
+        content: 'Desbloqueie mais de 50 conquistas. Medalhas de progresso, consistência e marcos para manter sua motivação sempre em alta.'
+      },
+      {
+        icon: BellRing,
+        title: 'Notificações',
+        content: 'Receba push para receber lembretes dos seus desafios. Não esqueça seus objetivos.'
+      }
+    ],
+  },
   resources: [
-    { icon: Code2, name: 'React Native', category: 'frontend' },
-    { icon: Code2, name: 'TypeScript', category: 'frontend' },
-    { icon: Database, name: 'Firebase', category: 'backend' },
-    { icon: Database, name: 'Firestore', category: 'backend' },
-    { icon: Figma, name: 'Figma', category: 'design' },
-    { icon: Palette, name: 'Design System', category: 'design' }
+    { icon: TabletSmartphone, name: 'Progressive Web App (PWA)' },
+    { icon: MessageSquareDot, name: 'Notificações Push com agendamento' },
+    { icon: SquaresSubtract, name: 'Funcionamento em segundo plano' },
+    { icon: CircleUser, name: 'Login social' },
+    { icon: Mail, name: 'Suporte a login por e-mail' },
+    { icon: ShieldCheck, name: 'Sessões seguras e estáveis' },
+    { icon: Proportions, name: 'Interface responsiva' },
+    { icon: Pointer, name: 'Interação por toque e gestos' },
+    { icon: Trophy, name: 'Gamificação e recompensas' },
+    { icon: Route, name: 'Conquistas integradas à jornada' },
+    { icon: ChartNoAxesColumnIncreasing, name: 'Trilhas de progresso para engajamento' },
   ],
   visualGuidelines: [
     {

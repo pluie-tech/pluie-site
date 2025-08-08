@@ -3,7 +3,7 @@
 import CaseStudy from '@/components/templates/CaseStudy';
 import { FinalCTA, Contact } from '@/components';
 import { desafiadoCaseStudy } from '@/data/cases';
-import { User, Target, Timer, TrendingUp, Code2, Database, Figma, Palette } from 'lucide-react';
+import { WandSparkles, TrendingUp, Code2, Database, Figma, Palette, Star, BellRing } from 'lucide-react';
 
 export default function DesafiadoPage() {
   const caseData = desafiadoCaseStudy;
@@ -24,15 +24,13 @@ export default function DesafiadoPage() {
           <CaseStudy.Hero.Description>
             {caseData.description}
           </CaseStudy.Hero.Description>
-          <CaseStudy.Hero.Action>
-            <CaseStudy.Hero.Button
+            <CaseStudy.CTA.Button
               href={caseData.appUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
               {caseData.ctaText}
-            </CaseStudy.Hero.Button>
-          </CaseStudy.Hero.Action>
+            </CaseStudy.CTA.Button>
         </CaseStudy.Hero.Content>
       </CaseStudy.Hero>
 
@@ -68,70 +66,84 @@ export default function DesafiadoPage() {
         </CaseStudy.About.Content>
       </CaseStudy.About>
 
-      <CaseStudy.Sections>
+      <CaseStudy.Sections
+        title={caseData.sections.title}
+        className='bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60'
+        preSection={
+          caseData.sections.image ? (
+          <div className="flex justify-center mb-6">
+            <div
+              className="border-4 border-white rounded-full p-4 flex items-center justify-center mb-6"
+              style={{
+                backgroundColor: '#eff7fd'
+              }}
+            >
+              <img
+                src={caseData.sections.image}
+                alt={`${caseData.title} section`}
+                width={64}
+                height={64}
+                className="w-16 h-16 object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        ) : null}
+      >
         <CaseStudy.Sections.Grid>
-          <CaseStudy.Sections.Item
-            icon={User}
-            title="Experiência do usuário"
-            index={0}
-          >
-            <CaseStudy.Sections.Content>
-              Interface clean e intuitiva que torna o acompanhamento de metas uma experiência agradável e motivadora.
-            </CaseStudy.Sections.Content>
-          </CaseStudy.Sections.Item>
+          {caseData.sections.items.map((sectionItem, index) => (
+            <CaseStudy.Sections.Item
+              key={index}
+              icon={sectionItem.icon}
+              title={sectionItem.title}
+              index={index}
+            >
+              {sectionItem.items
+                ? (
+                  <>
+                    <p className="text-gray-neutral sm:text-lg mb-6">{sectionItem.content}</p>
+                    <div className="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-5 gap-2">
+                      {sectionItem.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="flex flex-col items-center mb-6">
+                          <div
+                            className="aspect-square h-12 rounded-[45%] flex items-center justify-center mb-2"
+                            style={{ backgroundColor: item.color }}
+                          >
+                            <item.icon className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )
+                : (
+                  <p className="text-gray-neutral sm:text-lg">{sectionItem.content}</p>
+                )
+              }
+            </CaseStudy.Sections.Item>
+          ))}
 
-          <CaseStudy.Sections.Item
-            icon={Target}
-            title="Gamificação"
-            index={1}
-          >
-            <CaseStudy.Sections.Content>
-              Sistema de pontos, conquistas e rankings que mantém os usuários engajados e motivados.
-            </CaseStudy.Sections.Content>
-          </CaseStudy.Sections.Item>
-
-          <CaseStudy.Sections.Item
-            icon={Timer}
-            title="Produtividade"
-            index={2}
-          >
-            <CaseStudy.Sections.Content>
-              Ferramentas de acompanhamento que ajudam a manter o foco e a consistência nas metas.
-            </CaseStudy.Sections.Content>
-          </CaseStudy.Sections.Item>
-
-          <CaseStudy.Sections.Item
-            icon={TrendingUp}
-            title="Resultados"
-            index={3}
-          >
-            <CaseStudy.Sections.Content>
-              Analytics detalhados do progresso e insights personalizados para melhorar performance.
-            </CaseStudy.Sections.Content>
-          </CaseStudy.Sections.Item>
         </CaseStudy.Sections.Grid>
+
+        <div className="flex justify-center mt-10">
+          <CaseStudy.CTA.Button
+            href={caseData.appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {caseData.ctaText}
+          </CaseStudy.CTA.Button>
+        </div>
       </CaseStudy.Sections>
 
-      <CaseStudy.Resources>
+      <CaseStudy.Resources title='Recursos' className="bg-background">
         <CaseStudy.Resources.List>
-          <CaseStudy.Resources.Item icon={Code2} category="frontend" index={0}>
-            React Native
-          </CaseStudy.Resources.Item>
-          <CaseStudy.Resources.Item icon={Code2} category="frontend" index={1}>
-            TypeScript
-          </CaseStudy.Resources.Item>
-          <CaseStudy.Resources.Item icon={Database} category="backend" index={2}>
-            Firebase
-          </CaseStudy.Resources.Item>
-          <CaseStudy.Resources.Item icon={Database} category="backend" index={3}>
-            Firestore
-          </CaseStudy.Resources.Item>
-          <CaseStudy.Resources.Item icon={Figma} category="design" index={4}>
-            Figma
-          </CaseStudy.Resources.Item>
-          <CaseStudy.Resources.Item icon={Palette} category="design" index={5}>
-            Design System
-          </CaseStudy.Resources.Item>
+          {caseData.resources.map((resource, index) => (
+            <CaseStudy.Resources.Item
+              key={index}
+              icon={resource.icon}
+              label={resource.name}
+            />
+          ))}
         </CaseStudy.Resources.List>
       </CaseStudy.Resources>
 

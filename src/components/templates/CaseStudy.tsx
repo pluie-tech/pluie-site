@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { Hero, BaseLayout, Section, BackToHomeButton, Button } from '@/components';
 import { ExternalLink } from 'lucide-react';
-import { generateImageUrl } from '@/lib/utils';
+import { cn, generateImageUrl } from '@/lib/utils';
 import { ReactNode } from 'react';
 
 // Main CaseStudy Component
@@ -39,11 +39,8 @@ interface CaseStudyHeroDescriptionProps {
   className?: string;
 }
 
-interface CaseStudyHeroActionProps {
-  children: ReactNode;
-}
 
-interface CaseStudyHeroButtonProps {
+interface CaseStudyCTAButtonProps {
   children: ReactNode;
   href?: string;
   target?: string;
@@ -79,6 +76,7 @@ interface CaseStudySectionsProps {
   id?: string;
   className?: string;
   title?: string;
+  preSection?: React.ReactNode;
 }
 
 interface CaseStudySectionsGridProps {
@@ -111,10 +109,8 @@ interface CaseStudyResourcesListProps {
 }
 
 interface CaseStudyResourceItemProps {
-  children: ReactNode;
   icon: React.ComponentType<{ className?: string }>;
-  category: 'frontend' | 'backend' | 'design' | 'other';
-  index?: number;
+  label: string;
 }
 
 // Visual Guidelines Components
@@ -141,6 +137,24 @@ interface CaseStudyGuidelineItemProps {
   value: string;
   type: 'color' | 'font' | 'other';
   preview?: string;
+}
+
+interface CaseStudyTitleProps {
+  title?: string;
+  subtitle?: string;
+  className?: string;
+}
+
+function CaseStudyTitle({ title, subtitle, className }: CaseStudyTitleProps) {
+  if (!title && !subtitle) {
+    return null;
+  }
+  return (
+    <div className={cn("mb-8 md:mb-15", className)}>
+      <h3 className="font-heading font-semibold text-2xl md:text-[52px] text-center max-w-lg mx-auto">{title}</h3>
+      {subtitle && <p className="text-lg sm:text-2xl">{subtitle}</p>}
+    </div>
+  );
 }
 
 // Hero Components Implementation
@@ -179,11 +193,7 @@ function CaseStudyHeroDescription({ children, className }: CaseStudyHeroDescript
   );
 }
 
-function CaseStudyHeroAction({ children }: CaseStudyHeroActionProps) {
-  return <Hero.Action>{children}</Hero.Action>;
-}
-
-function CaseStudyHeroButton({ children, href, target, rel }: CaseStudyHeroButtonProps) {
+function CaseStudyCTAButton({ children, href, target, rel }: CaseStudyCTAButtonProps) {
   return (
     <Button
       as="a"
@@ -235,8 +245,6 @@ function CaseStudyAbout({ children, id = "case-about", className, title, subtitl
     <Section
       id={id}
       className={`py-10 xl:py-15 2xl:py-20 bg-white ${className || ''}`}
-      title={title}
-      subtitle={subtitle}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -244,6 +252,7 @@ function CaseStudyAbout({ children, id = "case-about", className, title, subtitl
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
+        <CaseStudyTitle title={title} subtitle={subtitle} />
         {children}
       </motion.div>
     </Section>
@@ -266,21 +275,18 @@ function CaseStudyAboutContent({ children, className }: CaseStudyAboutContentPro
 }
 
 // Sections Components Implementation
-function CaseStudySections({ children, id = "case-sections", className, title }: CaseStudySectionsProps) {
+function CaseStudySections({ children, id = "case-sections", className, title, preSection }: CaseStudySectionsProps) {
   return (
-    <Section id={id} className={`py-10 xl:py-15 2xl:py-20 bg-background ${className || ''}`}>
+    <Section id={id} className={cn("py-10 xl:py-15 2xl:py-20 bg-background", className)}>
       <motion.div
-        className="mx-auto max-w-7xl px-5 sm:px-8 xl:px-0"
+        className="mx-auto max-w-5xl px-5 sm:px-8 xl:px-0"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        {title && (
-          <h3 className="font-heading font-black text-[40px] leading-small tracking-title mb-12 text-center">
-            {title}
-          </h3>
-        )}
+        {preSection && <>{preSection}</>}
+        <CaseStudyTitle title={title} />
         {children}
       </motion.div>
     </Section>
@@ -289,7 +295,7 @@ function CaseStudySections({ children, id = "case-sections", className, title }:
 
 function CaseStudySectionsGrid({ children, className }: CaseStudySectionsGridProps) {
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 ${className || ''}`}>
+    <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-3", className)}>
       {children}
     </div>
   );
@@ -298,17 +304,15 @@ function CaseStudySectionsGrid({ children, className }: CaseStudySectionsGridPro
 function CaseStudySectionItem({ children, icon: Icon, title, index = 0 }: CaseStudySectionItemProps) {
   return (
     <motion.div
-      className="space-y-4"
+      className="bg-white rounded-4xl p-12 border border-border mb-3"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 'some' }}
       transition={{ duration: 0.4, delay: index * 0.1, ease: 'easeOut' }}
     >
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-azulao/10 rounded-xl flex items-center justify-center">
-          <Icon className="w-6 h-6 text-azulao" />
-        </div>
-        <h4 className="font-heading font-bold text-2xl text-foreground">
+      <div>
+        <Icon className="w-8 h-8 mb-4 stroke-2"  />
+        <h4 className="font-heading font-semibold text-xl sm:text-2xl">
           {title}
         </h4>
       </div>
@@ -328,7 +332,7 @@ function CaseStudySectionContent({ children }: CaseStudySectionContentProps) {
 // Resources Components Implementation
 function CaseStudyResources({ children, id = "case-resources", className, title = "Tecnologias utilizadas" }: CaseStudyResourcesProps) {
   return (
-    <Section id={id} className={`py-10 xl:py-15 2xl:py-20 ${className || ''}`}>
+    <Section id={id} className={cn("py-10 xl:py-15 2xl:py-20", className)}>
       <motion.div
         className="mx-auto max-w-7xl px-5 sm:px-8 xl:px-0"
         initial={{ opacity: 0, y: 20 }}
@@ -336,9 +340,7 @@ function CaseStudyResources({ children, id = "case-resources", className, title 
         viewport={{ once: true, amount: 'some' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <h3 className="font-heading font-black text-[40px] leading-small tracking-title mb-12 text-center">
-          {title}
-        </h3>
+        <CaseStudyTitle title={title} />
         {children}
       </motion.div>
     </Section>
@@ -347,32 +349,19 @@ function CaseStudyResources({ children, id = "case-resources", className, title 
 
 function CaseStudyResourcesList({ children, className }: CaseStudyResourcesListProps) {
   return (
-    <div className={`flex flex-wrap gap-4 justify-center ${className || ''}`}>
+    <div className={cn("flex flex-wrap gap-4 justify-center max-w-5xl mx-auto", className)}>
       {children}
     </div>
   );
 }
 
-function CaseStudyResourceItem({ children, icon: Icon, category, index = 0 }: CaseStudyResourceItemProps) {
-  const categoryColors = {
-    frontend: 'bg-blue-100 text-blue-800',
-    backend: 'bg-green-100 text-green-800',
-    design: 'bg-purple-100 text-purple-800',
-    other: 'bg-gray-100 text-gray-800'
-  };
-
+function CaseStudyResourceItem({ icon: Icon, label }: CaseStudyResourceItemProps) {
   return (
-    <motion.div
-      className={`flex items-center gap-2 px-4 py-2 rounded-full ${categoryColors[category]}`}
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 'some' }}
-      transition={{ duration: 0.3, delay: index * 0.05, ease: 'easeOut' }}
-    >
+    <div className="flex items-center space-x-2 px-3 py-1.5 rounded-lg border border-secondary">
       <Icon className="w-4 h-4" />
-      <span className="font-medium">{children}</span>
-    </motion.div>
-  );
+      <span className="text-lg leading-body">{label}</span>
+    </div>
+  )
 }
 
 // Visual Guidelines Components Implementation
@@ -446,8 +435,6 @@ interface CaseStudyComponent extends React.FC<CaseStudyProps> {
     Title: React.FC<CaseStudyHeroTitleProps>;
     Subtitle: React.FC<CaseStudyHeroSubtitleProps>;
     Description: React.FC<CaseStudyHeroDescriptionProps>;
-    Action: React.FC<CaseStudyHeroActionProps>;
-    Button: React.FC<CaseStudyHeroButtonProps>;
   };
   Banner: React.FC<CaseStudyBannerProps>;
   About: React.FC<CaseStudyAboutProps> & {
@@ -467,6 +454,9 @@ interface CaseStudyComponent extends React.FC<CaseStudyProps> {
     Group: React.FC<CaseStudyGuidelineGroupProps>;
     Item: React.FC<CaseStudyGuidelineItemProps>;
   };
+  CTA: {
+    Button: React.FC<CaseStudyCTAButtonProps>;
+  }
 }
 
 function CaseStudy({ children }: CaseStudyProps) {
@@ -488,8 +478,6 @@ CaseStudyComponent.Hero.Content = CaseStudyHeroContent;
 CaseStudyComponent.Hero.Title = CaseStudyHeroTitle;
 CaseStudyComponent.Hero.Subtitle = CaseStudyHeroSubtitle;
 CaseStudyComponent.Hero.Description = CaseStudyHeroDescription;
-CaseStudyComponent.Hero.Action = CaseStudyHeroAction;
-CaseStudyComponent.Hero.Button = CaseStudyHeroButton;
 
 CaseStudyComponent.Banner = CaseStudyBanner;
 
@@ -509,5 +497,9 @@ CaseStudyComponent.Guidelines = CaseStudyGuidelines as typeof CaseStudyComponent
 CaseStudyComponent.Guidelines.Grid = CaseStudyGuidelinesGrid;
 CaseStudyComponent.Guidelines.Group = CaseStudyGuidelineGroup;
 CaseStudyComponent.Guidelines.Item = CaseStudyGuidelineItem;
+
+CaseStudyComponent.CTA = {
+  Button: CaseStudyCTAButton
+};
 
 export default CaseStudyComponent;
