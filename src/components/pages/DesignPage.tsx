@@ -82,9 +82,9 @@ export default function DesignPage() {
       />
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
-        <BackToHomeButton />
+        <BackToHomeButton className="pt-4 md:pt-6 lg:pt-10" />
 
-        <Hero id="design-hero" className="bg-transparent p-0">
+        <Hero id="design-hero" className="p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Design estratégico pela Pluie

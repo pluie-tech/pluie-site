@@ -2,68 +2,11 @@
 
 import { motion } from 'motion/react';
 import { Hero, Services, FinalCTA, Contact, BaseLayout, Section, BackToHomeButton } from '@/components';
-import { Service } from '@/types';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
-import { Lightbulb, LucideIcon, Shrub, Target, Timer } from 'lucide-react';
 import { generateImageUrl } from '@/lib/utils';
 import { generateBreadcrumbSchema, generateServiceSchema, serializeSchema } from '@/lib/schema';
-
-type TargetAudience = {
-  icon: LucideIcon,
-  name: string,
-}
-
-const webServicesData: Service = {
-  imagePath: '/services/applications.jpg',
-  features: [
-    {
-      title: 'Entrega rápida',
-      description: 'Site pronto em poucas semanas, não em meses.',
-      icon: Timer
-    },
-    {
-      title: 'Pronto para crescer',
-      description: 'Ótima usabilidade e estrutura sólida, feito para durar e crescer com o seu negócio.',
-      icon: Shrub
-    },
-    {
-      title: 'Monitore os resultados',
-      description: 'Acompanhe o desempenho através de ferramentas de Analytics.',
-      icon: Target
-    }
-  ]
-};
-
-const targetAudience: TargetAudience[] = [
-  {
-    icon: Lightbulb,
-    name: 'Pet shops e clínicas veterinárias',
-  },
-  {
-    icon: Lightbulb,
-    name: 'Imobiliárias e incorporadoras',
-  },
-  {
-    icon: Lightbulb,
-    name: 'Consultórios e clínicas médicas',
-  },
-  {
-    icon: Lightbulb,
-    name: 'Escritórios de advocacia',
-  },
-  {
-    icon: Lightbulb,
-    name: 'Negócios locais e prestadores de serviço',
-  },
-];
-
-const howWeWorkSteps = [
-  'Entendimento do negócio',
-  'Arquitetura e experiência do usuário',
-  'Design visual e responsivo',
-  'Implementação leve e escalável',
-  'SEO técnico e integração com ferramentas como WhatsApp, Google Maps e Analytics'
-];
+import { webServicesData } from '@/data/services';
+import { sitesTargetAudience, sitesWorkflowSteps } from '@/data/sites';
 
 export default function SitesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -94,9 +37,9 @@ export default function SitesPage() {
       />
       <div className="bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60 relative z-10">
 
-      <BackToHomeButton />
+      <BackToHomeButton className="pt-4 md:pt-6 lg:pt-10" />
 
-        <Hero id="sites-hero" className="bg-transparent p-0">
+        <Hero id="sites-hero" className="p-0">
           <Hero.Content className="py-8!">
             <Hero.Title className="text-foreground">
               Site profissional para empresas
@@ -138,7 +81,7 @@ export default function SitesPage() {
             <div>
               <h4 className="font-heading font-black text-[40px] leading-small tracking-title mb-9">Pra quem é</h4>
               <div className="grid grid-cols-1 gap-6">
-                {targetAudience.map((audience, index) => (
+                {sitesTargetAudience.map((audience, index) => (
                   <motion.div
                     key={audience.name}
                     className="flex items-center space-x-2"
@@ -157,7 +100,7 @@ export default function SitesPage() {
               <h4 className="font-heading font-black text-[40px] leading-small tracking-title mb-3">Como fazemos</h4>
               <p className="text-lg mb-5 sm:mb-10 leading-body">Cada projeto é único. Nosso processo é colaborativo, direto e técnico:</p>
               <div className="grid gap-8">
-                {howWeWorkSteps.map((step, index) => (
+                {sitesWorkflowSteps.map((step, index) => (
                   <div key={index} className="flex items-center space-x-2 relative">
                     <motion.div
                       className="flex items-start justify-start"
@@ -173,7 +116,7 @@ export default function SitesPage() {
                       </span>
                       <h6 className="text-2xl font-semibold text-azulao">{step}</h6>
                     </motion.div>
-                    {index < howWeWorkSteps.length - 1 && <div className="absolute top-[33px] left-[15px] border-l-2 h-full border-dashed border-azulao"></div>}
+                    {index < sitesWorkflowSteps.length - 1 && <div className="absolute top-[33px] left-[15px] border-l-2 h-full border-dashed border-azulao"></div>}
                   </div>
                 ))}
               </div>

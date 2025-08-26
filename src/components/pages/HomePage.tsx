@@ -1,7 +1,7 @@
 "use client";
 
 import { Hero, About, HowItWorks, Services, FinalCTA, Contact, BaseLayout } from '@/components';
-import { servicesData } from '@/components/sections/Services';
+import { homeServicesData } from '@/data/services';
 import { WhatsAppFAB } from '@/components/ui/WhatsAppFAB';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
@@ -13,11 +13,9 @@ export default function HomePage() {
           src="/images/full/hero.png"
           alt="Background da seção Hero"
           srcSet={`
-            /images/400/hero.png 400w,
             /images/480/hero.png 480w,
             /images/640/hero.png 640w,
             /images/800/hero.png 800w,
-              /images/720/hero.png 720w,
             /images/1024/hero.png 1024w,
             /images/1400/hero.png 1400w,
             /images/1600/hero.png 1600w,
@@ -50,7 +48,7 @@ export default function HomePage() {
         rounded="top"
       >
         <Services.List>
-          {servicesData.map((service, index) => (
+          {homeServicesData.map((service, index) => (
             <Services.Item
               key={index}
               title={service.title}

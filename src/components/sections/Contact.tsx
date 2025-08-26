@@ -10,6 +10,7 @@ import Label from '../ui/Label';
 import { motion } from 'motion/react';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
+import { cn } from '@/lib/utils';
 
 interface ContactProps {
   children: ReactNode;
@@ -70,14 +71,14 @@ function ContactRoot({
   children, 
   id = "contato", 
   color = "white", 
-  className = "px-1 py-8 sm:px-8 sm:py-15",
+  className,
   contentClassName = "mt-0"
 }: ContactProps) {
   return (
     <Section
       id={id}
       color={color}
-      className={className}
+      className={cn('px-1 py-8 sm:px-8 sm:py-15', className)}
       contentClassName={contentClassName}
     >
       {children}
