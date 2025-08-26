@@ -17,6 +17,10 @@ const solutions = [
   { name: 'Design UX/UI', href: '/design' }
 ]
 
+const cases = [
+  { name: 'Desafiado', href: '/cases/desafiado' }
+]
+
 const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.'
 
 export default function Footer({ sticky = false }: FooterProps) {
@@ -34,7 +38,7 @@ export default function Footer({ sticky = false }: FooterProps) {
       sticky ? 'sticky bottom-0 left-0 w-full z-10' : '',
     )}>
       <div className="mx-auto max-w-7xl px-4 pt-6 pb-4 sm:py-12 sm:px-6 lg:px-8 lg:py-14">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Information */}
           <div className="lg:col-span-1">
             <div className="mb-4 flex items-center gap-4">
@@ -48,6 +52,20 @@ export default function Footer({ sticky = false }: FooterProps) {
             <h3 className="text-lg font-semibold mb-3">Soluções</h3>
             <ul className="space-y-3 font-medium">
               {solutions.map((link, index) => (
+                <li key={index}>
+                  <a key={link.name} href={link.href} className="text-background hover:underline">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Cases */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Casos</h3>
+            <ul className="space-y-3 font-medium">
+              {cases.map((link, index) => (
                 <li key={index}>
                   <a key={link.name} href={link.href} className="text-background hover:underline">
                     {link.name}
