@@ -3,7 +3,14 @@
 import CaseStudy from '@/components/templates/CaseStudy';
 import { FinalCTA, Contact } from '@/components';
 import { desafiadoCaseStudy } from '@/data/cases';
-import { WandSparkles, TrendingUp, Code2, Database, Figma, Palette, Star, BellRing } from 'lucide-react';
+import { Manrope } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const manrope = Manrope({
+  variable: '--font-manrope',
+  weight: ['300', '700', '800'],
+  subsets: ['latin']
+})
 
 export default function DesafiadoPage() {
   const caseData = desafiadoCaseStudy;
@@ -13,6 +20,7 @@ export default function DesafiadoPage() {
       <CaseStudy.Hero
         heroImage={caseData.heroImage}
         title={caseData.title}
+        className='bg-[#E5F6F5]'
       >
         <CaseStudy.Hero.Content>
           <CaseStudy.Hero.Title>
@@ -103,7 +111,7 @@ export default function DesafiadoPage() {
                     <p className="text-gray-neutral sm:text-lg mb-6">{sectionItem.content}</p>
                     <div className="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-5 gap-2">
                       {sectionItem.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="flex flex-col items-center mb-6">
+                        <div key={itemIndex} className="flex flex-col items-center mb-1">
                           <div
                             className="aspect-square h-12 rounded-[45%] flex items-center justify-center mb-2"
                             style={{ backgroundColor: item.color }}
@@ -147,52 +155,43 @@ export default function DesafiadoPage() {
         </CaseStudy.Resources.List>
       </CaseStudy.Resources>
 
-      <CaseStudy.Guidelines>
-        <CaseStudy.Guidelines.Grid>
-          <CaseStudy.Guidelines.Group title="Cores primárias" index={0}>
-            <CaseStudy.Guidelines.Item
-              name="Azul Principal"
-              value="#3B82F6"
-              type="color"
-              preview="#3B82F6"
-            />
-            <CaseStudy.Guidelines.Item
-              name="Verde Sucesso"
-              value="#10B981"
-              type="color"
-              preview="#10B981"
-            />
-            <CaseStudy.Guidelines.Item
-              name="Laranja Energia"
-              value="#F59E0B"
-              type="color"
-              preview="#F59E0B"
-            />
-          </CaseStudy.Guidelines.Group>
-
-          <CaseStudy.Guidelines.Group title="Tipografia" index={1}>
-            <CaseStudy.Guidelines.Item
-              name="Título Principal"
-              value="Inter Bold 24px"
-              type="font"
-            />
-            <CaseStudy.Guidelines.Item
-              name="Subtítulo"
-              value="Inter Medium 18px"
-              type="font"
-            />
-            <CaseStudy.Guidelines.Item
-              name="Corpo"
-              value="Inter Regular 16px"
-              type="font"
-            />
-          </CaseStudy.Guidelines.Group>
-        </CaseStudy.Guidelines.Grid>
+      <CaseStudy.Guidelines title="Linha visual" subtitle='Divertida, lúdica, leve, colorida, convidativa, com contornos e sombras suaves.'>
+        <div className="flex justify-center">
+          <div className="w-full sm:w-auto flex flex-col-reverse sm:grid grid-cols-2 gap-2">
+            <div>
+              <div className="bg-border p-8 rounded-4xl">
+                <p className="text-sm text-gray-neutral leading-body mb-2">Tipografia</p>
+                <div>
+                  <p
+                    className={cn("font-bold tracking-title text-[40px]", manrope.variable, 'leading-tight')}
+                    style={{ fontFamily: 'var(--font-manrope)' }}
+                  >Manrope</p>
+                  <span
+                    className={cn("font-extrabold tracking-title text-[100px]", manrope.variable, 'leading-tight')}
+                    style={{ fontFamily: 'var(--font-manrope)' }}
+                  >A</span>
+                  <span
+                    className={cn("font-light tracking-title text-[100px]", manrope.variable, 'leading-tight')}
+                    style={{ fontFamily: 'var(--font-manrope)' }}
+                  >a</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="bg-border p-8 rounded-4xl">
+                <p className="text-sm text-gray-neutral leading-body mb-3">Cores</p>
+                <div>
+                  <img src="/images/cases/desafiado/colors-grid.svg" className="w-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </CaseStudy.Guidelines>
 
       <FinalCTA
-        title="Gostou do que viu?"
-        subtitle="Vamos criar algo incrível para o seu negócio também."
+        title="Agende uma conversa gratuita"
+        subtitle="A gente escuta, entende e mostra como pode ajudar."
         color="black"
         rounded="full"
         className="py-13 sm:py-15 lg:py-20"
@@ -204,11 +203,11 @@ export default function DesafiadoPage() {
         </FinalCTA.Action>
       </FinalCTA>
 
-      <Contact>
+      <Contact color='white'>
         <Contact.Container>
           <Contact.Info
-            title="Pronto para o próximo projeto?"
-            subtitle="Conte com a Pluie para criar sua próxima solução digital de sucesso."
+            title="Quer um app profissional?"
+            subtitle="Fale com a Pluie e receba uma proposta sob medida."
             showLogo={true}
           />
           <Contact.Form 

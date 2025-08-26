@@ -1,11 +1,5 @@
-import { generateImageUrl } from '@/lib/utils';
 import { Apple, BellRing, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, CircleUser, Dumbbell, Flower, Glasses, Heart, LucideIcon, Mail, MessageSquareDot, Music, Notebook, Pointer, Proportions, Route, ShieldCheck, SoapDispenserDroplet, SquaresSubtract, Star, TabletSmartphone, Trophy, Wallet, WandSparkles } from 'lucide-react';
-import {
-  Database,
-  Palette,
-  Code2,
-  Figma, TrendingUp
-} from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 
 export type CaseStudySection = {
   icon: LucideIcon;
@@ -53,7 +47,7 @@ export type CaseStudy = {
     items: CaseStudySection[];
   };
   resources: CaseStudyResource[];
-  visualGuidelines: CaseStudyVisualGuideline[];
+  visualGuidelines?: CaseStudyVisualGuideline[];
 }
 
 // Desafiado case study data
@@ -129,24 +123,6 @@ export const desafiadoCaseStudy: CaseStudy = {
     { icon: Route, name: 'Conquistas integradas à jornada' },
     { icon: ChartNoAxesColumnIncreasing, name: 'Trilhas de progresso para engajamento' },
   ],
-  visualGuidelines: [
-    {
-      title: 'Cores primárias',
-      items: [
-        { type: 'color', name: 'Azul Principal', value: '#3B82F6', preview: '#3B82F6' },
-        { type: 'color', name: 'Verde Sucesso', value: '#10B981', preview: '#10B981' },
-        { type: 'color', name: 'Laranja Energia', value: '#F59E0B', preview: '#F59E0B' }
-      ]
-    },
-    {
-      title: 'Tipografia',
-      items: [
-        { type: 'font', name: 'Título Principal', value: 'Inter Bold 24px' },
-        { type: 'font', name: 'Subtítulo', value: 'Inter Medium 18px' },
-        { type: 'font', name: 'Corpo', value: 'Inter Regular 16px' }
-      ]
-    }
-  ]
 };
 
 // Export all case studies for easy access

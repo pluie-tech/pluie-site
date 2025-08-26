@@ -8,7 +8,7 @@ interface BackToHomeButtonProps {
 
 export default function BackToHomeButton({ className = "" }: BackToHomeButtonProps) {
   return (
-    <div className={cn("flex justify-center pt-4 md:pt-6 lg:pt-8", className)}>
+    <div className={cn("flex justify-center", className)}>
       <Button 
         variant="outline" 
         leftIcon={Home} 

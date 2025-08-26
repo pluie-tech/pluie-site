@@ -119,7 +119,7 @@ function HeroAction({ children, className = "" }: HeroActionProps) {
 function HeroContent({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div className={cn(
-      "relative mx-auto lg:max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-28 lg:px-8",
+      "relative mx-auto lg:max-w-3xl px-4 pt-8 pb-6 sm:pt-12 sm:pb-8 sm:px-6 md:pt-20 md:pb-20 lg:pt-24 lg:pb-28 lg:px-8",
       className
     )}>
       <motion.div 
