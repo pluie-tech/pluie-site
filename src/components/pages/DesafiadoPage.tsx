@@ -79,7 +79,7 @@ export default function DesafiadoPage() {
         className='bg-gradient-to-b from-[#E1EFF8]/60 to-[#E0F8ED]/60'
         preSection={
           caseData.sections.image ? (
-          <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-2 sm:mb-4 lg:mb-6">
             <div
               className="border-4 border-white rounded-full p-4 flex items-center justify-center mb-6"
               style={{
@@ -211,7 +211,7 @@ export default function DesafiadoPage() {
             showLogo={true}
           />
           <Contact.Form 
-            submitButtonText="Iniciar projeto"
+            submitButtonText="Solicitar proposta"
             serviceOptions={[
               'Aplicativo mobile',
               'Sistema web',
