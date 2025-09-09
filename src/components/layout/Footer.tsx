@@ -63,7 +63,7 @@ export default function Footer({ sticky = false }: FooterProps) {
 
           {/* Cases */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Casos</h3>
+            <h3 className="text-lg font-semibold mb-3">Cases</h3>
             <ul className="space-y-3 font-medium">
               {cases.map((link, index) => (
                 <li key={index}>
