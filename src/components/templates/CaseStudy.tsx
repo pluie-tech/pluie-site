@@ -153,7 +153,7 @@ function CaseStudyTitle({ title, subtitle, className }: CaseStudyTitleProps) {
   return (
     <div className={cn("mb-8 md:mb-15", className)}>
       <h3 className="font-heading font-semibold text-2xl sm:text-3xl md:text-[52px] text-center max-w-lg mx-auto">{title}</h3>
-      {subtitle && <p className="text-lg sm:text-2xl text-center max-w-lg mx-auto">{subtitle}</p>}
+      {subtitle && <p className="text-lg sm:text-2xl text-center max-w-lg xl:max-w-xl mx-auto">{subtitle}</p>}
     </div>
   );
 }
@@ -280,7 +280,7 @@ function CaseStudySections({ children, id = "case-sections", className, title, p
   return (
     <Section id={id} className={cn("py-10 xl:py-15 2xl:py-20 bg-background", className)}>
       <motion.div
-        className="mx-auto max-w-5xl px-1 sm:px-8 xl:px-0"
+        className="mx-auto max-w-4xl px-1 sm:px-8 xl:px-0"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 'some' }}

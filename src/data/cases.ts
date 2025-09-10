@@ -1,4 +1,4 @@
-import { Apple, BellRing, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, CircleUser, Dumbbell, Flower, Glasses, Heart, LucideIcon, Mail, MessageSquareDot, Music, Notebook, Pointer, Proportions, Route, ShieldCheck, SoapDispenserDroplet, SquaresSubtract, Star, TabletSmartphone, Trophy, Wallet, WandSparkles } from 'lucide-react';
+import { Apple, BellRing, ChartNoAxesColumnIncreasing, ChartNoAxesCombined, CircleUser, Dumbbell, Flower, Glasses, Heart, Joystick, LucideIcon, Mail, MessageSquareDot, Mic, Music, Notebook, Pointer, Proportions, Route, ShieldCheck, SoapDispenserDroplet, SquareCheck, SquaresSubtract, Star, TabletSmartphone, Trophy, Wallet, WandSparkles } from 'lucide-react';
 import { TrendingUp } from 'lucide-react';
 
 export type CaseStudySection = {
@@ -38,15 +38,14 @@ export type CaseStudy = {
   aboutContent: {
     title: string;
     subtitle?: string;
-    items: string[];
   };
   sections: {
     image?: string;
     icon?: LucideIcon;
-    title: string;
+    title?: string;
     items: CaseStudySection[];
   };
-  resources: CaseStudyResource[];
+  resources?: CaseStudyResource[];
   visualGuidelines?: CaseStudyVisualGuideline[];
 }
 
@@ -63,14 +62,7 @@ export const desafiadoCaseStudy: CaseStudy = {
   aboutReversed: false,
   aboutContent: {
     title: 'Sobre',
-    subtitle: 'O Desafiado é um aplicativo gratuito para criação e manutenção de hábitos.',
-    items: [
-      'Interface intuitiva e gamificada',
-      'Sistema de desafios personalizáveis',
-      'Conexão social entre usuários',
-      'Acompanhamento de progresso em tempo real',
-      'Notificações inteligentes'
-    ]
+    subtitle: 'O Desafiado é um aplicativo gratuito para criação e manutenção de hábitos.'
   },
   sections: {
     image: '/images/cases/desafiado/logo.svg',
@@ -125,7 +117,62 @@ export const desafiadoCaseStudy: CaseStudy = {
   ],
 };
 
+export const agrobayCaseStudy: CaseStudy = {
+  id: 'agrobay',
+  title: 'Agrobay',
+  subtitle: 'Controle de tarefas em visitas a clientes por meio de comandos de voz.',
+  bannerImage: '/cases/agrobay/banner.png',
+  aboutImage: '/cases/agrobay/about.png',
+  appIconImage: '/images/cases/agrobay/icon.png',
+  appUrl: 'https://agrobay.com',
+  ctaText: 'Ver na loja',
+  aboutReversed: true,
+  aboutContent: {
+    title: 'Sobre',
+    subtitle: 'Redesenhamos a experiência do usuário do aplicativo Agrobay, desenvolvido pela Utronics, com foco em usabilidade e eficiência para motoristas em viagem. As melhorias garantem uma jornada mais intuitiva e segura nas estradas.'
+  },
+  sections: {
+    image: '/images/cases/agrobay/logo.png',
+    title: 'Funcionalidades',
+    items: [
+      {
+        icon: Mic,
+        title: 'Do áudio à tarefa',
+        content: 'Botão de gravação ao alcance do polegar. Uso de inteligência artificial para interpretar audios e transformar em tarefas.'
+      },
+      {
+        icon: SquareCheck,
+        title: 'Visualização e gerenciamento',
+        content: 'Acompanhamento em tempo real do status das tarefas e visualização integrada dos relacionamentos do Salesforce.'
+      },
+      {
+        icon: Joystick,
+        title: 'Gamificação de tarefas',
+        content: 'Indicadores visuais para maior adesão, satisfação e eficiência.'
+      },
+      {
+        icon: Pointer,
+        title:  'Interface flexível',
+        content: 'Modo destro e modo canhoto para eficiência e ergonomia.'
+      }
+    ],
+  },
+  visualGuidelines: [
+    {
+      title: 'Identidade Visual',
+      items: [
+        { type: 'color', name: 'Verde Primário', value: '#4CAF50', preview: '#4CAF50' },
+        { type: 'color', name: 'Cinza Secundário', value: '#9E9E9E', preview: '#9E9E9E' },
+        { type: 'font', name: 'Fonte Principal', value: 'Roboto, sans-serif' },
+        { type: 'font', name: 'Fonte Secundária', value: 'Open Sans, sans-serif' },
+        { type: 'other', name: 'Logotipo', value: '/images/cases/agrobay/logo.png' },
+      ]
+    }
+  ]
+};
+
 // Export all case studies for easy access
 export const allCaseStudies: CaseStudy[] = [
-  desafiadoCaseStudy
+  desafiadoCaseStudy,
+  agrobayCaseStudy
 ];
