@@ -58,8 +58,26 @@ export default function DesafiadoPage() {
               <div className="relative h-full inline-block px-20 gradient-mask aspect-[0.84]">
                 <img
                   src="/images/cases/desafiado/mobile-mockup.png" alt="Mobile mockup"
-                  className="w-full object-cover"
+                  className="w-full object-cover relative z-1"
                 />
+
+                <div className="absolute top-0 left-0 w-full h-full z-0">
+                  <svg viewBox="0 0 100 100" className="absolute top-20 left-12 w-8" preserveAspectRatio="xMidYMid meet" role="img">
+                    <circle cx="50" cy="50" r="50" fill="#D8EDF6" />
+                  </svg>
+
+                  <svg viewBox="0 0 100 100" className="absolute w-16 top-30 right-18" preserveAspectRatio="xMidYMid meet" role="img">
+                    <circle cx="50" cy="50" r="50" fill="#D8EDF6" />
+                  </svg>
+
+                  <svg viewBox="0 0 100 100" className="absolute w-24 left-8 bottom-20" preserveAspectRatio="xMidYMid meet" role="img">
+                    <circle cx="50" cy="50" r="50" fill="#D8EDF6" />
+                  </svg>
+
+                  <svg viewBox="0 0 100 100" className="absolute w-5 top-80 right-12" preserveAspectRatio="xMidYMid meet" role="img">
+                    <circle cx="50" cy="50" r="50" fill="#D8EDF6" />
+                  </svg>
+                </div>
 
               </div>
             </div>
@@ -143,17 +161,19 @@ export default function DesafiadoPage() {
         </div>
       </CaseStudy.Sections>
 
-      <CaseStudy.Resources title='Recursos' className="bg-background">
-        <CaseStudy.Resources.List>
-          {caseData.resources.map((resource, index) => (
-            <CaseStudy.Resources.Item
-              key={index}
-              icon={resource.icon}
-              label={resource.name}
-            />
-          ))}
-        </CaseStudy.Resources.List>
-      </CaseStudy.Resources>
+      {caseData.resources && (
+        <CaseStudy.Resources title='Recursos' className="bg-background">
+          <CaseStudy.Resources.List>
+            {caseData.resources.map((resource, index) => (
+              <CaseStudy.Resources.Item
+                key={index}
+                icon={resource.icon}
+                label={resource.name}
+              />
+            ))}
+          </CaseStudy.Resources.List>
+        </CaseStudy.Resources>
+      )}
 
       <CaseStudy.Guidelines title="Linha visual" subtitle='Divertida, lúdica, leve, colorida, convidativa, com contornos e sombras suaves.'>
         <div className="flex justify-center">

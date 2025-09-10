@@ -18,7 +18,8 @@ const solutions = [
 ]
 
 const cases = [
-  { name: 'Desafiado', href: '/cases/desafiado' }
+  { name: 'Desafiado', href: '/cases/desafiado' },
+  { name: 'Agrobay', href: '/cases/agrobay' }
 ]
 
 const description = 'Pluie é um estúdio de software que cria soluções digitais sob medida para negócios em crescimento.'
